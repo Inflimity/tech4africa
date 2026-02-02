@@ -58,23 +58,50 @@
 
 <body class="bg-africa-soft text-africa-midnight antialiased selection:bg-africa-red selection:text-white">
 
-    <nav
+    <nav x-data="{ mobileMenu: false }"
         class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center">
         <div class="flex items-center gap-2">
             <a href="index.html" class="text-xl font-extrabold uppercase tracking-tight">Tech<span
                     class="text-africa-red">4</span>Africa</a>
         </div>
+
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
             <a href="index.html" class="hover:text-africa-red">Home</a>
             <a href="gallery.html" class="hover:text-africa-red">Gallery</a>
             <a href="contact.html" class="text-africa-red">Contact</a>
         </div>
         <a href="contact.html"
-            class="bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
+            class="hidden md:block bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
             Started</a>
+
+        <!-- Mobile Menu Button -->
+        <button @click="mobileMenu = !mobileMenu" class="md:hidden text-africa-midnight focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path x-show="!mobileMenu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16" />
+                <path x-show="mobileMenu" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+
+        <!-- Mobile Menu Dropdown -->
+        <div x-show="mobileMenu" x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2" x-cloak
+            class="absolute top-full left-0 w-full bg-white border-b border-africa-border shadow-2xl p-6 flex flex-col gap-6 md:hidden">
+            <a href="index.html" class="text-lg font-bold text-slate-600 hover:text-africa-red">Home</a>
+            <a href="gallery.html" class="text-lg font-bold text-slate-600 hover:text-africa-red">Gallery</a>
+            <a href="contact.html" class="text-lg font-bold text-africa-red">Contact</a>
+            <a href="contact.html"
+                class="bg-africa-midnight text-white py-4 text-center text-sm font-bold rounded-xl hover:bg-africa-red transition">Get
+                Started</a>
+        </div>
     </nav>
 
-    <section class="w-full overflow-hidden">
+    <section class="w-full overflow-hidden mt-24">
         <!-- Contact Page Carousel -->
         <div x-data="{ 
         active: 0, 
@@ -110,7 +137,7 @@
                 </div>
             </template>
 
-            <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+            <div class="absolute bottom-6 left-[48%] -translate-x-1/2 flex gap-3 z-20">
                 <template x-for="(slide, index) in slides" :key="index">
                     <button @click="active = index" :class="active === index ? 'w-8 bg-africa-red' : 'w-2 bg-white/50'"
                         class="h-2 rounded-full transition-all duration-500 shadow-md"></button>
