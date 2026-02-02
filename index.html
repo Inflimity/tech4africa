@@ -297,7 +297,7 @@
             class="bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
             Started</button>
     </nav>
-
+    <!-- 
     <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
         <div class="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -341,6 +341,67 @@
                             class="h-2 rounded-full transition-all"></button>
                     </template>
                 </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section class="pt-24 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
+        <div x-data="{ 
+        active: 0, 
+        slides: [
+            {img: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200', title: 'Master the Code.', sub: 'Intensive Full-Stack training for the next generation.'},
+            {img: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200', title: 'Trade the Global Markets.', sub: 'Expert Forex & Crypto strategies from professional traders.'},
+            {img: 'https://images.unsplash.com/photo-1516321318423-f06f85e504?q=80&w=1200', title: 'Secure the Network.', sub: 'Master Cybersecurity and Infrastructure defense.'},
+            {img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1200', title: 'Analyze the Future.', sub: 'Harness the power of Data Science and AI logic.'}
+        ]
+    }" x-init="setInterval(() => active = (active + 1) % slides.length, 6000)"
+            class="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden bg-africa-midnight border border-africa-border">
+
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="active === index" class="absolute inset-0 w-full h-full">
+                    <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover"
+                        x-transition:enter="transition duration-1000 ease-out"
+                        x-transition:enter-start="scale-110 opacity-0" x-transition:enter-end="scale-100 opacity-100">
+
+                    <div class="absolute inset-0 bg-africa-midnight/60"></div>
+
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                        <div class="max-w-3xl" x-show="active === index"
+                            x-transition:enter="transition delay-300 duration-700 ease-out"
+                            x-transition:enter-start="opacity-0 translate-y-12"
+                            x-transition:enter-end="opacity-100 translate-y-0">
+
+                            <span
+                                class="inline-block bg-africa-red text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-1.5 rounded-full mb-8">
+                                Tech4Africa Academy
+                            </span>
+
+                            <h1 class="text-4xl md:text-7xl font-extrabold text-white uppercase leading-none mb-8 tracking-tighter"
+                                x-text="slide.title"></h1>
+
+                            <p class="text-slate-200 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed"
+                                x-text="slide.sub"></p>
+
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <button
+                                    class="bg-africa-red text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition active:scale-95 shadow-2xl shadow-africa-red/30">
+                                    View Courses
+                                </button>
+                                <button
+                                    class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button @click="active = index" :class="active === index ? 'w-12 bg-africa-red' : 'w-3 bg-white/30'"
+                        class="h-3 rounded-full transition-all duration-500"></button>
+                </template>
             </div>
         </div>
     </section>
