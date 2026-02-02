@@ -79,7 +79,7 @@
         <div x-data="{ 
         active: 0, 
         slides: [
-            {img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200', title: 'We&apos;re Listening', sub: 'Our team is ready to help you map out your tech career.'},
+            {img: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=1200', title: 'We are Listening', sub: 'Our team is ready to help you map out your tech career.'},
             {img: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=1200', title: 'Visit Us', sub: 'Experience our world-class campus in Lagos.'},
             {img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200', title: 'Start Today', sub: 'Your journey to a global tech career begins here.'}
         ]
@@ -87,10 +87,11 @@
             class="relative h-[40vh] w-full overflow-hidden bg-africa-midnight border-b border-africa-border shadow-2xl">
 
             <template x-for="(slide, index) in slides" :key="index">
-                <div x-show="active === index" class="absolute inset-0 w-full h-full">
-                    <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover blur-[2px] scale-105"
-                        x-transition:enter="transition duration-1000 ease-out"
-                        x-transition:enter-start="scale-110 opacity-0" x-transition:enter-end="scale-105 opacity-100">
+                <div x-show="active === index" class="absolute inset-0 w-full h-full"
+                    x-transition:enter="transition duration-1000 ease-out"
+                    x-transition:enter-start="scale-110 opacity-0" x-transition:enter-end="scale-100 opacity-100">
+
+                    <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover blur-[2px]">
 
                     <div class="absolute inset-0 bg-africa-midnight/50"></div>
 
