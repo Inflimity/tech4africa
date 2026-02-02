@@ -74,53 +74,8 @@
             class="bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
             Started</button>
     </nav>
-    <!-- 
-    <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
-        <div class="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-                <span class="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Engineered for
-                    Excellence</span>
-                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
-                    Advance your career with <span class="text-africa-red">Expert-Led</span> training.
-                </h1>
-                <p class="text-slate-600 text-lg mb-8 max-w-lg leading-relaxed">
-                    Practical, project-based learning designed to turn beginners into industry-ready software engineers.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <button
-                        class="bg-africa-red text-white px-8 py-4 font-bold rounded-xl shadow-lg shadow-africa-red/20 hover:scale-105 transition">Enroll
-                        for 2026</button>
-                    <button
-                        class="bg-white border border-africa-border px-8 py-4 font-bold rounded-xl hover:bg-slate-50 transition">View
-                        Courses</button>
-                </div>
-            </div>
 
-            <div x-data="{ active: 0, images: [
-                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200',
-                'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200',
-                'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200',
-                'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1200'
-            ]}" x-init="setInterval(() => active = (active + 1) % images.length, 5000)"
-                class="relative w-full h-[300px] md:h-[450px]">
-                <div class="w-full h-full rounded-2xl overflow-hidden border border-africa-border bg-slate-200">
-                    <template x-for="(img, index) in images" :key="index">
-                        <img x-show="active === index" x-transition:enter="transition duration-700 ease-in-out"
-                            x-transition:enter-start="opacity-0 scale-105"
-                            x-transition:enter-end="opacity-100 scale-100" :src="img"
-                            class="absolute inset-0 w-full h-full object-cover">
-                    </template>
-                </div>
-                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
-                    <template x-for="(img, index) in images" :key="index">
-                        <button @click="active = index"
-                            :class="active === index ? 'w-8 bg-africa-red' : 'w-2 bg-white/50'"
-                            class="h-2 rounded-full transition-all"></button>
-                    </template>
-                </div>
-            </div>
-        </div>
-    </section> -->
+
 
     <section class="pt-24 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
         <div x-data="{ 
@@ -214,60 +169,6 @@
         </div>
     </section>
 
-    <!-- <section id="courses" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="flex justify-between items-end mb-12">
-            <div>
-                <h2 class="text-3xl font-extrabold mb-2">Our Tracks</h2>
-                <div class="w-12 h-1 bg-africa-red"></div>
-            </div>
-            <a href="#" class="text-africa-red font-bold text-sm hover:underline">See all 12 modules →</a>
-        </div>
-
-        <div class="grid md:grid-cols-12 gap-6">
-            <div
-                class="md:col-span-8 bg-africa-midnight text-white p-10 rounded-3xl flex flex-col justify-between min-h-[300px]">
-                <div>
-                    <span
-                        class="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Most
-                        Popular</span>
-                    <h3 class="text-3xl font-bold mt-6">Full-Stack Development</h3>
-                </div>
-                <p class="text-slate-400 max-w-sm">From UI design with Tailwind to scalable backends with Node.js and
-                    SQL.</p>
-            </div>
-
-            <div class="md:col-span-4 bg-white p-8 rounded-3xl bento-card">
-                <div
-                    class="w-10 h-10 bg-africa-red/10 text-africa-red rounded-lg flex items-center justify-center mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2">Python for AI</h3>
-                <p class="text-slate-500 text-sm">Automate tasks and build predictive models.</p>
-            </div>
-
-            <div class="md:col-span-4 bg-white p-8 rounded-3xl bento-card">
-                <h3 class="text-xl font-bold mb-4">Mobile with C#</h3>
-                <p class="text-slate-500 text-sm mb-6">Build cross-platform apps using .NET MAUI.</p>
-                <div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
-                    <div class="h-full bg-africa-red w-3/4"></div>
-                </div>
-            </div>
-
-            <div class="md:col-span-8 bg-white p-10 rounded-3xl bento-card flex items-center justify-between">
-                <div>
-                    <h3 class="text-2xl font-bold">Cyber Security</h3>
-                    <p class="text-slate-500 mt-2">Protect digital assets and infrastructures.</p>
-                </div>
-                <button
-                    class="bg-africa-soft border border-africa-border px-6 py-2 rounded-lg font-bold text-xs">Register</button>
-            </div>
-        </div>
-    </section> -->
-
 
     <section id="courses" class="py-24 px-6 max-w-7xl mx-auto">
         <div class="mb-16">
@@ -355,33 +256,6 @@
         </div>
     </section>
 
-
-    <!-- <section class="py-24 px-6 max-w-7xl mx-auto" id="all-courses">
-        <h2 class="text-2xl font-extrabold mb-12 uppercase tracking-tight">Explore the <span
-                class="text-africa-red">Full Catalog</span></h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <template x-for="course in [
-            {t: 'Mobile App Dev', d: 'iOS & Android'},
-            {t: 'HTML & CSS', d: 'Structure & Style'},
-            {t: 'JavaScript', d: 'Frontend Logic'},
-            {t: 'Node.js', d: 'Backend Power'},
-            {t: 'Python', d: 'General Purpose'},
-            {t: 'Data Science', d: 'Predictive Modeling'},
-            {t: 'Data Analysis', d: 'Insights & BI'},
-            {t: 'Forex Trading', d: 'Currency Markets'},
-            {t: 'Crypto Trading', d: 'Digital Assets'},
-            {t: 'Cybersecurity', d: 'Network Defense'},
-            {t: 'Computer Networking', d: 'Infrastructure'},
-            {t: 'UI/UX Design', d: 'Visual Strategy'}
-        ]" :key="course.t">
-                <div
-                    class="p-6 bg-white border border-africa-border rounded-2xl hover:border-africa-red transition-colors group cursor-pointer">
-                    <h4 class="font-bold text-sm mb-1 group-hover:text-africa-red transition" x-text="course.t"></h4>
-                    <p class="text-slate-400 text-[11px]" x-text="course.d"></p>
-                </div>
-            </template>
-        </div>
-    </section> -->
 
     <section class="py-24 px-6 max-w-7xl mx-auto" id="all-courses">
         <div class="mb-12">
