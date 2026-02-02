@@ -41,6 +41,19 @@
             transform: translateY(-4px);
             border-color: #E11D48;
         }
+
+        /* Animation Classes */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 
