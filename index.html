@@ -345,6 +345,27 @@
         </div>
     </section>
 
+    <section class="bg-africa-midnight py-16 px-6 border-y border-white/10">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-africa-red text-3xl font-extrabold mb-1">98%</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Success Rate</div>
+            </div>
+            <div class="text-center border-l border-white/10">
+                <div class="text-white text-3xl font-extrabold mb-1">24/7</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Mentor Support</div>
+            </div>
+            <div class="text-center border-l border-white/10">
+                <div class="text-white text-3xl font-extrabold mb-1">50+</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Hiring Partners</div>
+            </div>
+            <div class="text-center border-l border-white/10">
+                <div class="text-white text-3xl font-extrabold mb-1">12</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Expert Tracks</div>
+            </div>
+        </div>
+    </section>
+
     <section id="about" class="py-20 bg-white border-y border-africa-border">
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-2xl font-bold mb-6">Our Mission</h2>
@@ -495,6 +516,38 @@
             </div>
         </div>
     </section>
+
+
+    <section class="py-24 px-6 max-w-7xl mx-auto" id="all-courses">
+        <h2 class="text-2xl font-extrabold mb-12 uppercase tracking-tight">Explore the <span
+                class="text-africa-red">Full Catalog</span></h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <template x-for="course in [
+            {t: 'Mobile App Dev', d: 'iOS & Android'},
+            {t: 'HTML & CSS', d: 'Structure & Style'},
+            {t: 'JavaScript', d: 'Frontend Logic'},
+            {t: 'Node.js', d: 'Backend Power'},
+            {t: 'Python', d: 'General Purpose'},
+            {t: 'Data Science', d: 'Predictive Modeling'},
+            {t: 'Data Analysis', d: 'Insights & BI'},
+            {t: 'Forex Trading', d: 'Currency Markets'},
+            {t: 'Crypto Trading', d: 'Digital Assets'},
+            {t: 'Cybersecurity', d: 'Network Defense'},
+            {t: 'Computer Networking', d: 'Infrastructure'},
+            {t: 'UI/UX Design', d: 'Visual Strategy'}
+        ]" :key="course.t">
+                <div
+                    class="p-6 bg-white border border-africa-border rounded-2xl hover:border-africa-red transition-colors group cursor-pointer">
+                    <h4 class="font-bold text-sm mb-1 group-hover:text-africa-red transition" x-text="course.t"></h4>
+                    <p class="text-slate-400 text-[11px]" x-text="course.d"></p>
+                </div>
+            </template>
+        </div>
+    </section>
+
+
+
+
     <section id="curriculum" class="py-24 bg-slate-100/50 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
@@ -527,22 +580,96 @@
         </div>
     </section>
 
-    <footer class="bg-white py-16 px-6 border-t border-africa-border">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <h3 class="text-lg font-extrabold uppercase mb-2">Tech4Africa</h3>
-                <p class="text-slate-400 text-sm">Empowering Africa's digital workforce.</p>
+    <section class="py-24 bg-africa-midnight text-white px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/3">
+                <h2 class="text-3xl font-extrabold mb-6 uppercase">Led by <span class="text-africa-red">Seniors</span>,
+                    not just teachers.</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">Our mentors work at top global firms like Google,
+                    Paystack, and Binance.</p>
             </div>
-            <div class="flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
-                <a href="#" class="hover:text-africa-red">Privacy</a>
-                <a href="#" class="hover:text-africa-red">Terms</a>
-                <a href="#" class="hover:text-africa-red">Contact</a>
+            <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
+                <div class="text-center group">
+                    <div
+                        class="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
+                        <img src="https://i.pravatar.cc/300?img=12"
+                            class="grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h5 class="font-bold text-xs uppercase">Bamidele Samson</h5>
+                    <p class="text-[10px] text-africa-red font-bold">Fullstack Lead</p>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
+                        <img src="https://i.pravatar.cc/300?img=11"
+                            class="grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h5 class="font-bold text-xs uppercase">Sarah Chen</h5>
+                    <p class="text-[10px] text-africa-red font-bold">Data Scientist</p>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
+                        <img src="https://i.pravatar.cc/300?img=33"
+                            class="grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h5 class="font-bold text-xs uppercase">Ibrahim Musa</h5>
+                    <p class="text-[10px] text-africa-red font-bold">Trading Strategist</p>
+                </div>
             </div>
-            <div class="text-slate-400 text-xs font-medium">
-                © 2026 Tech4Africa. All rights reserved.
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 px-6 border-t border-africa-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
+                <div class="col-span-2">
+                    <div class="text-xl font-black mb-6 uppercase tracking-tighter">Tech<span
+                            class="text-africa-red">4</span>Africa</div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs">Building the next generation of African
+                        digital leaders. Professional training for the global market.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Learning</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase">
+                        <li><a href="#" class="hover:text-africa-red transition">Web Tech</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Data Science</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Finance</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase">
+                        <li><a href="#" class="hover:text-africa-red transition">Forex</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Crypto</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Join the cohort
+                    </h6>
+                    <div class="flex flex-col gap-3">
+                        <input type="text" placeholder="your@email.com"
+                            class="bg-africa-soft border border-africa-border px-4 py-3 rounded-xl text-xs focus:outline-none focus:border-africa-red">
+                        <button
+                            class="bg-africa-midnight text-white py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-africa-red transition shadow-lg shadow-africa-midnight/10">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-africa-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Tech4Africa Academy.
+                    Remote & Local.</span>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Privacy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Terms</a>
+                </div>
             </div>
         </div>
     </footer>
+
 
 </body>
 
