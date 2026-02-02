@@ -1,239 +1,3 @@
-<!-- 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech4Africa | The Ultimate Dev Hub</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Unbounded', 'sans-serif'] },
-                    colors: {
-                        africa: { red: '#E11D48', black: '#000000', white: '#FFFFFF', gray: '#F4F4F5' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-
-        .sticker-shadow {
-            box-shadow: 8px 8px 0px 0px #000000;
-            transition: all 0.2s;
-        }
-
-        .sticker-shadow:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 10px 10px 0px 0px #000000;
-        }
-
-        .sticker-red-shadow {
-            box-shadow: 8px 8px 0px 0px #E11D48;
-        }
-    </style>
-</head>
-
-<body class="bg-africa-white text-africa-black selection:bg-africa-red selection:text-white">
-
-    <nav
-        class="fixed top-0 w-full z-50 bg-africa-white border-b-4 border-africa-black px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div
-                class="bg-africa-red w-8 h-8 border-2 border-africa-black rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            </div>
-            <span class="text-lg font-black uppercase tracking-tighter">Tech4Africa</span>
-        </div>
-        <div class="hidden md:flex gap-8 font-bold uppercase text-[10px] tracking-widest">
-            <a href="#courses" class="hover:text-africa-red">Courses</a>
-            <a href="#pricing" class="hover:text-africa-red">Pricing</a>
-            <a href="#faq" class="hover:text-africa-red">FAQ</a>
-        </div>
-        <button
-            class="bg-africa-black text-white px-5 py-2 text-[10px] font-black uppercase rounded-full border-2 border-africa-black hover:bg-africa-red transition">Join
-            Cohort</button>
-    </nav>
-
-    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-            <h1 class="text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-8">
-                Build <span class="text-africa-red">Better</span> <br> than your <br> mentors.
-            </h1>
-            <p class="text-lg font-bold mb-10 text-slate-500 max-w-sm">Serious tech skills for the African context. From
-                HTML to AI.</p>
-            <div class="flex gap-4">
-                <button
-                    class="bg-africa-red text-white px-8 py-5 font-black uppercase rounded-xl sticker-shadow border-2 border-africa-black">Apply
-                    Now</button>
-                <button
-                    class="bg-africa-white border-4 border-africa-black px-8 py-5 font-black uppercase rounded-xl">Curriculum</button>
-            </div>
-        </div>
-
-        <div x-data="{ active: 0, images: [
-            'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800',
-            'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800',
-            'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800',
-            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800'
-        ]}" x-init="setInterval(() => active = (active + 1) % images.length, 4000)" class="relative">
-            <div
-                class="w-full aspect-square border-4 border-africa-black rounded-[3rem] overflow-hidden sticker-shadow bg-africa-black">
-                <template x-for="(img, index) in images" :key="index">
-                    <img x-show="active === index" x-transition.opacity.duration.500ms :src="img"
-                        class="absolute inset-0 w-full h-full object-cover">
-                </template>
-            </div>
-            <div
-                class="absolute -bottom-4 -left-4 bg-africa-red text-white p-6 rounded-2xl border-4 border-africa-black font-black uppercase text-xs rotate-3">
-                New Cohort: Feb 2026
-            </div>
-        </div>
-    </section>
-
-    <section id="courses" class="py-24 bg-africa-black text-white px-6">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-black uppercase mb-16 underline decoration-africa-red underline-offset-8">The Tech
-                Stack</h2>
-            <div class="grid md:grid-cols-12 gap-6">
-                <div
-                    class="md:col-span-8 bg-africa-red p-10 rounded-[2rem] border-4 border-white flex flex-col justify-between min-h-[350px]">
-                    <h3 class="text-4xl font-black uppercase">Full-Stack Master <br> (Node + React)</h3>
-                    <p class="font-bold">The most in-demand course in Africa right now.</p>
-                </div>
-                <div
-                    class="md:col-span-4 bg-africa-white text-africa-black p-8 rounded-[2rem] border-4 border-africa-black sticker-red-shadow">
-                    <h3 class="text-2xl font-black uppercase mb-4">Python for AI</h3>
-                    <p class="text-sm font-bold opacity-60">Automation, Data, and Intelligence.</p>
-                </div>
-                <div class="md:col-span-4 border-4 border-white p-8 rounded-[2rem] hover:bg-white/10 transition">
-                    <h3 class="text-xl font-black uppercase">PHP & Laravel</h3>
-                </div>
-                <div
-                    class="md:col-span-8 bg-africa-white text-africa-black p-10 rounded-[2rem] border-4 border-africa-black flex items-center justify-between">
-                    <h3 class="text-3xl font-black uppercase">Web3 & Blockchain</h3>
-                    <div class="w-16 h-16 bg-africa-red rounded-full flex items-center justify-center font-black">GO
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 overflow-hidden">
-        <h2 class="text-center text-4xl font-black uppercase mb-16">Wall of Fame 🏆</h2>
-        <div class="flex gap-8 animate-[marquee_20s_linear_infinite] whitespace-nowrap">
-            <template x-for="i in 5">
-                <div
-                    class="inline-block bg-africa-white border-4 border-africa-black p-8 rounded-3xl min-w-[300px] sticker-shadow">
-                    <p class="font-bold mb-4 italic whitespace-normal text-sm">"Tech4Africa changed my life. I went from
-                        zero to a remote job in the UK!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-africa-red rounded-full"></div>
-                        <span class="font-black uppercase text-xs">Musa Samson</span>
-                    </div>
-                </div>
-            </template>
-        </div>
-    </section>
-
-    <section id="pricing" class="py-24 bg-africa-gray px-6 border-y-4 border-africa-black">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-black uppercase mb-12">One Simple Price</h2>
-            <div class="bg-africa-white border-8 border-africa-black p-12 rounded-[3rem] sticker-red-shadow relative">
-                <div
-                    class="absolute -top-6 left-1/2 -translate-x-1/2 bg-africa-black text-white px-6 py-2 rounded-full font-black uppercase text-xs">
-                    All-Access Pass</div>
-                <div class="text-6xl font-black mb-4">₦150,000</div>
-                <p class="font-bold text-slate-400 mb-8">One-time payment. Lifetime access to the community.</p>
-                <ul class="text-left space-y-4 font-black uppercase text-sm mb-10">
-                    <li class="flex gap-3"><span class="text-africa-red">✔</span> 5 Core Tech Tracks</li>
-                    <li class="flex gap-3"><span class="text-africa-red">✔</span> Direct Mentor Access</li>
-                    <li class="flex gap-3"><span class="text-africa-red">✔</span> Job Placement Support</li>
-                </ul>
-                <button
-                    class="w-full bg-africa-red text-white py-5 rounded-2xl font-black uppercase text-xl sticker-shadow border-2 border-africa-black">Claim
-                    This Offer</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="faq" class="py-24 px-6 max-w-3xl mx-auto">
-        <h2 class="text-3xl font-black uppercase mb-12 text-center">Frequently Asked</h2>
-        <div class="space-y-4" x-data="{ active: null }">
-            <template x-for="(q, i) in [
-                {q: 'Is it for beginners?', a: 'Yes! We start from absolute zero.'},
-                {q: 'Is it remote?', a: '100% Online with weekly live syncs.'},
-                {q: 'Do I get a certificate?', a: 'Yes, and a portfolio to prove your skills.'}
-            ]" :key="i">
-                <div class="border-4 border-africa-black rounded-2xl overflow-hidden">
-                    <button @click="active = (active === i ? null : i)"
-                        class="w-full p-6 text-left font-black uppercase flex justify-between bg-africa-white">
-                        <span x-text="q.q"></span>
-                        <span x-text="active === i ? '-' : '+'"></span>
-                    </button>
-                    <div x-show="active === i"
-                        class="p-6 bg-africa-red text-white font-bold border-t-4 border-africa-black" x-transition>
-                        <p x-text="q.a"></p>
-                    </div>
-                </div>
-            </template>
-        </div>
-    </section>
-
-    <footer class="bg-africa-black text-white py-20 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 border-b border-white/20 pb-12">
-            <div>
-                <h2 class="text-3xl font-black uppercase mb-6">Tech4Africa</h2>
-                <p class="text-white/60 font-bold mb-8">Empowering the next generation of African developers to lead the
-                    global tech scene.</p>
-                <div class="flex gap-4">
-                    <input type="email" placeholder="Email"
-                        class="bg-white/10 border-2 border-white/20 p-4 rounded-xl flex-1 font-bold">
-                    <button
-                        class="bg-africa-red px-6 rounded-xl font-black uppercase tracking-widest text-xs">Join</button>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 font-bold uppercase text-[10px] tracking-widest gap-8">
-                <div class="flex flex-col gap-4">
-                    <a href="#">X (Twitter)</a>
-                    <a href="#">Instagram</a>
-                    <a href="#">LinkedIn</a>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <a href="#">Support</a>
-                    <a href="#">Careers</a>
-                    <a href="#">Refunds</a>
-                </div>
-            </div>
-        </div>
-        <p class="text-center pt-12 text-[10px] font-black uppercase tracking-[0.3em] opacity-40 italic">Code. Create.
-            Conquer.</p>
-    </footer>
-
-    <style>
-        @keyframes marquee {
-            0% {
-                transform: translateX(0);
-            }
-
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-    </style>
-</body>
-
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -616,32 +380,33 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" x-data="{
         courses: [
-            {t: 'Mobile App Dev', d: 'iOS & Android', icon: '📱'},
-            {t: 'HTML & CSS', d: 'Structure & Style', icon: '🎨'},
-            {t: 'JavaScript', d: 'Frontend Logic', icon: '⚡'},
-            {t: 'Node.js', d: 'Backend Power', icon: '🟢'},
-            {t: 'Python', d: 'General Purpose', icon: '🐍'},
-            {t: 'Data Science', d: 'Predictive Modeling', icon: '📊'},
-            {t: 'Data Analysis', d: 'Insights & BI', icon: '📈'},
-            {t: 'Forex Trading', d: 'Currency Markets', icon: '💹'},
-            {t: 'Crypto Trading', d: 'Digital Assets', icon: '₿'},
-            {t: 'Cybersecurity', d: 'Network Defense', icon: '🛡️'},
-            {t: 'Computer Networking', d: 'Infrastructure', icon: '🌐'},
-            {t: 'UI/UX Design', d: 'Visual Strategy', icon: '✨'}
+            {t: 'Mobile App Dev', d: 'iOS & Android', icon: '📱', color: 'text-sky-500', hover: 'hover:border-sky-500', shadow: 'hover:shadow-sky-500/20'},
+            {t: 'HTML & CSS', d: 'Structure & Style', icon: '🎨', color: 'text-orange-500', hover: 'hover:border-orange-500', shadow: 'hover:shadow-orange-500/20'},
+            {t: 'JavaScript', d: 'Frontend Logic', icon: '⚡', color: 'text-yellow-500', hover: 'hover:border-yellow-500', shadow: 'hover:shadow-yellow-500/20'},
+            {t: 'Node.js', d: 'Backend Power', icon: '🟢', color: 'text-green-500', hover: 'hover:border-green-500', shadow: 'hover:shadow-green-500/20'},
+            {t: 'Python', d: 'General Purpose', icon: '🐍', color: 'text-blue-600', hover: 'hover:border-blue-600', shadow: 'hover:shadow-blue-600/20'},
+            {t: 'Data Science', d: 'Predictive Modeling', icon: '📊', color: 'text-purple-600', hover: 'hover:border-purple-600', shadow: 'hover:shadow-purple-600/20'},
+            {t: 'Data Analysis', d: 'Insights & BI', icon: '📈', color: 'text-indigo-600', hover: 'hover:border-indigo-600', shadow: 'hover:shadow-indigo-600/20'},
+            {t: 'Forex Trading', d: 'Currency Markets', icon: '💹', color: 'text-emerald-500', hover: 'hover:border-emerald-500', shadow: 'hover:shadow-emerald-500/20'},
+            {t: 'Crypto Trading', d: 'Digital Assets', icon: '₿', color: 'text-amber-500', hover: 'hover:border-amber-500', shadow: 'hover:shadow-amber-500/20'},
+            {t: 'Cybersecurity', d: 'Network Defense', icon: '🛡️', color: 'text-red-600', hover: 'hover:border-red-600', shadow: 'hover:shadow-red-600/20'},
+            {t: 'Computer Networking', d: 'Infrastructure', icon: '🌐', color: 'text-cyan-500', hover: 'hover:border-cyan-500', shadow: 'hover:shadow-cyan-500/20'},
+            {t: 'UI/UX Design', d: 'Visual Strategy', icon: '✨', color: 'text-pink-500', hover: 'hover:border-pink-500', shadow: 'hover:shadow-pink-500/20'}
         ]
     }">
             <template x-for="course in courses" :key="course.t">
-                <div
-                    class="group p-8 bg-white border border-africa-border rounded-[2rem] hover:border-africa-red hover:-translate-y-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl hover:shadow-africa-red/5">
+                <div class="group p-8 bg-white border border-africa-border rounded-[2rem] hover:-translate-y-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
+                    :class="`${course.hover} ${course.shadow}`">
                     <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300"
-                        x-text="course.icon"></div>
-                    <h4 class="font-extrabold text-sm mb-2 uppercase group-hover:text-africa-red transition-colors"
-                        x-text="course.t"></h4>
+                        :class="course.color" x-text="course.icon"></div>
+                    <h4 class="font-extrabold text-sm mb-2 uppercase transition-colors"
+                        :class="`group-hover:${course.color}`" x-text="course.t"></h4>
                     <p class="text-slate-400 text-xs font-medium leading-relaxed" x-text="course.d"></p>
 
                     <div class="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                        <span class="text-[10px] font-black uppercase text-africa-red tracking-widest">Learn More</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-africa-red" fill="none"
+                        <span class="text-[10px] font-black uppercase tracking-widest" :class="course.color">Learn
+                            More</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" :class="course.color" fill="none"
                             viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
                         </svg>
@@ -776,7 +541,33 @@
         </div>
     </footer>
 
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
 
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('section > div:not(.nocascade), section h2, .bento-card, .group, footer > div');
+
+            elementsToAnimate.forEach((el) => {
+                el.classList.add('reveal-element');
+                observer.observe(el);
+            });
+        });
+    </script>
 </body>
 
 </html>
