@@ -1,430 +1,4 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduNexus | Premium Learning Experience</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0f172a',
-                            surface: '#1e293b',
-                            accent: '#6366f1',
-                            secondary: '#38bdf8',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-
-        .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .text-gradient {
-            background: linear-gradient(to right, #6366f1, #38bdf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
-</head>
-
-<body class="bg-brand-dark text-slate-100 font-sans selection:bg-brand-accent selection:text-white">
-
-    <nav class="fixed top-0 w-full z-50 glass px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div
-                class="w-10 h-10 bg-brand-accent rounded-xl flex items-center justify-center shadow-lg shadow-brand-accent/20">
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="m16 6 4 14-8-4-8 4 4-14" />
-                    <path d="M12 2v2" />
-                </svg>
-            </div>
-            <span class="text-xl font-bold tracking-tight">EduNexus</span>
-        </div>
-        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
-            <a href="#" class="hover:text-white transition-colors">Courses</a>
-            <a href="#" class="hover:text-white transition-colors">Mentors</a>
-            <a href="#" class="hover:text-white transition-colors">Business</a>
-        </div>
-        <div class="flex items-center gap-4">
-            <button class="text-sm font-semibold hover:text-brand-accent transition">Login</button>
-            <button
-                class="bg-brand-accent px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-brand-accent/30 hover:scale-105 transition active:scale-95">Enroll
-                Now</button>
-        </div>
-    </nav>
-
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-20">
-        <div class="absolute top-1/4 -left-20 w-72 h-72 bg-brand-accent/20 rounded-full blur-[120px] animate-float">
-        </div>
-        <div class="absolute bottom-1/4 -right-20 w-72 h-72 bg-brand-secondary/20 rounded-full blur-[120px] animate-float"
-            style="animation-delay: 2s"></div>
-
-        <div class="max-w-5xl mx-auto text-center relative z-10" x-data="{ shown: false }"
-            x-init="setTimeout(() => shown = true, 100)">
-
-            <div x-show="shown" x-transition:enter="transition ease-out duration-1000"
-                x-transition:enter-start="opacity-0 translate-y-10" x-transition:enter-end="opacity-100 translate-y-0">
-                <span
-                    class="inline-block py-2 px-4 rounded-full bg-white/5 border border-white/10 text-brand-secondary text-xs font-bold uppercase tracking-widest mb-6">
-                    ✨ Learning Re-imagined for 2026
-                </span>
-
-                <h1 class="text-5xl md:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1]">
-                    Unlock Your Potential <br>
-                    <span class="text-gradient">With Every Course.</span>
-                </h1>
-
-                <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
-                    Access world-class education from industry leaders. Master HTML, Python, and modern development
-                    through immersive, project-based learning.
-                </p>
-
-                <div class="flex flex-col sm:flex-row items-center justify-center gap-6">
-                    <button
-                        class="w-full sm:w-auto px-10 py-5 bg-white text-brand-dark font-extrabold rounded-2xl hover:shadow-2xl hover:shadow-white/10 transition-all hover:-translate-y-1 flex items-center justify-center gap-2">
-                        Get Started Free
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14" />
-                            <path d="m12 5 7 7-7 7" />
-                        </svg>
-                    </button>
-                    <button
-                        class="w-full sm:w-auto px-10 py-5 glass rounded-2xl font-bold flex items-center justify-center gap-2 hover:bg-white/10 transition">
-                        View Curriculum
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="mb-16">
-            <h2 class="text-3xl font-bold mb-4">Popular Specializations</h2>
-            <div class="h-1 w-20 bg-brand-accent rounded-full"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <div class="md:col-span-2 glass p-10 rounded-[2.5rem] relative overflow-hidden group">
-                <div
-                    class="absolute -right-10 -bottom-10 w-64 h-64 bg-brand-accent/10 rounded-full blur-3xl group-hover:bg-brand-accent/20 transition">
-                </div>
-                <div class="relative z-10">
-                    <div
-                        class="w-14 h-14 bg-indigo-500/20 rounded-2xl flex items-center justify-center text-indigo-400 mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                    </div>
-                    <h3 class="text-3xl font-bold mb-4">Full-Stack Web Development</h3>
-                    <p class="text-slate-400 max-w-md mb-8">Master HTML, CSS, JavaScript, and Node.js. Build
-                        production-ready apps from scratch.</p>
-                    <div class="flex items-center gap-4">
-                        <span class="px-4 py-2 bg-white/5 rounded-lg text-xs font-bold">24 Modules</span>
-                        <span
-                            class="px-4 py-2 bg-white/5 rounded-lg text-xs font-bold text-brand-secondary">$199.00</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass p-8 rounded-[2.5rem] hover:bg-white/5 transition group cursor-pointer">
-                <div
-                    class="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-emerald-400 mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2 group-hover:text-brand-secondary transition">Cybersecurity</h3>
-                <p class="text-slate-400 text-sm mb-6">Learn to protect and secure digital infrastructures.</p>
-                <div class="text-xs font-bold text-brand-accent">Learn More →</div>
-            </div>
-
-            <div class="glass p-8 rounded-[2.5rem] hover:bg-white/5 transition group cursor-pointer">
-                <div class="w-12 h-12 bg-amber-500/20 rounded-2xl flex items-center justify-center text-amber-400 mb-6">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none"
-                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 16v-4" />
-                        <path d="M12 8h.01" />
-                    </svg>
-                </div>
-                <h3 class="text-xl font-bold mb-2 group-hover:text-brand-secondary transition">Python for Data Science
-                </h3>
-                <p class="text-slate-400 text-sm mb-6">Analyze complex data sets using modern Python libraries.</p>
-                <div class="text-xs font-bold text-brand-accent">Learn More →</div>
-            </div>
-
-            <div
-                class="md:col-span-2 glass p-10 rounded-[2.5rem] bg-gradient-to-br from-brand-accent/10 to-transparent">
-                <div class="flex flex-col md:flex-row gap-8 items-center">
-                    <div class="flex-1">
-                        <h3 class="text-2xl font-bold mb-4 text-white">Earn a Professional Certificate</h3>
-                        <p class="text-slate-400 text-sm mb-6">Our certifications are recognized by top tech companies
-                            worldwide. Start your journey today.</p>
-                        <button
-                            class="px-6 py-3 bg-brand-accent rounded-xl text-sm font-bold shadow-xl shadow-brand-accent/20">View
-                            Certifications</button>
-                    </div>
-                    <div
-                        class="w-full md:w-1/3 aspect-video bg-white/5 rounded-2xl border border-white/10 flex items-center justify-center shadow-inner">
-                        <span class="text-xs text-slate-500 italic">Certificate Preview</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <footer class="py-12 border-t border-white/5 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-slate-500 text-sm">
-                © 2026 EduNexus Inc. Designed for Excellence.
-            </div>
-            <div class="flex gap-8 text-slate-500 text-sm">
-                <a href="#" class="hover:text-white transition">Privacy</a>
-                <a href="#" class="hover:text-white transition">Terms</a>
-                <a href="#" class="hover:text-white transition">Support</a>
-            </div>
-        </div>
-    </footer>
-
-</body>
-
-</html> -->
-
-
 <!-- 
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech4Africa | Empowering the Continent</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Space Grotesk', 'sans-serif'] },
-                    colors: {
-                        africa: {
-                            red: '#E11D48', // Solid vibrant red
-                            black: '#000000',
-                            white: '#FFFFFF',
-                            gray: '#F4F4F5'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        [x-cloak] {
-            display: none !important;
-        }
-
-        .bento-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .bento-card:hover {
-            transform: translateY(-8px);
-        }
-    </style>
-</head>
-
-<body class="bg-africa-white text-africa-black font-sans selection:bg-africa-red selection:text-white"
-    x-data="{ modalOpen: false }">
-
-    <nav
-        class="fixed top-0 w-full z-50 bg-africa-white border-b-4 border-africa-black px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <div class="bg-africa-red w-8 h-8 rotate-3"></div>
-            <span class="text-2xl font-black tracking-tighter uppercase">Tech4Africa</span>
-        </div>
-        <div class="hidden md:flex gap-10 font-bold uppercase text-xs tracking-widest">
-            <a href="#" class="hover:text-africa-red transition">Courses</a>
-            <a href="#" class="hover:text-africa-red transition">Mentorship</a>
-            <a href="#" class="hover:text-africa-red transition">Impact</a>
-        </div>
-        <button @click="modalOpen = true"
-            class="bg-africa-black text-white px-6 py-2 font-bold uppercase text-xs border-2 border-africa-black hover:bg-africa-white hover:text-africa-black transition">
-            Join Now
-        </button>
-    </nav>
-
-    <section class="min-h-screen flex flex-col justify-center px-6 pt-32">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 150)">
-                <div x-show="shown" x-transition:enter="transition ease-out duration-700"
-                    x-transition:enter-start="opacity-0 -ml-20" x-transition:enter-end="opacity-100 ml-0">
-                    <h1 class="text-6xl md:text-8xl font-black leading-[0.9] uppercase mb-6">
-                        Code the <br><span class="text-africa-red">Future</span> of Africa.
-                    </h1>
-                    <p class="text-xl font-medium mb-8 max-w-md border-l-4 border-africa-black pl-6">
-                        Direct industry training in Python, Node.js, and Full-Stack development. Build local solutions
-                        for a global market.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <button @click="modalOpen = true"
-                            class="bg-africa-red text-white px-10 py-5 text-lg font-black uppercase shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-1 hover:translate-y-1 transition-all">
-                            Start Learning
-                        </button>
-                        <button
-                            class="bg-africa-white border-4 border-africa-black px-10 py-5 text-lg font-black uppercase transition hover:bg-africa-black hover:text-white">
-                            View Roadmap
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="relative hidden md:block">
-                <div
-                    class="w-full aspect-square bg-africa-black relative overflow-hidden flex items-center justify-center p-12">
-                    <div class="w-full h-full border-8 border-africa-red animate-[spin_10s_linear_infinite]"></div>
-                    <div class="absolute w-48 h-48 bg-africa-red -top-10 -right-10"></div>
-                    <div class="absolute w-24 h-24 bg-africa-white bottom-10 left-10"></div>
-                    <span class="absolute text-white text-9xl font-black opacity-20">Afr</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-africa-black text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-black uppercase mb-16 flex items-center gap-4">
-                <span class="w-12 h-2 bg-africa-red"></span>
-                Top Specializations
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div class="md:col-span-2 bg-africa-red p-10 bento-card flex flex-col justify-between min-h-[400px]">
-                    <div>
-                        <div class="text-6xl font-black opacity-30 mb-4">01</div>
-                        <h3 class="text-4xl font-black uppercase leading-tight">Fullstack <br>Mastery</h3>
-                    </div>
-                    <p class="font-bold text-lg">Master HTML, CSS, JS & Node.js with real-world projects.</p>
-                </div>
-
-                <div class="bg-africa-white text-africa-black p-8 bento-card">
-                    <div class="text-3xl font-black mb-6">PYTHON <br>FOR AI</div>
-                    <p class="text-sm font-medium mb-12">Building the next generation of African data scientists.</p>
-                    <div class="w-full h-2 bg-africa-red"></div>
-                </div>
-
-                <div class="bg-africa-gray text-africa-black p-8 bento-card flex flex-col justify-between">
-                    <h3 class="text-2xl font-black uppercase">UI/UX <br>Design</h3>
-                    <button class="w-full py-4 border-2 border-africa-black font-black uppercase text-xs">Learn
-                        More</button>
-                </div>
-
-                <div class="md:col-span-2 border-4 border-africa-white p-10 bento-card flex items-center gap-10">
-                    <div class="flex-1">
-                        <h3 class="text-3xl font-black uppercase mb-4">Backend with C#</h3>
-                        <p class="text-slate-400">Robust, scalable enterprise logic taught by seniors.</p>
-                    </div>
-                    <div class="w-24 h-24 bg-africa-red flex-shrink-0 rotate-12"></div>
-                </div>
-
-                <div
-                    class="md:col-span-2 bg-africa-white text-africa-black p-10 bento-card border-l-8 border-africa-red">
-                    <h3 class="text-3xl font-black uppercase mb-4">The Launchpad</h3>
-                    <p class="font-medium mb-6">How to pitch and build for global startups.</p>
-                    <span class="bg-africa-red text-white px-4 py-1 font-bold text-xs uppercase">Premium</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div x-show="modalOpen" x-cloak class="fixed inset-0 z-[100] flex items-center justify-center p-6">
-        <div x-show="modalOpen" x-transition:enter="transition opacity-0" x-transition:enter-end="opacity-100"
-            @click="modalOpen = false" class="absolute inset-0 bg-africa-black/90"></div>
-
-        <div x-show="modalOpen" x-transition:enter="transition scale-90 opacity-0"
-            x-transition:enter-end="scale-100 opacity-100"
-            class="bg-africa-white w-full max-w-md relative z-10 p-10 border-8 border-africa-black">
-            <button @click="modalOpen = false" class="absolute top-4 right-4 font-black text-2xl">×</button>
-            <h2 class="text-4xl font-black uppercase mb-2">Checkout</h2>
-            <p class="font-bold text-africa-red mb-8">Fullstack Web Development</p>
-
-            <div class="space-y-4 mb-8">
-                <div class="flex justify-between font-bold border-b-2 border-africa-black pb-2">
-                    <span>Course Fee</span>
-                    <span>₦150,000</span>
-                </div>
-                <div class="flex justify-between font-bold text-slate-400">
-                    <span>Admin Charge</span>
-                    <span>₦0.00</span>
-                </div>
-            </div>
-
-            <button
-                class="w-full bg-africa-red text-white py-5 text-xl font-black uppercase shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-1 active:translate-y-1 transition-all">
-                Pay Now
-            </button>
-
-            <div class="mt-6 flex justify-center gap-4 grayscale opacity-50">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-4" alt="Paypal">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-4"
-                    alt="Mastercard">
-            </div>
-        </div>
-    </div>
-
-    <footer class="py-12 px-6 border-t-4 border-africa-black text-center">
-        <p class="font-black uppercase tracking-widest text-sm">© 2026 Tech4Africa — Built for the Next Billion
-            Developers</p>
-    </footer>
-
-</body>
-
-</html> -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -655,6 +229,235 @@
             }
         }
     </style>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech4Africa | Professional Dev Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        africa: {
+                            red: '#E11D48',
+                            midnight: '#0F172A',
+                            soft: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .bento-card {
+            border: 1px solid #E2E8F0;
+            transition: transform 0.2s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #E11D48;
+        }
+    </style>
+</head>
+
+<body class="bg-africa-soft text-africa-midnight antialiased selection:bg-africa-red selection:text-white">
+
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <span class="text-xl font-extrabold uppercase tracking-tight">Tech<span
+                    class="text-africa-red">4</span>Africa</span>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+            <a href="#about" class="hover:text-africa-red">About</a>
+            <a href="#courses" class="hover:text-africa-red">Courses</a>
+            <a href="#curriculum" class="hover:text-africa-red">Curriculum</a>
+        </div>
+        <button
+            class="bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
+            Started</button>
+    </nav>
+
+    <section class="pt-32 pb-16 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Engineered for
+                    Excellence</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                    Advance your career with <span class="text-africa-red">Expert-Led</span> training.
+                </h1>
+                <p class="text-slate-600 text-lg mb-8 max-w-lg leading-relaxed">
+                    Practical, project-based learning designed to turn beginners into industry-ready software engineers.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="bg-africa-red text-white px-8 py-4 font-bold rounded-xl shadow-lg shadow-africa-red/20 hover:scale-105 transition">Enroll
+                        for 2026</button>
+                    <button
+                        class="bg-white border border-africa-border px-8 py-4 font-bold rounded-xl hover:bg-slate-50 transition">View
+                        Courses</button>
+                </div>
+            </div>
+
+            <div x-data="{ active: 0, images: [
+                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200',
+                'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=1200',
+                'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200',
+                'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=1200'
+            ]}" x-init="setInterval(() => active = (active + 1) % images.length, 5000)"
+                class="relative w-full h-[300px] md:h-[450px]">
+                <div class="w-full h-full rounded-2xl overflow-hidden border border-africa-border bg-slate-200">
+                    <template x-for="(img, index) in images" :key="index">
+                        <img x-show="active === index" x-transition:enter="transition duration-700 ease-in-out"
+                            x-transition:enter-start="opacity-0 scale-105"
+                            x-transition:enter-end="opacity-100 scale-100" :src="img"
+                            class="absolute inset-0 w-full h-full object-cover">
+                    </template>
+                </div>
+                <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2">
+                    <template x-for="(img, index) in images" :key="index">
+                        <button @click="active = index"
+                            :class="active === index ? 'w-8 bg-africa-red' : 'w-2 bg-white/50'"
+                            class="h-2 rounded-full transition-all"></button>
+                    </template>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white border-y border-africa-border">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-6">Our Mission</h2>
+            <p class="text-xl text-slate-500 leading-relaxed italic">
+                "We bridge the gap between academic theory and industry reality. Tech4Africa is built to empower African
+                talent with the specific tools needed to compete in the global digital economy."
+            </p>
+        </div>
+    </section>
+
+    <section id="courses" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <h2 class="text-3xl font-extrabold mb-2">Our Tracks</h2>
+                <div class="w-12 h-1 bg-africa-red"></div>
+            </div>
+            <a href="#" class="text-africa-red font-bold text-sm hover:underline">See all 12 modules →</a>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-6">
+            <div
+                class="md:col-span-8 bg-africa-midnight text-white p-10 rounded-3xl flex flex-col justify-between min-h-[300px]">
+                <div>
+                    <span
+                        class="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Most
+                        Popular</span>
+                    <h3 class="text-3xl font-bold mt-6">Full-Stack Development</h3>
+                </div>
+                <p class="text-slate-400 max-w-sm">From UI design with Tailwind to scalable backends with Node.js and
+                    SQL.</p>
+            </div>
+
+            <div class="md:col-span-4 bg-white p-8 rounded-3xl bento-card">
+                <div
+                    class="w-10 h-10 bg-africa-red/10 text-africa-red rounded-lg flex items-center justify-center mb-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Python for AI</h3>
+                <p class="text-slate-500 text-sm">Automate tasks and build predictive models.</p>
+            </div>
+
+            <div class="md:col-span-4 bg-white p-8 rounded-3xl bento-card">
+                <h3 class="text-xl font-bold mb-4">Mobile with C#</h3>
+                <p class="text-slate-500 text-sm mb-6">Build cross-platform apps using .NET MAUI.</p>
+                <div class="h-1 w-full bg-slate-100 rounded-full overflow-hidden">
+                    <div class="h-full bg-africa-red w-3/4"></div>
+                </div>
+            </div>
+
+            <div class="md:col-span-8 bg-white p-10 rounded-3xl bento-card flex items-center justify-between">
+                <div>
+                    <h3 class="text-2xl font-bold">Cyber Security</h3>
+                    <p class="text-slate-500 mt-2">Protect digital assets and infrastructures.</p>
+                </div>
+                <button
+                    class="bg-africa-soft border border-africa-border px-6 py-2 rounded-lg font-bold text-xs">Register</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="curriculum" class="py-24 bg-slate-100/50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold mb-4">The Learning Path</h2>
+                <p class="text-slate-500">A rigorous 5-month journey to mastery.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="text-africa-red font-black text-4xl">01</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Foundations</h4>
+                    <p class="text-sm text-slate-500">HTML5, Semantic CSS, and responsive architecture.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-slate-300 font-black text-4xl">02</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Client Logic</h4>
+                    <p class="text-sm text-slate-500">Modern JavaScript, DOM, and API integration.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-slate-300 font-black text-4xl">03</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Server Side</h4>
+                    <p class="text-sm text-slate-500">Node.js, Express, and Database Design.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-slate-300 font-black text-4xl">04</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Deployment</h4>
+                    <p class="text-sm text-slate-500">CI/CD, Cloud Hosting, and Career Prep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-16 px-6 border-t border-africa-border">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-center md:text-left">
+                <h3 class="text-lg font-extrabold uppercase mb-2">Tech4Africa</h3>
+                <p class="text-slate-400 text-sm">Empowering Africa's digital workforce.</p>
+            </div>
+            <div class="flex gap-8 text-sm font-bold text-slate-500 uppercase tracking-widest">
+                <a href="#" class="hover:text-africa-red">Privacy</a>
+                <a href="#" class="hover:text-africa-red">Terms</a>
+                <a href="#" class="hover:text-africa-red">Contact</a>
+            </div>
+            <div class="text-slate-400 text-xs font-medium">
+                © 2026 Tech4Africa. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
 </body>
 
 </html>
