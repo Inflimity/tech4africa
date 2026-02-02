@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Tech4Africa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        africa: {
+                            red: '#E11D48',
+                            midnight: '#0F172A',
+                            soft: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        /* Animation Classes */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+
+        @media (min-width: 640px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
+
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+
+<body class="bg-africa-soft text-africa-midnight antialiased selection:bg-africa-red selection:text-white">
+
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <a href="index.html" class="text-xl font-extrabold uppercase tracking-tight">Tech<span
+                    class="text-africa-red">4</span>Africa</a>
+        </div>
+        <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+            <a href="index.html" class="hover:text-africa-red">Home</a>
+            <a href="gallery.html" class="text-africa-red">Gallery</a>
+            <a href="contact.html" class="hover:text-africa-red">Contact</a>
+        </div>
+        <a href="contact.html"
+            class="bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
+            Started</a>
+    </nav>
+
+    <section class="pt-32 pb-12 px-6 max-w-7xl mx-auto text-center">
+        <span class="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Our Impact</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+            Capturing the <span class="text-africa-red">Momentum</span>.
+        </h1>
+        <p class="text-slate-600 text-lg mb-8 max-w-2xl mx-auto leading-relaxed">
+            From intense coding sessions to community meetups, see how we are building the future of African tech.
+        </p>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-6 pb-24">
+        <!-- Masonry Layout -->
+        <div class="masonry-grid" x-data="{
+            images: [
+                'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800',
+                'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800', 
+                'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800',
+                'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800',
+                'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800',
+                'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800',
+                'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800',
+                'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800',
+                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800'
+            ]
+        }">
+            <template x-for="(img, index) in images" :key="index">
+                <div class="masonry-item group relative overflow-hidden rounded-2xl">
+                    <img :src="img"
+                        class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
+                        alt="Gallery Image">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-africa-midnight/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-sm tracking-wide">Community Event 2026</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 px-6 border-t border-africa-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
+                <div class="col-span-2">
+                    <div class="text-xl font-black mb-6 uppercase tracking-tighter">Tech<span
+                            class="text-africa-red">4</span>Africa</div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs">Building the next generation of African
+                        digital leaders. Professional training for the global market.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Learning</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase">
+                        <li><a href="#" class="hover:text-africa-red transition">Web Tech</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Data Science</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Finance</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase">
+                        <li><a href="#" class="hover:text-africa-red transition">Forex</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Crypto</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Join the cohort
+                    </h6>
+                    <div class="flex flex-col gap-3">
+                        <input type="text" placeholder="your@email.com"
+                            class="bg-africa-soft border border-africa-border px-4 py-3 rounded-xl text-xs focus:outline-none focus:border-africa-red">
+                        <button
+                            class="bg-africa-midnight text-white py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-africa-red transition shadow-lg shadow-africa-midnight/10">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-africa-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Tech4Africa Academy.
+                    Remote & Local.</span>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Privacy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('section > div:not(.nocascade), section h1, section p, .masonry-item, footer > div');
+
+            elementsToAnimate.forEach((el) => {
+                el.classList.add('reveal-element');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
