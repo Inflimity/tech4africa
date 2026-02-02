@@ -425,14 +425,13 @@
 
 </html> -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech4Africa | Fun. Bold. Skilled.</title>
+    <title>Tech4Africa | The Ultimate Dev Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700;900&display=swap" rel="stylesheet">
@@ -443,11 +442,7 @@
                 extend: {
                     fontFamily: { sans: ['Unbounded', 'sans-serif'] },
                     colors: {
-                        africa: {
-                            red: '#E11D48',
-                            black: '#000000',
-                            white: '#FFFFFF',
-                        }
+                        africa: { red: '#E11D48', black: '#000000', white: '#FFFFFF', gray: '#F4F4F5' }
                     }
                 }
             }
@@ -460,6 +455,7 @@
 
         .sticker-shadow {
             box-shadow: 8px 8px 0px 0px #000000;
+            transition: all 0.2s;
         }
 
         .sticker-shadow:hover {
@@ -467,187 +463,198 @@
             box-shadow: 10px 10px 0px 0px #000000;
         }
 
-        .sticker-shadow:active {
-            transform: translate(4px, 4px);
-            box-shadow: 0px 0px 0px 0px #000000;
+        .sticker-red-shadow {
+            box-shadow: 8px 8px 0px 0px #E11D48;
         }
     </style>
 </head>
 
-<body class="bg-africa-white text-africa-black selection:bg-africa-black selection:text-africa-white">
+<body class="bg-africa-white text-africa-black selection:bg-africa-red selection:text-white">
 
     <nav
-        class="fixed top-0 w-full z-50 bg-africa-white border-b-4 border-africa-black px-8 py-5 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="bg-africa-red w-10 h-10 border-2 border-africa-black rounded-lg -rotate-6"></div>
-            <span class="text-xl font-black uppercase tracking-tighter">Tech4Africa</span>
+        class="fixed top-0 w-full z-50 bg-africa-white border-b-4 border-africa-black px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div
+                class="bg-africa-red w-8 h-8 border-2 border-africa-black rounded shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+            </div>
+            <span class="text-lg font-black uppercase tracking-tighter">Tech4Africa</span>
         </div>
-        <div class="hidden lg:flex gap-12 font-bold uppercase text-[10px] tracking-widest">
-            <a href="#" class="hover:text-africa-red">The Courses</a>
-            <a href="#" class="hover:text-africa-red">Mentors</a>
-            <a href="#" class="hover:text-africa-red">Stories</a>
+        <div class="hidden md:flex gap-8 font-bold uppercase text-[10px] tracking-widest">
+            <a href="#courses" class="hover:text-africa-red">Courses</a>
+            <a href="#pricing" class="hover:text-africa-red">Pricing</a>
+            <a href="#faq" class="hover:text-africa-red">FAQ</a>
         </div>
         <button
-            class="bg-africa-black text-white px-6 py-2 text-xs font-black uppercase border-2 border-africa-black rounded-full hover:bg-africa-red transition-colors">
-            Start Now
-        </button>
+            class="bg-africa-black text-white px-5 py-2 text-[10px] font-black uppercase rounded-full border-2 border-africa-black hover:bg-africa-red transition">Join
+            Cohort</button>
     </nav>
 
-    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto overflow-hidden">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-
-            <div x-data="{ shown: false }" x-init="setTimeout(() => shown = true, 100)">
-                <div x-show="shown" x-transition:enter="transition duration-1000"
-                    x-transition:enter-start="opacity-0 translate-y-20"
-                    x-transition:enter-end="opacity-100 translate-y-0">
-                    <div
-                        class="inline-block bg-africa-red text-white px-4 py-1 font-black text-[10px] uppercase rounded-md mb-6 rotate-2">
-                        Top Rated in Africa 🌍
-                    </div>
-                    <h1 class="text-6xl md:text-8xl font-black uppercase leading-[0.85] mb-10">
-                        Level up <br> your <br><span class="text-africa-red">vibe & skill.</span>
-                    </h1>
-                    <p class="text-lg font-bold mb-12 max-w-sm text-slate-500">
-                        No boring lectures. Just real projects, real tech, and a real African community.
-                    </p>
-                    <button
-                        class="bg-africa-black text-white px-10 py-6 text-xl font-black uppercase rounded-2xl sticker-shadow transition-all">
-                        Claim Your Seat →
-                    </button>
-                </div>
-            </div>
-
-            <div x-data="{ 
-                active: 0, 
-                images: [
-                    'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80&w=800',
-                    'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=800'
-                ],
-                next() { this.active = (this.active + 1) % this.images.length },
-                prev() { this.active = (this.active - 1 + this.images.length) % this.images.length },
-                auto() { setInterval(() => this.next(), 5000) }
-            }" x-init="auto()" class="relative group">
-
-                <div
-                    class="w-full aspect-[4/5] bg-africa-black border-4 border-africa-black rounded-[3rem] overflow-hidden sticker-shadow relative">
-                    <template x-for="(img, index) in images" :key="index">
-                        <img x-show="active === index" x-transition:enter="transition duration-500 transform"
-                            x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
-                            :src="img" class="absolute inset-0 w-full h-full object-cover">
-                    </template>
-                </div>
-
-                <div class="absolute -bottom-6 -right-6 flex gap-4">
-                    <button @click="prev()"
-                        class="w-16 h-16 bg-africa-white border-4 border-africa-black rounded-2xl flex items-center justify-center hover:bg-africa-red transition group">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 group-hover:text-white"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="m15 18-6-6 6-6" />
-                        </svg>
-                    </button>
-                    <button @click="next()"
-                        class="w-16 h-16 bg-africa-black border-4 border-africa-black rounded-2xl flex items-center justify-center hover:bg-africa-red transition">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path d="m9 18 6-6-6-6" />
-                        </svg>
-                    </button>
-                </div>
-
-                <div class="absolute top-10 left-10 flex gap-2">
-                    <template x-for="(img, index) in images" :key="index">
-                        <div class="h-3 rounded-full transition-all duration-300"
-                            :class="active === index ? 'w-10 bg-africa-red' : 'w-3 bg-white'"></div>
-                    </template>
-                </div>
+    <section class="pt-32 pb-20 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+            <h1 class="text-5xl md:text-7xl font-black uppercase leading-[0.9] mb-8">
+                Build <span class="text-africa-red">Better</span> <br> than your <br> mentors.
+            </h1>
+            <p class="text-lg font-bold mb-10 text-slate-500 max-w-sm">Serious tech skills for the African context. From
+                HTML to AI.</p>
+            <div class="flex gap-4">
+                <button
+                    class="bg-africa-red text-white px-8 py-5 font-black uppercase rounded-xl sticker-shadow border-2 border-africa-black">Apply
+                    Now</button>
+                <button
+                    class="bg-africa-white border-4 border-africa-black px-8 py-5 font-black uppercase rounded-xl">Curriculum</button>
             </div>
         </div>
-    </section>
 
-    <section class="py-32 bg-africa-gray/20 border-t-4 border-africa-black">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-black uppercase mb-20 text-center">
-                Pick Your <span class="text-africa-red underline decoration-8 underline-offset-8">Weapon</span>.
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
-                <div
-                    class="md:col-span-8 bg-africa-red border-4 border-africa-black rounded-[2.5rem] p-12 text-white sticker-shadow group transition-all">
-                    <div class="flex flex-col h-full justify-between">
-                        <div class="mb-12">
-                            <span
-                                class="bg-africa-black text-white px-4 py-1 text-[10px] font-black uppercase rounded mb-4 inline-block">Bestseller</span>
-                            <h3 class="text-5xl font-black uppercase leading-tight">Full-Stack <br> Ninja (JS + Node)
-                            </h3>
-                        </div>
-                        <div class="flex items-end justify-between">
-                            <p class="max-w-xs font-bold text-africa-white/80">Go from zero to building apps like this
-                                one in 12 weeks.</p>
-                            <div
-                                class="w-16 h-16 bg-africa-black rounded-full flex items-center justify-center group-hover:rotate-45 transition-transform cursor-pointer">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <path d="M7 17l10-10M7 7h10v10" />
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-4 bg-africa-black text-white border-4 border-africa-black rounded-[2.5rem] p-8 flex flex-col justify-center items-center text-center bento-card sticker-shadow">
-                    <h3 class="text-3xl font-black uppercase mb-4 text-africa-red">Python <br> AI</h3>
-                    <p class="font-bold text-xs text-white/50">Master the logic of the future.</p>
-                </div>
-
-                <div
-                    class="md:col-span-4 bg-africa-white border-4 border-africa-black rounded-[2.5rem] p-8 sticker-shadow">
-                    <h3 class="text-3xl font-black uppercase mb-4">PHP <br> Pro</h3>
-                    <p class="font-bold text-sm mb-6">Backend powerhouses start here.</p>
-                    <div class="flex -space-x-3">
-                        <div class="w-10 h-10 rounded-full bg-africa-red border-2 border-africa-black"></div>
-                        <div class="w-10 h-10 rounded-full bg-africa-black border-2 border-africa-black"></div>
-                        <div
-                            class="w-10 h-10 rounded-full bg-africa-white border-2 border-africa-black flex items-center justify-center text-[10px] font-black">
-                            +4k</div>
-                    </div>
-                </div>
-
-                <div
-                    class="md:col-span-8 bg-africa-white border-4 border-africa-black rounded-[2.5rem] p-10 flex items-center gap-8 sticker-shadow">
-                    <div class="hidden sm:block w-32 h-32 bg-africa-red rounded-3xl shrink-0 -rotate-3"></div>
-                    <div>
-                        <h3 class="text-2xl font-black uppercase mb-2 leading-none">Global Startup Readiness</h3>
-                        <p class="font-bold text-slate-400 mb-4">Learn to pitch, build, and deploy to international
-                            clients.</p>
-                        <button class="text-africa-red font-black text-xs uppercase underline underline-offset-4">Learn
-                            the Secrets →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 border-t-4 border-africa-black bg-africa-white text-center">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-6xl md:text-9xl font-black opacity-5 mb-10">TECH4AFRICA</h2>
+        <div x-data="{ active: 0, images: [
+            'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800',
+            'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800',
+            'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=800',
+            'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800'
+        ]}" x-init="setInterval(() => active = (active + 1) % images.length, 4000)" class="relative">
             <div
-                class="flex flex-col md:flex-row justify-between items-center gap-8 text-[10px] font-black uppercase tracking-widest">
-                <p>© 2026 Tech4Africa - No Robots Allowed.</p>
-                <div class="flex gap-10">
-                    <a href="#" class="hover:text-africa-red transition">Privacy</a>
-                    <a href="#" class="hover:text-africa-red transition">Terms</a>
-                    <a href="#" class="hover:text-africa-red transition">Instagram</a>
+                class="w-full aspect-square border-4 border-africa-black rounded-[3rem] overflow-hidden sticker-shadow bg-africa-black">
+                <template x-for="(img, index) in images" :key="index">
+                    <img x-show="active === index" x-transition.opacity.duration.500ms :src="img"
+                        class="absolute inset-0 w-full h-full object-cover">
+                </template>
+            </div>
+            <div
+                class="absolute -bottom-4 -left-4 bg-africa-red text-white p-6 rounded-2xl border-4 border-africa-black font-black uppercase text-xs rotate-3">
+                New Cohort: Feb 2026
+            </div>
+        </div>
+    </section>
+
+    <section id="courses" class="py-24 bg-africa-black text-white px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-black uppercase mb-16 underline decoration-africa-red underline-offset-8">The Tech
+                Stack</h2>
+            <div class="grid md:grid-cols-12 gap-6">
+                <div
+                    class="md:col-span-8 bg-africa-red p-10 rounded-[2rem] border-4 border-white flex flex-col justify-between min-h-[350px]">
+                    <h3 class="text-4xl font-black uppercase">Full-Stack Master <br> (Node + React)</h3>
+                    <p class="font-bold">The most in-demand course in Africa right now.</p>
+                </div>
+                <div
+                    class="md:col-span-4 bg-africa-white text-africa-black p-8 rounded-[2rem] border-4 border-africa-black sticker-red-shadow">
+                    <h3 class="text-2xl font-black uppercase mb-4">Python for AI</h3>
+                    <p class="text-sm font-bold opacity-60">Automation, Data, and Intelligence.</p>
+                </div>
+                <div class="md:col-span-4 border-4 border-white p-8 rounded-[2rem] hover:bg-white/10 transition">
+                    <h3 class="text-xl font-black uppercase">PHP & Laravel</h3>
+                </div>
+                <div
+                    class="md:col-span-8 bg-africa-white text-africa-black p-10 rounded-[2rem] border-4 border-africa-black flex items-center justify-between">
+                    <h3 class="text-3xl font-black uppercase">Web3 & Blockchain</h3>
+                    <div class="w-16 h-16 bg-africa-red rounded-full flex items-center justify-center font-black">GO
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="py-24 px-6 overflow-hidden">
+        <h2 class="text-center text-4xl font-black uppercase mb-16">Wall of Fame 🏆</h2>
+        <div class="flex gap-8 animate-[marquee_20s_linear_infinite] whitespace-nowrap">
+            <template x-for="i in 5">
+                <div
+                    class="inline-block bg-africa-white border-4 border-africa-black p-8 rounded-3xl min-w-[300px] sticker-shadow">
+                    <p class="font-bold mb-4 italic whitespace-normal text-sm">"Tech4Africa changed my life. I went from
+                        zero to a remote job in the UK!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-africa-red rounded-full"></div>
+                        <span class="font-black uppercase text-xs">Musa Samson</span>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-24 bg-africa-gray px-6 border-y-4 border-africa-black">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-black uppercase mb-12">One Simple Price</h2>
+            <div class="bg-africa-white border-8 border-africa-black p-12 rounded-[3rem] sticker-red-shadow relative">
+                <div
+                    class="absolute -top-6 left-1/2 -translate-x-1/2 bg-africa-black text-white px-6 py-2 rounded-full font-black uppercase text-xs">
+                    All-Access Pass</div>
+                <div class="text-6xl font-black mb-4">₦150,000</div>
+                <p class="font-bold text-slate-400 mb-8">One-time payment. Lifetime access to the community.</p>
+                <ul class="text-left space-y-4 font-black uppercase text-sm mb-10">
+                    <li class="flex gap-3"><span class="text-africa-red">✔</span> 5 Core Tech Tracks</li>
+                    <li class="flex gap-3"><span class="text-africa-red">✔</span> Direct Mentor Access</li>
+                    <li class="flex gap-3"><span class="text-africa-red">✔</span> Job Placement Support</li>
+                </ul>
+                <button
+                    class="w-full bg-africa-red text-white py-5 rounded-2xl font-black uppercase text-xl sticker-shadow border-2 border-africa-black">Claim
+                    This Offer</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 px-6 max-w-3xl mx-auto">
+        <h2 class="text-3xl font-black uppercase mb-12 text-center">Frequently Asked</h2>
+        <div class="space-y-4" x-data="{ active: null }">
+            <template x-for="(q, i) in [
+                {q: 'Is it for beginners?', a: 'Yes! We start from absolute zero.'},
+                {q: 'Is it remote?', a: '100% Online with weekly live syncs.'},
+                {q: 'Do I get a certificate?', a: 'Yes, and a portfolio to prove your skills.'}
+            ]" :key="i">
+                <div class="border-4 border-africa-black rounded-2xl overflow-hidden">
+                    <button @click="active = (active === i ? null : i)"
+                        class="w-full p-6 text-left font-black uppercase flex justify-between bg-africa-white">
+                        <span x-text="q.q"></span>
+                        <span x-text="active === i ? '-' : '+'"></span>
+                    </button>
+                    <div x-show="active === i"
+                        class="p-6 bg-africa-red text-white font-bold border-t-4 border-africa-black" x-transition>
+                        <p x-text="q.a"></p>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+
+    <footer class="bg-africa-black text-white py-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 border-b border-white/20 pb-12">
+            <div>
+                <h2 class="text-3xl font-black uppercase mb-6">Tech4Africa</h2>
+                <p class="text-white/60 font-bold mb-8">Empowering the next generation of African developers to lead the
+                    global tech scene.</p>
+                <div class="flex gap-4">
+                    <input type="email" placeholder="Email"
+                        class="bg-white/10 border-2 border-white/20 p-4 rounded-xl flex-1 font-bold">
+                    <button
+                        class="bg-africa-red px-6 rounded-xl font-black uppercase tracking-widest text-xs">Join</button>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 font-bold uppercase text-[10px] tracking-widest gap-8">
+                <div class="flex flex-col gap-4">
+                    <a href="#">X (Twitter)</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <a href="#">Support</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Refunds</a>
+                </div>
+            </div>
+        </div>
+        <p class="text-center pt-12 text-[10px] font-black uppercase tracking-[0.3em] opacity-40 italic">Code. Create.
+            Conquer.</p>
     </footer>
 
+    <style>
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+    </style>
 </body>
 
 </html>
