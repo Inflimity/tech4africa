@@ -48,6 +48,150 @@
         .pillar-card:hover .pillar-icon {
             transform: scale(1.1) rotate(5deg);
         }
+
+        /* Hero Animations */
+        @keyframes float-badge {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-8px) scale(1.02);
+            }
+        }
+
+        @keyframes slide-up-fade {
+            0% {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-up-scale {
+            0% {
+                opacity: 0;
+                transform: translateY(80px) scale(0.9);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes gradient-shift {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes text-glow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 20px rgba(225, 29, 72, 0);
+            }
+
+            50% {
+                text-shadow: 0 0 30px rgba(225, 29, 72, 0.3), 0 0 60px rgba(225, 29, 72, 0.1);
+            }
+        }
+
+        @keyframes letter-pop {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) rotateX(-90deg);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        .hero-badge {
+            animation: float-badge 3s ease-in-out infinite, slide-up-fade 0.8s ease-out;
+        }
+
+        .hero-title {
+            animation: slide-up-scale 1s ease-out 0.2s both;
+        }
+
+        .hero-title-gradient {
+            background-size: 200% 200%;
+            animation: gradient-shift 4s ease infinite, text-glow 3s ease-in-out infinite;
+        }
+
+        .hero-description {
+            animation: slide-up-fade 1s ease-out 0.5s both;
+        }
+
+        /* Staggered word animation */
+        .word-reveal {
+            display: inline-block;
+            animation: letter-pop 0.6s ease-out both;
+        }
+
+        /* Letter Scatter Animation */
+        .scatter-text {
+            display: inline-block;
+            perspective: 1000px;
+        }
+
+        .scatter-letter {
+            display: inline-block;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                opacity 0.8s ease;
+            will-change: transform, opacity;
+        }
+
+        /* Gradient letters for second line */
+        .scatter-text.gradient-text .scatter-letter {
+            background: linear-gradient(90deg, #E11D48, #f97316, #eab308);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .scatter-letter.scattered {
+            opacity: 0.4;
+        }
+
+        .scatter-letter.space {
+            width: 0.3em;
+        }
+
+        /* Word-based scatter animation for longer text */
+        .scatter-words {
+            display: block;
+        }
+
+        .scatter-word {
+            display: inline-block;
+            transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+                opacity 0.8s ease;
+            will-change: transform, opacity;
+            margin-right: 0.25em;
+        }
+
+        .scatter-word.scattered {
+            opacity: 0.4;
+        }
     </style>
 </head>
 
@@ -178,20 +322,19 @@
 
         <div class="max-w-7xl mx-auto text-center relative z-10 w-full">
             <span
-                class="inline-block py-1 px-3 rounded-full bg-africa-red/10 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-6 animate-pulse">
+                class="hero-badge inline-block py-1.5 px-4 rounded-full bg-africa-red/10 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-6 border border-africa-red/20 backdrop-blur-sm">
                 AFRICA SILICON VALLEY
             </span>
 
-            <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">
-                From Africa, <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-africa-red to-orange-500">To The
-                    Future.</span>
+            <h1 class="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">
+                <span id="scatter-line-1" class="scatter-text">From Africa,</span> <br>
+                <span id="scatter-line-2" class="scatter-text gradient-text">To The Future.</span>
             </h1>
 
-            <p class="text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto mb-16 leading-relaxed">
-                A central band for tech education, events, news and startup enablement reimagining what’s possible from
-                Africa, for the world.
-            </p>
+            <p id="scatter-desc"
+                class="hero-description scatter-words text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto mb-16 leading-relaxed">
+                A central hub for tech education, events, news and startup enablement reimagining what's possible from
+                Africa, for the world.</p>
 
             <!-- Pillars Grid -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -528,6 +671,123 @@
                 observer.observe(el);
             });
         });
+
+        // Letter Scatter Animation v2 - Fixed character handling
+        function initScatterAnimation() {
+            const scatterElements = document.querySelectorAll('.scatter-text');
+
+            scatterElements.forEach(function (element) {
+                // Get text and normalize whitespace
+                let text = element.textContent;
+                text = text.replace(/\s+/g, ' ').trim();
+
+                // Clear the element
+                element.innerHTML = '';
+
+                // Split text into characters using split
+                const chars = text.split('');
+                const delayMultiplier = chars.length > 50 ? 8 : 25;
+
+                // Create span for each character
+                for (let i = 0; i < chars.length; i++) {
+                    const char = chars[i];
+                    const span = document.createElement('span');
+
+                    if (char === ' ') {
+                        span.className = 'scatter-letter space';
+                        span.innerHTML = '&nbsp;';
+                    } else {
+                        span.className = 'scatter-letter';
+                        span.textContent = char;
+                    }
+
+                    span.style.transitionDelay = (i * delayMultiplier) + 'ms';
+                    element.appendChild(span);
+                }
+            });
+
+            function scatterLetters() {
+                const letters = document.querySelectorAll('.scatter-letter:not(.space)');
+                letters.forEach(letter => {
+                    const randomX = (Math.random() - 0.5) * 200;
+                    const randomY = (Math.random() - 0.5) * 150;
+                    const randomRotate = (Math.random() - 0.5) * 60;
+                    const randomScale = 0.5 + Math.random() * 0.5;
+
+                    letter.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg) scale(${randomScale})`;
+                    letter.classList.add('scattered');
+                });
+            }
+
+            function reassembleLetters() {
+                const letters = document.querySelectorAll('.scatter-letter');
+                letters.forEach(letter => {
+                    letter.style.transform = 'translate(0, 0) rotate(0deg) scale(1)';
+                    letter.classList.remove('scattered');
+                });
+            }
+
+            // Animation cycle: scatter for 1s, reassemble for 3s
+            function runCycle() {
+                scatterLetters();
+                scatterWords();
+                setTimeout(() => {
+                    reassembleLetters();
+                    reassembleWords();
+                }, 1000);
+            }
+
+            // Start after initial page load animation
+            setTimeout(() => {
+                runCycle();
+                setInterval(runCycle, 4000);
+            }, 2000);
+        }
+
+        // Word-based scatter animation for longer text
+        function initWordScatterAnimation() {
+            const wordElements = document.querySelectorAll('.scatter-words');
+
+            wordElements.forEach(function (element) {
+                const text = element.textContent.replace(/\s+/g, ' ').trim();
+                element.innerHTML = '';
+
+                const words = text.split(' ');
+
+                for (let i = 0; i < words.length; i++) {
+                    const span = document.createElement('span');
+                    span.className = 'scatter-word';
+                    span.textContent = words[i];
+                    span.style.transitionDelay = (i * 50) + 'ms';
+                    element.appendChild(span);
+                }
+            });
+        }
+
+        function scatterWords() {
+            const words = document.querySelectorAll('.scatter-word');
+            words.forEach(word => {
+                const randomX = (Math.random() - 0.5) * 150;
+                const randomY = (Math.random() - 0.5) * 100;
+                const randomRotate = (Math.random() - 0.5) * 30;
+                const randomScale = 0.7 + Math.random() * 0.3;
+
+                word.style.transform = `translate(${randomX}px, ${randomY}px) rotate(${randomRotate}deg) scale(${randomScale})`;
+                word.classList.add('scattered');
+            });
+        }
+
+        function reassembleWords() {
+            const words = document.querySelectorAll('.scatter-word');
+            words.forEach(word => {
+                word.style.transform = 'translate(0, 0) rotate(0deg) scale(1)';
+                word.classList.remove('scattered');
+            });
+        }
+
+        // Initialize both animations
+        initScatterAnimation();
+        initWordScatterAnimation();
     </script>
 </body>
 
