@@ -124,25 +124,25 @@ export default function EventsPage() {
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                     <div>
                         <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter end={5000} suffix="+" />
+                            <Counter target={5000} suffix="+" />
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Attendees</div>
                     </div>
                     <div>
                         <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter end={50} suffix="+" />
+                            <Counter target={50} suffix="+" />
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Speakers</div>
                     </div>
                     <div>
                         <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter end={20} suffix="+" />
+                            <Counter target={20} suffix="+" />
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Workshops</div>
                     </div>
                     <div>
                         <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter end={100} suffix="%" />
+                            <Counter target={100} suffix="%" />
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Energy</div>
                     </div>
