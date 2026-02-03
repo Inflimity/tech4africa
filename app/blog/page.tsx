@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = {
     title: "Tech4Nigeria | Insights & News",
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
 export default function BlogPage() {
     return (
         <div className="bg-africa-soft text-africa-midnight selection:bg-africa-green selection:text-white">
+            <Marquee />
             <Navbar />
 
             {/* Hero */}

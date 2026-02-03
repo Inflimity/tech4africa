@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = {
     title: "Contact Us | Tech4Afrika",
@@ -17,6 +18,7 @@ const heroSlides = [
 export default function ContactPage() {
     return (
         <>
+            <Marquee />
             <Navbar />
 
             {/* Hero Carousel */}

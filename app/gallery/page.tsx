@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = {
     title: "Gallery | Tech4Afrika",
@@ -45,6 +46,7 @@ const events = [
 export default function GalleryPage() {
     return (
         <>
+            <Marquee />
             <Navbar />
 
             {/* Hero Slider */}

@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Counter from "@/components/ui/Counter";
+import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = {
     title: "Tech4Lagos | Community Tech Events",
@@ -60,6 +61,7 @@ const speakers = [
 export default function EventsPage() {
     return (
         <div className="bg-yellow-50 text-africa-midnight">
+            <Marquee />
             <Navbar />
 
             {/* Hero */}

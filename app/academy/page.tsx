@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = {
     title: "Tech4Afrika Academy | Professional Dev Training",
@@ -58,6 +59,7 @@ const mentors = [
 export default function AcademyPage() {
     return (
         <>
+            <Marquee />
             <Navbar />
 
             {/* Hero Slider Section */}

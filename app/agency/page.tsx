@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Marquee from "@/components/Marquee";
 
 export const metadata: Metadata = {
     title: "Tech4Agency | Digital Solutions",
@@ -85,6 +86,7 @@ const process = [
 export default function AgencyPage() {
     return (
         <div className="bg-africa-midnight text-white">
+            <Marquee />
             <Navbar />
 
             {/* Hero */}
