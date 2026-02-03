@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Counter from "@/components/ui/Counter";
 import Marquee from "@/components/Marquee";
+import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
     title: "Tech4Lagos | Community Tech Events",
@@ -61,18 +62,19 @@ const speakers = [
 export default function EventsPage() {
     return (
         <div className="bg-yellow-50 text-africa-midnight">
+            <PageAnimations />
             <Marquee />
             <Navbar />
 
             {/* Hero */}
             <header className="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center relative overflow-hidden">
                 {/* Background Image */}
-                <div className="absolute inset-0 z-0">
+                <div data-hero className="absolute inset-0 z-0">
                     <Image src="/images/event5.jpeg" alt="Tech4Lagos Event" fill className="object-cover blur-sm opacity-20" />
                     <div className="absolute inset-0 bg-yellow-50/70" />
                 </div>
 
-                <div className="relative z-10">
+                <div className="relative z-10" data-reveal="scale-up">
                     <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
                         Tech4Lagos 2026
                     </span>
@@ -100,10 +102,10 @@ export default function EventsPage() {
             {/* Past Events Gallery */}
             <section className="py-24 px-6 bg-white border-y border-africa-border">
                 <div className="max-w-7xl mx-auto">
-                    <h2 className="text-3xl font-extrabold mb-12 text-center">Past Highlights</h2>
+                    <h2 className="text-3xl font-extrabold mb-12 text-center" data-section-header>Past Highlights</h2>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4 h-[600px]">
                         {pastEventImages.map((event, index) => (
-                            <div key={index} className={`group relative overflow-hidden rounded-3xl ${event.span || ''}`}>
+                            <div key={index} className={`group relative overflow-hidden rounded-3xl ${event.span || ''}`} data-reveal="pop-in" data-stagger={index + 1}>
                                 <Image
                                     src={event.src}
                                     alt={event.title || "Event"}
@@ -125,26 +127,26 @@ export default function EventsPage() {
             <section className="py-24 bg-africa-midnight text-white px-6">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter target={5000} suffix="+" />
+                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                            5000+
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Attendees</div>
                     </div>
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter target={50} suffix="+" />
+                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                            50+
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Speakers</div>
                     </div>
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter target={20} suffix="+" />
+                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                            20+
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Workshops</div>
                     </div>
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2">
-                            <Counter target={100} suffix="%" />
+                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                            100%
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Energy</div>
                     </div>
@@ -154,17 +156,17 @@ export default function EventsPage() {
             {/* What to Expect */}
             <section className="py-24 px-6 bg-yellow-50">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16" data-reveal>
                         <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-4">
                             Event Highlights
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight">What to Expect</h2>
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight" data-section-header>What to Expect</h2>
                         <p className="text-slate-500 max-w-xl mx-auto">Three days of inspiration, learning, and networking.</p>
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-8">
-                        {whatToExpect.map((item) => (
-                            <div key={item.title} className="bg-white p-8 rounded-3xl border border-africa-border shadow-lg hover:shadow-xl transition-shadow">
+                        {whatToExpect.map((item, index) => (
+                            <div key={item.title} className="bg-white p-8 rounded-3xl border border-africa-border shadow-lg hover:shadow-xl transition-shadow" data-reveal="slide-up-bounce" data-stagger={index + 1}>
                                 <div className={`w-14 h-14 ${item.color} rounded-2xl flex items-center justify-center text-white text-2xl mb-6`}>
                                     {item.icon}
                                 </div>
@@ -183,13 +185,13 @@ export default function EventsPage() {
                         <span className="inline-block py-1 px-3 rounded-full bg-africa-midnight text-white text-[10px] font-bold uppercase tracking-widest mb-4">
                             Speakers
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight">Featured Speakers</h2>
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight" data-section-header>Featured Speakers</h2>
                         <p className="text-slate-500 max-w-xl mx-auto">Learn from the best minds in African tech.</p>
                     </div>
 
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                        {speakers.map((speaker) => (
-                            <div key={speaker.role} className="text-center group">
+                        {speakers.map((speaker, index) => (
+                            <div key={speaker.role} className="text-center group" data-reveal="flip-in" data-stagger={index + 1}>
                                 <div className="relative mb-4 rounded-3xl overflow-hidden">
                                     <Image
                                         src={speaker.img}

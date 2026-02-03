@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
+import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
     title: "Contact Us | Tech4Afrika",
@@ -18,12 +19,13 @@ const heroSlides = [
 export default function ContactPage() {
     return (
         <>
+            <PageAnimations />
             <Marquee />
             <Navbar />
 
             {/* Hero Carousel */}
             <section className="w-full overflow-hidden">
-                <div className="relative h-[40vh] w-full overflow-hidden bg-africa-midnight border-b border-africa-border shadow-2xl">
+                <div data-hero className="relative h-[40vh] w-full overflow-hidden bg-africa-midnight border-b border-africa-border shadow-2xl">
                     {/* Static hero - first slide */}
                     <div className="absolute inset-0 w-full h-full">
                         <Image
@@ -35,7 +37,7 @@ export default function ContactPage() {
                         />
                         <div className="absolute inset-0 bg-africa-midnight/50" />
                         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                            <div className="max-w-3xl">
+                            <div className="max-w-3xl" data-reveal="scale-up">
                                 <h1 className="text-2xl md:text-6xl font-extrabold text-white uppercase leading-none mb-4 md:mb-6 tracking-tighter drop-shadow-lg">
                                     {heroSlides[0].title}
                                 </h1>
@@ -52,7 +54,7 @@ export default function ContactPage() {
             <section className="py-12 px-6 max-w-7xl mx-auto">
                 <div className="grid lg:grid-cols-2 gap-16 w-full">
                     {/* Contact Info */}
-                    <div className="flex flex-col justify-center">
+                    <div className="flex flex-col justify-center" data-reveal="fade-right">
                         <span className="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Get in Touch</span>
                         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
                             Start your <br /> <span className="text-africa-red">Transformation</span>.
@@ -62,7 +64,7 @@ export default function ContactPage() {
                         </p>
 
                         <div className="space-y-8">
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4" data-reveal data-stagger="1">
                                 <div className="w-12 h-12 bg-white border border-africa-border rounded-xl flex items-center justify-center text-africa-red shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -73,7 +75,7 @@ export default function ContactPage() {
                                     <p className="text-slate-500">admissions@tech4africa.com</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-start gap-4" data-reveal data-stagger="2">
                                 <div className="w-12 h-12 bg-white border border-africa-border rounded-xl flex items-center justify-center text-africa-red shrink-0">
                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -88,7 +90,7 @@ export default function ContactPage() {
                     </div>
 
                     {/* Contact Form */}
-                    <div className="bg-white p-10 rounded-[2.5rem] border border-africa-border shadow-xl shadow-africa-midnight/5">
+                    <div className="bg-white p-10 rounded-[2.5rem] border border-africa-border shadow-xl shadow-africa-midnight/5" data-reveal="fade-left">
                         <form className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
