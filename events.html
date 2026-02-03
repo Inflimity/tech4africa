@@ -226,23 +226,138 @@
     </section>
 
     <!-- Stats -->
-    <section class="py-24 bg-africa-midnight text-white px-6">
+    <section class="py-24 bg-africa-midnight text-white px-6" x-data="{ shown: false }"
+        x-intersect:enter="shown = true">
         <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
             <div>
-                <div class="text-5xl font-black text-yellow-400 mb-2">5k+</div>
+                <div class="text-5xl font-black text-africa-red mb-2" x-data="{ count: 0, target: 5000 }"
+                    x-init="$watch('shown', value => { if(value) { let interval = setInterval(() => { if(count < target) { count += Math.ceil(target/50); if(count > target) count = target; } else { clearInterval(interval); } }, 30); } })"
+                    x-text="count.toLocaleString() + '+'"></div>
                 <div class="text-xs font-bold uppercase tracking-widest">Attendees</div>
             </div>
             <div>
-                <div class="text-5xl font-black text-yellow-400 mb-2">50+</div>
+                <div class="text-5xl font-black text-africa-red mb-2" x-data="{ count: 0, target: 50 }"
+                    x-init="$watch('shown', value => { if(value) { let interval = setInterval(() => { if(count < target) { count += 1; } else { clearInterval(interval); } }, 40); } })"
+                    x-text="count + '+'"></div>
                 <div class="text-xs font-bold uppercase tracking-widest">Speakers</div>
             </div>
             <div>
-                <div class="text-5xl font-black text-yellow-400 mb-2">20+</div>
+                <div class="text-5xl font-black text-africa-red mb-2" x-data="{ count: 0, target: 20 }"
+                    x-init="$watch('shown', value => { if(value) { let interval = setInterval(() => { if(count < target) { count += 1; } else { clearInterval(interval); } }, 60); } })"
+                    x-text="count + '+'"></div>
                 <div class="text-xs font-bold uppercase tracking-widest">Workshops</div>
             </div>
             <div>
-                <div class="text-5xl font-black text-yellow-400 mb-2">100%</div>
+                <div class="text-5xl font-black text-africa-red mb-2" x-data="{ count: 0, target: 100 }"
+                    x-init="$watch('shown', value => { if(value) { let interval = setInterval(() => { if(count < target) { count += 2; if(count > target) count = target; } else { clearInterval(interval); } }, 30); } })"
+                    x-text="count + '%'"></div>
                 <div class="text-xs font-bold uppercase tracking-widest">Energy</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Expect -->
+    <section class="py-24 px-6 bg-yellow-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-4">
+                    Event Highlights
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight">What to Expect</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Three days of inspiration, learning, and networking.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-8 rounded-3xl border border-africa-border shadow-lg hover:shadow-xl transition-shadow">
+                    <div
+                        class="w-14 h-14 bg-africa-red rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        🎤</div>
+                    <h3 class="text-xl font-bold mb-3 text-africa-midnight">Keynote Sessions</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Hear from industry leaders, successful founders,
+                        and innovators shaping Africa's tech future.</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-africa-border shadow-lg hover:shadow-xl transition-shadow">
+                    <div
+                        class="w-14 h-14 bg-africa-midnight rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        🛠️</div>
+                    <h3 class="text-xl font-bold mb-3 text-africa-midnight">Hands-On Workshops</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Build real projects with expert mentors in AI,
+                        mobile development, product design, and more.</p>
+                </div>
+
+                <div
+                    class="bg-white p-8 rounded-3xl border border-africa-border shadow-lg hover:shadow-xl transition-shadow">
+                    <div
+                        class="w-14 h-14 bg-africa-red rounded-2xl flex items-center justify-center text-white text-2xl mb-6">
+                        🤝</div>
+                    <h3 class="text-xl font-bold mb-3 text-africa-midnight">Networking Lounges</h3>
+                    <p class="text-slate-500 text-sm leading-relaxed">Connect with investors, potential co-founders, and
+                        talent. Your next big opportunity awaits.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Speakers -->
+    <section class="py-24 px-6 bg-white border-y border-africa-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-africa-midnight text-white text-[10px] font-bold uppercase tracking-widest mb-4">
+                    Speakers
+                </span>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight">Featured Speakers</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Learn from the best minds in African tech.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center group">
+                    <div class="relative mb-4 rounded-3xl overflow-hidden">
+                        <img src="assets/img/event6.jpeg"
+                            class="w-full aspect-square object-cover group-hover:scale-110 transition duration-500"
+                            alt="Speaker">
+                        <div class="absolute inset-0 bg-africa-red/0 group-hover:bg-africa-red/20 transition"></div>
+                    </div>
+                    <h4 class="font-bold text-africa-midnight">TBA</h4>
+                    <p class="text-xs text-slate-400">Tech Founder</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="relative mb-4 rounded-3xl overflow-hidden">
+                        <img src="assets/img/home1.jpeg"
+                            class="w-full aspect-square object-cover group-hover:scale-110 transition duration-500"
+                            alt="Speaker">
+                        <div class="absolute inset-0 bg-africa-red/0 group-hover:bg-africa-red/20 transition"></div>
+                    </div>
+                    <h4 class="font-bold text-africa-midnight">TBA</h4>
+                    <p class="text-xs text-slate-400">Investor</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="relative mb-4 rounded-3xl overflow-hidden">
+                        <img src="assets/img/home2.jpeg"
+                            class="w-full aspect-square object-cover group-hover:scale-110 transition duration-500"
+                            alt="Speaker">
+                        <div class="absolute inset-0 bg-africa-red/0 group-hover:bg-africa-red/20 transition"></div>
+                    </div>
+                    <h4 class="font-bold text-africa-midnight">TBA</h4>
+                    <p class="text-xs text-slate-400">AI Expert</p>
+                </div>
+
+                <div class="text-center group">
+                    <div class="relative mb-4 rounded-3xl overflow-hidden">
+                        <img src="assets/img/home5.jpeg"
+                            class="w-full aspect-square object-cover group-hover:scale-110 transition duration-500"
+                            alt="Speaker">
+                        <div class="absolute inset-0 bg-africa-red/0 group-hover:bg-africa-red/20 transition"></div>
+                    </div>
+                    <h4 class="font-bold text-africa-midnight">TBA</h4>
+                    <p class="text-xs text-slate-400">Product Designer</p>
+                </div>
             </div>
         </div>
     </section>
