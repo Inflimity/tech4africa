@@ -188,48 +188,146 @@
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 pt-24 pb-24">
+    <!-- Certifications Section -->
+    <section class="max-w-7xl mx-auto px-6 pt-24 pb-12">
         <div class="text-center mb-16">
-            <span class="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Our Moments</span>
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Life at <span
-                    class="text-africa-red">Tech4Africa</span></h2>
+            <span class="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Proven
+                Excellence</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Our <span class="text-africa-red">Graduates</span></h2>
             <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-                Explore the vibrant moments that define our community. From collaborative hacking sessions to
-                celebratory graduations, every image tells a story of growth and connection.
+                Celebrating the achievements of our alumni who have successfully completed their rigorous training.
             </p>
         </div>
 
-        <!-- Masonry Layout -->
-        <div class="masonry-grid" x-data="{
-            images: [
-                'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800',
-                'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800',
-                'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800', 
-                'https://images.unsplash.com/photo-1573164713988-8665fc963095?q=80&w=800',
-                'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800',
-                'https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=800',
-                'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=800',
-                'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=800',
-                'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800',
-                'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800',
-                'https://images.unsplash.com/photo-1537511446984-935f663eb1f4?q=80&w=800',
-                'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800',
-                'https://images.unsplash.com/photo-1551434678-e076c2236033?q=80&w=800',
-                'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=800',
-                'https://images.unsplash.com/photo-1504384308090-c54be3855833?q=80&w=800'
-            ]
-        }">
-            <template x-for="(img, index) in images" :key="index">
-                <div class="masonry-item group relative overflow-hidden rounded-2xl">
-                    <img :src="img"
-                        class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700 ease-in-out"
-                        alt="Gallery Image">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-africa-midnight/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <span class="text-white font-bold text-sm tracking-wide">Community Event 2026</span>
-                    </div>
-                </div>
-            </template>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Certification Items -->
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="assets/img/cert1.jpeg"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    alt="Certificate">
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="assets/img/cert2.jpeg"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    alt="Certificate">
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="assets/img/cert4.jpeg"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    alt="Certificate">
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="assets/img/cert5.jpeg"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    alt="Certificate">
+            </div>
+            <div
+                class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
+                <img src="assets/img/cert6.jpeg"
+                    class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                    alt="Certificate">
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="max-w-7xl mx-auto px-6 py-24 bg-slate-50/50">
+        <div class="text-center mb-16">
+            <span class="text-africa-midnight font-bold text-xs uppercase tracking-widest mb-4 block">Community
+                Life</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Campus <span class="text-africa-red">Events</span></h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                From hackathons to networking nights, experience the energy of our vibrant tech community.
+            </p>
+        </div>
+
+        <div class="masonry-grid">
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event1.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event2.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event3.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event4.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event5.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event6.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/event8.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+            <div class="masonry-item group relative overflow-hidden rounded-2xl mb-6">
+                <img src="assets/img/agency1.jpeg"
+                    class="w-full h-auto transform group-hover:scale-110 transition-transform duration-700" alt="Event">
+            </div>
+        </div>
+    </section>
+
+    <!-- Students Section -->
+    <section class="max-w-7xl mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <span class="text-africa-red font-bold text-xs uppercase tracking-widest mb-4 block">Future Leaders</span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Meet Our <span class="text-africa-red">Students</span>
+            </h2>
+            <p class="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
+                The faces behind the code. Diverse, driven, and destined for greatness.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/home1.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/home2.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/home4.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/home5.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/home6.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/home7.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
+            <div class="group relative aspect-square overflow-hidden rounded-2xl">
+                <img src="assets/img/skill4africa.jpeg"
+                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-110"
+                    alt="Student">
+            </div>
         </div>
     </section>
 
