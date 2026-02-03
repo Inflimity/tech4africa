@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
@@ -24,7 +25,8 @@ export default function Navbar() {
         <>
             <nav className="fixed top-8 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center transition-all duration-300">
                 <div className="flex items-center gap-2">
-                    <Link href="/" className="text-xl font-extrabold uppercase tracking-tight">
+                    <Link href="/" className="flex items-center gap-2 text-xl font-extrabold uppercase tracking-tight">
+                        <Image src="/images/favicon.jpeg" alt="Tech4Afrika Logo" width={32} height={32} className="rounded-lg" />
                         Tech<span className="text-africa-red">4</span>Afrika
                     </Link>
                 </div>

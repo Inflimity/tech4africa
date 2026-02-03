@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
     return (
@@ -6,7 +7,8 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
                     <div className="col-span-2">
-                        <div className="text-xl font-black mb-6 uppercase tracking-tighter">
+                        <div className="text-xl font-black mb-6 uppercase tracking-tighter flex items-center gap-2">
+                            <Image src="/images/favicon.jpeg" alt="Tech4Afrika Logo" width={32} height={32} className="rounded-lg" />
                             Tech<span className="text-africa-red">4</span>Afrika
                         </div>
                         <p className="text-slate-400 text-xs leading-relaxed max-w-xs">
