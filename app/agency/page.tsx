@@ -10,12 +10,63 @@ export const metadata: Metadata = {
 };
 
 const services = [
-    { title: "Mobile Development", description: "Native iOS and Android applications built with Flutter and React Native. High performance, smooth animations." },
-    { title: "Web Development", description: "Responsive, SEO-optimized websites and web apps using React, Next.js, and modern CSS frameworks." },
-    { title: "Cloud Solutions", description: "Scalable backend architecture, API development, and secure hosting on AWS and Azure." },
-    { title: "AI Solutions", description: "Machine learning models, chatbots, and intelligent automation to transform your business operations." },
-    { title: "Data Analytics", description: "Unlock insights from your data with dashboards, reporting tools, and predictive analytics." },
-    { title: "Design & Branding", description: "UI/UX design, brand identity, and visual systems that make your product stand out." },
+    {
+        title: "Mobile Development",
+        description: "Native iOS and Android applications built with Flutter and React Native. High performance, smooth animations.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+            </svg>
+        ),
+        bg: "/images/home2.jpeg",
+    },
+    {
+        title: "Web Development",
+        description: "Responsive, SEO-optimized websites and web apps using React, Next.js, and modern CSS frameworks.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+            </svg>
+        ),
+        bg: "/images/home1.jpeg",
+    },
+    {
+        title: "Cloud Solutions",
+        description: "Scalable backend architecture, API development, and secure hosting on AWS and Azure.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z" />
+            </svg>
+        ),
+    },
+    {
+        title: "AI Solutions",
+        description: "Machine learning models, chatbots, and intelligent automation to transform your business operations.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 002.25-2.25V6.75a2.25 2.25 0 00-2.25-2.25H6.75A2.25 2.25 0 004.5 6.75v10.5a2.25 2.25 0 002.25 2.25zm.75-12h9v9h-9v-9z" />
+            </svg>
+        ),
+    },
+    {
+        title: "Data Analytics",
+        description: "Unlock insights from your data with dashboards, reporting tools, and predictive analytics.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg>
+        ),
+    },
+    {
+        title: "Design & Branding",
+        description: "UI/UX design, brand identity, and visual systems that make your product stand out.",
+        icon: (
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9.53 16.122a3 3 0 00-5.78 1.128 2.25 2.25 0 01-2.4 2.245 4.5 4.5 0 008.4-2.245c0-.399-.078-.78-.22-1.128zm0 0a15.998 15.998 0 003.388-1.62m-5.043-.025a15.994 15.994 0 011.622-3.395m3.42 3.42a15.995 15.995 0 004.764-4.648l3.876-5.814a1.151 1.151 0 00-1.597-1.597L14.146 6.32a15.996 15.996 0 00-4.649 4.763m3.42 3.42a6.776 6.776 0 00-3.42-3.42" />
+            </svg>
+        ),
+        bg: "/images/home5.jpeg",
+    },
 ];
 
 const whyUs = [
@@ -78,14 +129,20 @@ export default function AgencyPage() {
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {services.map((service) => (
-                            <div key={service.title} className="p-8 rounded-3xl bg-africa-midnight border border-white/10 hover:border-africa-red transition-colors group">
-                                <div className="mb-6">
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 16.875h3.375m0 0h3.375m-3.375 0V13.5m0 3.375v3.375M6 10.5h2.25a2.25 2.25 0 002.25-2.25V6a2.25 2.25 0 00-2.25-2.25H6A2.25 2.25 0 003.75 6v2.25A2.25 2.25 0 006 10.5zm0 9.75h2.25A2.25 2.25 0 0010.5 18v-2.25a2.25 2.25 0 00-2.25-2.25H6a2.25 2.25 0 00-2.25 2.25V18A2.25 2.25 0 006 20.25zm9.75-9.75H18a2.25 2.25 0 002.25-2.25V6A2.25 2.25 0 0018 3.75h-2.25A2.25 2.25 0 0013.5 6v2.25a2.25 2.25 0 002.25 2.25z" />
-                                    </svg>
+                            <div
+                                key={service.title}
+                                className="p-8 rounded-3xl bg-africa-midnight border border-white/10 hover:border-africa-red transition-colors group relative overflow-hidden"
+                            >
+                                {service.bg && (
+                                    <div className="absolute inset-0 z-0 opacity-10">
+                                        <Image src={service.bg} alt={service.title} fill className="object-cover" />
+                                    </div>
+                                )}
+                                <div className="relative z-10">
+                                    <div className="mb-6">{service.icon}</div>
+                                    <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                                    <p className="text-slate-400 text-sm leading-relaxed">{service.description}</p>
                                 </div>
-                                <h3 className="text-xl font-bold mb-4">{service.title}</h3>
-                                <p className="text-slate-400 text-sm leading-relaxed">{service.description}</p>
                             </div>
                         ))}
                     </div>
@@ -152,41 +209,7 @@ export default function AgencyPage() {
                 </div>
             </section>
 
-            {/* Footer */}
-            <footer className="bg-africa-midnight pt-24 pb-12 px-6 border-t border-white/10">
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
-                        <div className="col-span-2">
-                            <div className="text-xl font-black mb-6 uppercase tracking-tighter text-white">
-                                Tech<span className="text-africa-red">4</span>Afrika
-                            </div>
-                            <p className="text-slate-400 text-xs leading-relaxed max-w-xs">
-                                An integrated ecosystem driving Africa&apos;s digital future through education, innovation, and community.
-                            </p>
-                        </div>
-                        <div>
-                            <h6 className="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-6">Ecosystem</h6>
-                            <ul className="space-y-4 text-xs font-bold uppercase text-slate-300">
-                                <li><Link href="/academy" className="hover:text-africa-red transition">Academy</Link></li>
-                                <li><Link href="/agency" className="hover:text-africa-red transition">Agency</Link></li>
-                                <li><Link href="/events" className="hover:text-africa-red transition">Tech4Lagos</Link></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h6 className="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-6">Resources</h6>
-                            <ul className="space-y-4 text-xs font-bold uppercase text-slate-300">
-                                <li><Link href="/blog" className="hover:text-africa-red transition">Tech4Nigeria</Link></li>
-                                <li><Link href="/contact" className="hover:text-africa-red transition">Contact</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
-                        <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">
-                            © 2026 Tech4Agency. Part of Tech4Afrika.
-                        </span>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </div>
     );
 }
