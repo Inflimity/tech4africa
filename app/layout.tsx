@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import ClientPage from "@/components/ClientPage";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta-sans",
@@ -35,8 +36,9 @@ export default function RootLayout({
       <body
         className={`${plusJakartaSans.variable} font-sans bg-africa-soft text-africa-midnight antialiased`}
       >
-        {children}
+        <ClientPage>{children}</ClientPage>
       </body>
     </html>
   );
 }
+
