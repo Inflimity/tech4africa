@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech4Afrika | Professional Dev Training</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        africa: {
+                            red: '#E11D48',
+                            midnight: '#0F172A',
+                            soft: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .bento-card {
+            border: 1px solid #E2E8F0;
+            transition: transform 0.2s ease;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-4px);
+            border-color: #E11D48;
+        }
+
+        /* Animation Classes */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-africa-soft text-africa-midnight antialiased selection:bg-africa-red selection:text-white">
+
+    <div x-data="{ mobileMenu: false }">
+        <nav
+            class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="text-xl font-extrabold uppercase tracking-tight">Tech<span
+                        class="text-africa-red">4</span>Afrika</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
+                <a href="index.html" class="hover:text-africa-red">Home</a>
+                <a href="academy.html" class="text-africa-red">Academy</a>
+                <a href="agency.html" class="hover:text-africa-red">Agency</a>
+                <a href="events.html" class="hover:text-africa-red">Events</a>
+                <a href="blog.html" class="hover:text-africa-red">Blog</a>
+                <a href="contact.html" class="hover:text-africa-red">Contact</a>
+            </div>
+            <a href="academy.html#courses"
+                class="hidden md:block bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition">Get
+                Started</a>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden text-africa-midnight focus:outline-none z-[70]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path x-show="!mobileMenu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                    <path x-show="mobileMenu" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Radial Menu (270° Arc) -->
+        <div class="md:hidden">
+            <!-- Menu Items Container - positioned relative to hamburger -->
+            <div class="fixed top-4 right-4 z-[60]" x-cloak>
+                <!-- Radial Menu Items -->
+                <a href="index.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-red text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-90px, 0px)' : 'transform: translate(0, 0) scale(0)'">
+                    Home
+                </a>
+
+                <a href="gallery.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-midnight text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500 delay-75"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-130px, 50px)' : 'transform: translate(0, 0) scale(0)'">
+                    Gallery
+                </a>
+
+                <a href="contact.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-midnight text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500 delay-150"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-130px, 110px)' : 'transform: translate(0, 0) scale(0)'">
+                    Contact
+                </a>
+
+                <a href="contact.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-16 h-16 bg-gradient-to-br from-africa-red to-red-600 text-white rounded-full shadow-xl font-bold text-[10px] text-center leading-tight transition-all duration-500 delay-200"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-90px, 170px)' : 'transform: translate(0, 0) scale(0)'">
+                    Get<br>Started
+                </a>
+            </div>
+
+            <!-- Backdrop -->
+            <div x-show="mobileMenu" x-cloak @click="mobileMenu = false"
+                class="fixed inset-0 z-[55] bg-africa-midnight/20 backdrop-blur-sm"
+                x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="pt-24 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
+        <div x-data="{ 
+        active: 0, 
+        slides: [
+            {img: 'assets/img/home1.jpeg', title: 'Master the Code.', sub: 'Intensive Full-Stack training for the next generation.'},
+            {img: 'assets/img/home2.jpeg', title: 'Trade the Global Markets.', sub: 'Expert Forex & Crypto strategies from professional traders.'},
+            {img: 'assets/img/home5.jpeg', title: 'Secure the Network.', sub: 'Master Cybersecurity and Infrastructure defense.'},
+            {img: 'assets/img/home4.jpeg', title: 'Analyze the Future.', sub: 'Harness the power of Data Science and AI logic.'},
+            {img: 'assets/img/home6.jpeg', title: 'Innovate on Mobile.', sub: 'Build world-class apps for iOS and Android devices.'}
+        ]
+    }" x-init="setInterval(() => active = (active + 1) % slides.length, 6000)"
+            class="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden bg-africa-midnight border border-africa-border">
+
+            <template x-for="(slide, index) in slides" :key="index">
+                <div x-show="active === index" class="absolute inset-0 w-full h-full">
+                    <img :src="slide.img" class="absolute inset-0 w-full h-full object-cover"
+                        x-transition:enter="transition duration-1000 ease-out"
+                        x-transition:enter-start="scale-110 opacity-0" x-transition:enter-end="scale-100 opacity-100">
+
+                    <div class="absolute inset-0 bg-africa-midnight/60"></div>
+
+                    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                        <div class="max-w-3xl" x-show="active === index"
+                            x-transition:enter="transition delay-300 duration-700 ease-out"
+                            x-transition:enter-start="opacity-0 translate-y-12"
+                            x-transition:enter-end="opacity-100 translate-y-0">
+
+                            <span
+                                class="inline-block bg-africa-red text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-1.5 rounded-full mb-8">
+                                Tech4Africa Academy
+                            </span>
+
+                            <h1 class="text-4xl md:text-7xl font-extrabold text-white uppercase leading-none mb-8 tracking-tighter"
+                                x-text="slide.title"></h1>
+
+                            <p class="text-slate-200 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed"
+                                x-text="slide.sub"></p>
+
+                            <div class="flex flex-wrap justify-center gap-4">
+                                <button
+                                    class="bg-africa-red text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition active:scale-95 shadow-2xl shadow-africa-red/30">
+                                    View Courses
+                                </button>
+                                <button
+                                    class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition">
+                                    Learn More
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+                <template x-for="(slide, index) in slides" :key="index">
+                    <button @click="active = index" :class="active === index ? 'w-12 bg-africa-red' : 'w-3 bg-white/30'"
+                        class="h-3 rounded-full transition-all duration-500"></button>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-africa-midnight py-16 px-6 border-y border-white/10">
+        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="text-center">
+                <div class="text-africa-red text-3xl font-extrabold mb-1">98%</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Success Rate</div>
+            </div>
+            <div class="text-center border-l border-white/10">
+                <div class="text-white text-3xl font-extrabold mb-1">24/7</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Mentor Support</div>
+            </div>
+            <div class="text-center border-l border-white/10">
+                <div class="text-white text-3xl font-extrabold mb-1">50+</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Hiring Partners</div>
+            </div>
+            <div class="text-center border-l border-white/10">
+                <div class="text-white text-3xl font-extrabold mb-1">12</div>
+                <div class="text-white/50 text-[10px] uppercase font-bold tracking-widest">Expert Tracks</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white border-y border-africa-border">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-6">Our Mission</h2>
+            <p class="text-xl text-slate-500 leading-relaxed italic">
+                "We bridge the gap between academic theory and industry reality. Tech4Africa is built to empower African
+                talent with the specific tools needed to compete in the global digital economy."
+            </p>
+        </div>
+    </section>
+
+
+    <section id="courses" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-16">
+            <h2 class="text-3xl font-extrabold mb-2">Our Learning Tracks</h2>
+            <div class="w-16 h-1 bg-africa-red"></div>
+        </div>
+
+        <div class="grid md:grid-cols-12 gap-6 mb-12">
+            <!-- Web Engineering - Slides from LEFT -->
+            <div x-data="{ shown: false }" x-intersect.once="shown = true"
+                class="md:col-span-8 bg-africa-midnight text-white p-10 rounded-3xl flex flex-col justify-between min-h-[350px] relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+                :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'">
+                <div class="relative z-10">
+                    <span
+                        class="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">Most
+                        Popular</span>
+                    <h3 class="text-3xl font-bold mt-6">Web Engineering</h3>
+                    <p class="text-slate-300 mt-4 max-w-sm">Master HTML5, CSS3, JavaScript, and Node.js. Build the
+                        modern web from scratch.</p>
+                </div>
+                <div class="flex flex-wrap gap-2 relative z-10 mt-8">
+                    <span
+                        class="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-[10px] font-bold">HTML/CSS</span>
+                    <span
+                        class="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-[10px] font-bold">JAVASCRIPT</span>
+                    <span
+                        class="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-[10px] font-bold">NODE.JS</span>
+                </div>
+            </div>
+
+            <!-- Mobile App - Slides from RIGHT -->
+            <div x-data="{ shown: false }" x-intersect.once="shown = true"
+                class="md:col-span-4 bg-africa-red text-white p-8 rounded-3xl flex flex-col justify-between transition-all duration-500 delay-100 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+                :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'">
+                <div>
+                    <h3 class="text-xl font-bold mb-3">Mobile App <br> Development</h3>
+                    <p class="text-rose-100 text-sm">Build cross-platform Android & iOS apps with C# and modern
+                        frameworks.</p>
+                </div>
+                <div class="mt-8 text-white font-bold text-xs bg-white/20 px-4 py-2 rounded-full w-fit">8 Modules →
+                </div>
+            </div>
+
+            <!-- Data Science - Slides from LEFT -->
+            <div x-data="{ shown: false }" x-intersect.once="shown = true"
+                class="md:col-span-4 bg-slate-700 text-white p-8 rounded-3xl transition-all duration-500 delay-150 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+                :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'">
+                <h3 class="text-xl font-bold mb-3">Data Science <br> & Analysis</h3>
+                <p class="text-slate-300 text-sm mb-6">Learn Python, Data Analysis, and Predictive Modeling.</p>
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 rounded-full bg-africa-red animate-pulse"></div>
+                    <span class="text-[10px] font-bold text-slate-300 uppercase tracking-tighter">Python
+                        Integrated</span>
+                </div>
+            </div>
+
+            <!-- Cybersecurity - Slides from RIGHT -->
+            <div x-data="{ shown: false }" x-intersect.once="shown = true"
+                class="md:col-span-8 bg-slate-800 text-white p-10 rounded-3xl flex items-center justify-between group transition-all duration-500 delay-200 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer"
+                :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'">
+                <div>
+                    <h3 class="text-2xl font-bold">Cybersecurity & Networking</h3>
+                    <p class="text-slate-400 mt-2">Ethical hacking, defense systems, and network infrastructure.</p>
+                </div>
+                <div
+                    class="w-14 h-14 bg-africa-red text-white rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-africa-red transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <!-- Forex - Slides from LEFT -->
+            <div x-data="{ shown: false }" x-intersect.once="shown = true"
+                class="bg-rose-50 border border-rose-200 p-8 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-red cursor-pointer"
+                :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-12'">
+                <div>
+                    <h3 class="text-xl font-bold mb-2 text-africa-midnight">Forex & Crypto Trading</h3>
+                    <p class="text-slate-600 text-sm">Master the markets. Learn technical analysis and risk management
+                        for digital assets.</p>
+                </div>
+                <button
+                    class="bg-africa-red text-white px-6 py-3 rounded-xl font-bold text-xs shrink-0 hover:bg-rose-700 transition">Trading
+                    Floor</button>
+            </div>
+
+            <!-- Quiz - Slides from RIGHT -->
+            <div x-data="{ shown: false }" x-intersect.once="shown = true"
+                class="bg-slate-100 border border-slate-200 p-8 rounded-3xl flex items-center gap-6 transition-all duration-500 delay-100 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-midnight cursor-pointer"
+                :class="shown ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-12'">
+                <div
+                    class="w-12 h-12 bg-africa-midnight rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                    ?</div>
+                <div>
+                    <h4 class="font-bold text-sm text-africa-midnight">Not sure where to start?</h4>
+                    <p class="text-xs text-slate-500">Take our 2-minute career quiz to find your path.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="py-24 px-6 max-w-7xl mx-auto" id="all-courses">
+        <div class="mb-12">
+            <h2 class="text-3xl font-extrabold uppercase tracking-tight">
+                Explore the <span class="text-africa-red">Full Catalog</span>
+            </h2>
+            <div class="w-12 h-1 bg-africa-red mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" x-data="{
+        courses: [
+            {t: 'Web Development', d: '5 Months • ₦350,000', icon: '🌐', color: 'text-orange-500', hover: 'hover:border-orange-500', shadow: 'hover:shadow-orange-500/20'},
+            {t: 'App Development', d: '5 Months • ₦450,000', icon: '📱', color: 'text-sky-500', hover: 'hover:border-sky-500', shadow: 'hover:shadow-sky-500/20'},
+            {t: 'Full Stack Development', d: '5 Months • ₦350,000', icon: '💻', color: 'text-yellow-500', hover: 'hover:border-yellow-500', shadow: 'hover:shadow-yellow-500/20'},
+            {t: 'Cloud Engineering', d: '3 Months • ₦250,000', icon: '☁️', color: 'text-blue-500', hover: 'hover:border-blue-500', shadow: 'hover:shadow-blue-500/20'},
+            {t: 'AWS Computing', d: '3 Months • ₦200,000', icon: '�️', color: 'text-orange-600', hover: 'hover:border-orange-600', shadow: 'hover:shadow-orange-600/20'},
+            {t: 'DevOps', d: '2 Months • ₦250,000', icon: '♾️', color: 'text-slate-500', hover: 'hover:border-slate-500', shadow: 'hover:shadow-slate-500/20'},
+            {t: 'Mobile Development', d: '5 Months • ₦450,000', icon: '📲', color: 'text-sky-600', hover: 'hover:border-sky-600', shadow: 'hover:shadow-sky-600/20'},
+            {t: 'Software Testing', d: '3 Months • ₦350,000', icon: '🧪', color: 'text-teal-500', hover: 'hover:border-teal-500', shadow: 'hover:shadow-teal-500/20'},
+            {t: 'Game Development (C++)', d: '4 Months • ₦450,000', icon: '🎮', color: 'text-purple-600', hover: 'hover:border-purple-600', shadow: 'hover:shadow-purple-600/20'},
+            {t: 'Cybersecurity', d: '5 Months • ₦350,000', icon: '🛡️', color: 'text-red-600', hover: 'hover:border-red-600', shadow: 'hover:shadow-red-600/20'},
+            {t: 'UI/UX Design', d: '3 Months • ₦250,000', icon: '✨', color: 'text-pink-500', hover: 'hover:border-pink-500', shadow: 'hover:shadow-pink-500/20'},
+            {t: 'Data Analysis', d: '3 Months • ₦250,000', icon: '📈', color: 'text-indigo-500', hover: 'hover:border-indigo-500', shadow: 'hover:shadow-indigo-500/20'},
+            {t: 'Data Science', d: '4 Months • ₦300,000', icon: '�', color: 'text-indigo-600', hover: 'hover:border-indigo-600', shadow: 'hover:shadow-indigo-600/20'},
+            {t: 'Digital Marketing', d: '3 Months • ₦250,000', icon: '📢', color: 'text-blue-400', hover: 'hover:border-blue-400', shadow: 'hover:shadow-blue-400/20'},
+            {t: 'Forex Trading', d: '3 Months • ₦250,000', icon: '�', color: 'text-emerald-500', hover: 'hover:border-emerald-500', shadow: 'hover:shadow-emerald-500/20'},
+            {t: 'Crypto Trading', d: '3 Months • ₦250,000', icon: '₿', color: 'text-amber-500', hover: 'hover:border-amber-500', shadow: 'hover:shadow-amber-500/20'},
+            {t: 'Project Management', d: '3 Months • ₦250,000', icon: '🗂️', color: 'text-gray-600', hover: 'hover:border-gray-600', shadow: 'hover:shadow-gray-600/20'},
+            {t: 'Database Management', d: '4 Months • ₦250,000', icon: '🗄️', color: 'text-cyan-600', hover: 'hover:border-cyan-600', shadow: 'hover:shadow-cyan-600/20'},
+            {t: 'Product Management', d: '3 Months • ₦250,000', icon: '�', color: 'text-rose-500', hover: 'hover:border-rose-500', shadow: 'hover:shadow-rose-500/20'},
+            {t: 'Business Analytics', d: '3 Months • ₦250,000', icon: '📉', color: 'text-violet-500', hover: 'hover:border-violet-500', shadow: 'hover:shadow-violet-500/20'},
+            {t: 'Data Engineering', d: '5 Months • ₦350,000', icon: '⚙️', color: 'text-blue-700', hover: 'hover:border-blue-700', shadow: 'hover:shadow-blue-700/20'},
+            {t: 'Data Governance', d: '4 Months • ₦300,000', icon: '📜', color: 'text-gray-500', hover: 'hover:border-gray-500', shadow: 'hover:shadow-gray-500/20'},
+            {t: 'Blockchain Development', d: '5 Months • ₦400,000', icon: '🔗', color: 'text-amber-600', hover: 'hover:border-amber-600', shadow: 'hover:shadow-amber-600/20'},
+            {t: 'ICT Essentials', d: '2 Months • ₦200,000', icon: '🖥️', color: 'text-slate-600', hover: 'hover:border-slate-600', shadow: 'hover:shadow-slate-600/20'},
+            {t: 'Technical Writing', d: '2 Months • ₦100,000', icon: '✍️', color: 'text-zinc-500', hover: 'hover:border-zinc-500', shadow: 'hover:shadow-zinc-500/20'},
+            {t: 'Tech Sales', d: '2 Months • ₦150,000', icon: '💼', color: 'text-lime-600', hover: 'hover:border-lime-600', shadow: 'hover:shadow-lime-600/20'},
+            {t: 'Graphic Design', d: '2 Months • ₦150,000', icon: '🖌️', color: 'text-fuchsia-500', hover: 'hover:border-fuchsia-500', shadow: 'hover:shadow-fuchsia-500/20'},
+            {t: 'Virtual Assistant', d: '2 Months • ₦150,000', icon: '🎧', color: 'text-pink-400', hover: 'hover:border-pink-400', shadow: 'hover:shadow-pink-400/20'},
+            {t: 'Artificial Intelligence', d: '5 Months • ₦250,000', icon: '🤖', color: 'text-purple-500', hover: 'hover:border-purple-500', shadow: 'hover:shadow-purple-500/20'}
+        ]
+    }">
+            <template x-for="course in courses" :key="course.t">
+                <div class="group p-8 bg-white border border-africa-border rounded-[2rem] hover:-translate-y-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl"
+                    :class="`${course.hover} ${course.shadow}`">
+                    <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300"
+                        :class="course.color" x-text="course.icon"></div>
+                    <h4 class="font-extrabold text-sm mb-2 uppercase transition-colors"
+                        :class="`group-hover:${course.color}`" x-text="course.t"></h4>
+                    <p class="text-slate-400 text-xs font-medium leading-relaxed" x-text="course.d"></p>
+
+                    <div class="mt-6 flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span class="text-[10px] font-black uppercase tracking-widest" :class="course.color">Learn
+                            More</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" :class="course.color" fill="none"
+                            viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </section>
+
+
+
+
+    <section id="curriculum" class="py-24 bg-slate-100/50 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold mb-4">The Learning Path</h2>
+                <p class="text-slate-500">A rigorous 5-month journey to mastery.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="text-africa-red font-black text-4xl">01</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Foundations</h4>
+                    <p class="text-sm text-slate-500">HTML5, Semantic CSS, and responsive architecture.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-slate-300 font-black text-4xl">02</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Client Logic</h4>
+                    <p class="text-sm text-slate-500">Modern JavaScript, DOM, and API integration.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-slate-300 font-black text-4xl">03</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Server Side</h4>
+                    <p class="text-sm text-slate-500">Node.js, Express, and Database Design.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-slate-300 font-black text-4xl">04</div>
+                    <h4 class="font-bold uppercase text-xs tracking-widest">Deployment</h4>
+                    <p class="text-sm text-slate-500">CI/CD, Cloud Hosting, and Career Prep.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-africa-midnight text-white px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
+            <div class="md:w-1/3">
+                <h2 class="text-3xl font-extrabold mb-6 uppercase">Led by <span class="text-africa-red">Seniors</span>,
+                    not just teachers.</h2>
+                <p class="text-slate-400 text-sm leading-relaxed">Our mentors work at top global firms like Google,
+                    Paystack, and Binance.</p>
+            </div>
+            <div class="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
+                <div class="text-center group">
+                    <div
+                        class="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
+                        <img src="https://i.pravatar.cc/300?img=12"
+                            class="grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h5 class="font-bold text-xs uppercase">Bamidele Samson</h5>
+                    <p class="text-[10px] text-africa-red font-bold">Fullstack Lead</p>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
+                        <img src="https://i.pravatar.cc/300?img=11"
+                            class="grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h5 class="font-bold text-xs uppercase">Sarah Chen</h5>
+                    <p class="text-[10px] text-africa-red font-bold">Data Scientist</p>
+                </div>
+                <div class="text-center group">
+                    <div
+                        class="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
+                        <img src="https://i.pravatar.cc/300?img=33"
+                            class="grayscale group-hover:grayscale-0 transition duration-500">
+                    </div>
+                    <h5 class="font-bold text-xs uppercase">Ibrahim Musa</h5>
+                    <p class="text-[10px] text-africa-red font-bold">Trading Strategist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white pt-24 pb-12 px-6 border-t border-africa-border">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
+                <div class="col-span-2">
+                    <div class="text-xl font-black mb-6 uppercase tracking-tighter">Tech<span
+                            class="text-africa-red">4</span>Africa</div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs">Building the next generation of African
+                        digital leaders. Professional training for the global market.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Learning</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase">
+                        <li><a href="#" class="hover:text-africa-red transition">Web Tech</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Data Science</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Cybersecurity</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Finance</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase">
+                        <li><a href="#" class="hover:text-africa-red transition">Forex</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Crypto</a></li>
+                        <li><a href="#" class="hover:text-africa-red transition">Analysis</a></li>
+                    </ul>
+                </div>
+                <div class="col-span-2">
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Join the cohort
+                    </h6>
+                    <div class="flex flex-col gap-3">
+                        <input type="text" placeholder="your@email.com"
+                            class="bg-africa-soft border border-africa-border px-4 py-3 rounded-xl text-xs focus:outline-none focus:border-africa-red">
+                        <button
+                            class="bg-africa-midnight text-white py-3 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-africa-red transition shadow-lg shadow-africa-midnight/10">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="pt-8 border-t border-africa-border flex flex-col md:flex-row justify-between items-center gap-6">
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Tech4Africa Academy.
+                    Remote & Local.</span>
+                <div class="flex gap-8">
+                    <a href="#"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Privacy</a>
+                    <a href="#"
+                        class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            const elementsToAnimate = document.querySelectorAll('section > div:not(.nocascade), section h2, .bento-card, .group, footer > div');
+
+            elementsToAnimate.forEach((el) => {
+                el.classList.add('reveal-element');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
