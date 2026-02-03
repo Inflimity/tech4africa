@@ -82,6 +82,10 @@
             <!-- Desktop Navigation -->
             <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-600">
                 <a href="index.html" class="hover:text-africa-red">Home</a>
+                <a href="academy.html" class="hover:text-africa-red">Academy</a>
+                <a href="agency.html" class="hover:text-africa-red">Agency</a>
+                <a href="events.html" class="hover:text-africa-red">Events</a>
+                <a href="blog.html" class="hover:text-africa-red">Blog</a>
                 <a href="gallery.html" class="text-africa-red">Gallery</a>
                 <a href="contact.html" class="hover:text-africa-red">Contact</a>
             </div>
@@ -101,48 +105,27 @@
             </button>
         </nav>
 
-        <!-- Mobile Radial Menu (270° Arc) -->
+        <!-- Mobile Menu Overlay -->
         <div class="md:hidden">
-            <!-- Menu Items Container - positioned relative to hamburger -->
-            <div class="fixed top-4 right-4 z-[60]" x-cloak>
-                <!-- Radial Menu Items -->
-                <a href="index.html" @click="mobileMenu = false" x-show="mobileMenu"
-                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-midnight text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500"
-                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
-                    :style="mobileMenu ? 'transform: translate(-90px, 0px)' : 'transform: translate(0, 0) scale(0)'">
-                    Home
-                </a>
+            <div class="fixed inset-0 z-[60] bg-white flex flex-col items-center justify-center gap-8 text-2xl font-bold"
+                x-show="mobileMenu" x-cloak x-transition.opacity>
+                <a href="index.html" class="text-africa-red" @click="mobileMenu = false">Home</a>
+                <a href="academy.html" class="hover:text-africa-red" @click="mobileMenu = false">Academy</a>
+                <a href="agency.html" class="hover:text-africa-red" @click="mobileMenu = false">Agency</a>
+                <a href="events.html" class="hover:text-africa-red" @click="mobileMenu = false">Events</a>
+                <a href="blog.html" class="hover:text-africa-red" @click="mobileMenu = false">Blog</a>
+                <a href="contact.html" class="hover:text-africa-red" @click="mobileMenu = false">Contact</a>
 
-                <a href="gallery.html" @click="mobileMenu = false" x-show="mobileMenu"
-                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-red text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500 delay-75"
-                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
-                    :style="mobileMenu ? 'transform: translate(-130px, 50px)' : 'transform: translate(0, 0) scale(0)'">
-                    Gallery
-                </a>
-
-                <a href="contact.html" @click="mobileMenu = false" x-show="mobileMenu"
-                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-midnight text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500 delay-150"
-                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
-                    :style="mobileMenu ? 'transform: translate(-130px, 110px)' : 'transform: translate(0, 0) scale(0)'">
-                    Contact
-                </a>
-
-                <a href="contact.html" @click="mobileMenu = false" x-show="mobileMenu"
-                    class="absolute flex items-center justify-center w-16 h-16 bg-gradient-to-br from-africa-red to-red-600 text-white rounded-full shadow-xl font-bold text-[10px] text-center leading-tight transition-all duration-500 delay-200"
-                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
-                    :style="mobileMenu ? 'transform: translate(-90px, 170px)' : 'transform: translate(0, 0) scale(0)'">
-                    Get<br>Started
-                </a>
-            </div>
-
-            <!-- Backdrop -->
-            <div x-show="mobileMenu" x-cloak @click="mobileMenu = false"
-                class="fixed inset-0 z-[55] bg-africa-midnight/20 backdrop-blur-sm"
-                x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
-                x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
-                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
+                <button @click="mobileMenu = false" class="absolute top-6 right-6 p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
         </div>
+    </div>
     </div>
 
     <section class="w-full overflow-hidden">
@@ -336,28 +319,28 @@
             <div class="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
                 <div class="col-span-2">
                     <div class="text-xl font-black mb-6 uppercase tracking-tighter">Tech<span
-                            class="text-africa-red">4</span>Africa</div>
-                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs">Building the next generation of African
-                        digital leaders. Professional training for the global market.</p>
+                            class="text-africa-red">4</span>Afrika</div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs">An integrated ecosystem driving Africa's
+                        digital future through education, innovation, and community.</p>
                 </div>
                 <div>
-                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Learning</h6>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Ecosystem</h6>
                     <ul class="space-y-4 text-xs font-bold uppercase">
-                        <li><a href="#" class="hover:text-africa-red transition">Web Tech</a></li>
-                        <li><a href="#" class="hover:text-africa-red transition">Data Science</a></li>
-                        <li><a href="#" class="hover:text-africa-red transition">Cybersecurity</a></li>
+                        <li><a href="academy.html" class="hover:text-africa-red transition">Academy</a></li>
+                        <li><a href="agency.html" class="hover:text-africa-red transition">Agency</a></li>
+                        <li><a href="events.html" class="hover:text-africa-red transition">Tech4Lagos</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Finance</h6>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Resources</h6>
                     <ul class="space-y-4 text-xs font-bold uppercase">
-                        <li><a href="#" class="hover:text-africa-red transition">Forex</a></li>
-                        <li><a href="#" class="hover:text-africa-red transition">Crypto</a></li>
-                        <li><a href="#" class="hover:text-africa-red transition">Analysis</a></li>
+                        <li><a href="blog.html" class="hover:text-africa-red transition">Tech4Nigeria</a></li>
+                        <li><a href="contact.html" class="hover:text-africa-red transition">Contact</a></li>
                     </ul>
                 </div>
+                <!-- ... other footer cols (Learning/Finance removed for simplicity in gallery) ... -->
                 <div class="col-span-2">
-                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Join the cohort
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-6">Stay Connected
                     </h6>
                     <div class="flex flex-col gap-3">
                         <input type="text" placeholder="your@email.com"
@@ -369,8 +352,9 @@
             </div>
             <div
                 class="pt-8 border-t border-africa-border flex flex-col md:flex-row justify-between items-center gap-6">
-                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Tech4Africa Academy.
-                    Remote & Local.</span>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">© 2026 Tech4Afrika
+                    Universe.
+                    All Rights Reserved.</span>
                 <div class="flex gap-8">
                     <a href="#"
                         class="text-[10px] font-bold text-slate-400 uppercase tracking-widest hover:text-africa-midnight">Privacy</a>

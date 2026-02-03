@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech4Agency | Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    colors: {
+                        africa: {
+                            red: '#E11D48',
+                            midnight: '#0F172A',
+                            soft: '#F8FAFC',
+                            border: '#E2E8F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .reveal-element.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="bg-africa-midnight text-white antialiased selection:bg-africa-red selection:text-white">
+
+    <div x-data="{ mobileMenu: false }">
+        <nav
+            class="fixed top-0 w-full z-50 bg-africa-midnight/90 backdrop-blur-md border-b border-white/10 px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <a href="index.html" class="text-xl font-extrabold uppercase tracking-tight text-white">Tech<span
+                        class="text-africa-red">4</span>Afrika</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex gap-8 text-sm font-semibold text-slate-300">
+                <a href="index.html" class="hover:text-white">Home</a>
+                <a href="academy.html" class="hover:text-white">Academy</a>
+                <a href="agency.html" class="text-africa-red">Agency</a>
+                <a href="events.html" class="hover:text-white">Events</a>
+                <a href="blog.html" class="hover:text-white">Blog</a>
+                <a href="contact.html" class="hover:text-white">Contact</a>
+            </div>
+            <a href="contact.html"
+                class="hidden md:block bg-white text-africa-midnight px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red hover:text-white transition">
+                Start Project</a>
+
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenu = !mobileMenu" class="md:hidden text-white focus:outline-none z-[70]">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path x-show="!mobileMenu" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16M4 18h16" />
+                    <path x-show="mobileMenu" x-cloak stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div class="md:hidden">
+            <div class="fixed inset-0 z-[60] bg-africa-midnight flex flex-col items-center justify-center gap-8 text-2xl font-bold"
+                x-show="mobileMenu" x-cloak x-transition.opacity>
+                <a href="index.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Home</a>
+                <a href="academy.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Academy</a>
+                <a href="agency.html" class="text-africa-red" @click="mobileMenu = false">Agency</a>
+                <a href="events.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Events</a>
+                <a href="blog.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Blog</a>
+                <a href="contact.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Contact</a>
+
+                <button @click="mobileMenu = false" class="absolute top-6 right-6 p-2 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center">
+        <span
+            class="inline-block py-1 px-3 rounded-full bg-white/10 text-white text-[10px] font-bold uppercase tracking-widest mb-6 border border-white/20">
+            Tech4Agency
+        </span>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
+            We Build <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Digital
+                Engines.</span>
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+            From sleek mobile apps to robust enterprise web platforms. We turn your vision into shipped code.
+        </p>
+        <a href="contact.html"
+            class="inline-block bg-africa-red text-white py-4 px-8 rounded-xl font-bold uppercase tracking-widest hover:scale-105 transition shadow-lg shadow-africa-red/20 text-xs">
+            Book a Consultation
+        </a>
+    </header>
+
+    <!-- Services -->
+    <section class="py-20 px-6 bg-slate-900 border-y border-white/5">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div
+                class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-africa-red transition-colors group">
+                <div class="text-4xl mb-6">📱</div>
+                <h3 class="text-xl font-bold mb-4">Mobile Development</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Native iOS and Android applications built with Flutter
+                    and React Native. High performance, smooth animations.</p>
+            </div>
+            <div
+                class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-africa-red transition-colors group">
+                <div class="text-4xl mb-6">💻</div>
+                <h3 class="text-xl font-bold mb-4">Web Development</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Responsive, SEO-optimized websites and web apps using
+                    React, Next.js, and modern CSS frameworks.</p>
+            </div>
+            <div
+                class="p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-africa-red transition-colors group">
+                <div class="text-4xl mb-6">☁️</div>
+                <h3 class="text-xl font-bold mb-4">Cloud Solutions</h3>
+                <p class="text-slate-400 text-sm leading-relaxed">Scalable backend architecture, API development, and
+                    secure hosting on AWS and Azure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-extrabold mb-4">How We Work</h2>
+            <div class="w-12 h-1 bg-africa-red mx-auto"></div>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 text-center">
+            <div>
+                <div
+                    class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                    1</div>
+                <h4 class="font-bold mb-2">Discovery</h4>
+                <p class="text-xs text-slate-400">We analyze your requirements and define the scope.</p>
+            </div>
+            <div>
+                <div
+                    class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                    2</div>
+                <h4 class="font-bold mb-2">Design</h4>
+                <p class="text-xs text-slate-400">UI/UX prototyping to visualize the final product.</p>
+            </div>
+            <div>
+                <div
+                    class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                    3</div>
+                <h4 class="font-bold mb-2">Build</h4>
+                <p class="text-xs text-slate-400">Agile development with regular progress updates.</p>
+            </div>
+            <div>
+                <div
+                    class="w-16 h-16 bg-africa-red rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6">
+                    4</div>
+                <h4 class="font-bold mb-2">Launch</h4>
+                <p class="text-xs text-slate-400">Deployment, testing, and post-launch support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-africa-midnight pt-24 pb-12 px-6 border-t border-white/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
+                <div class="col-span-2">
+                    <div class="text-xl font-black mb-6 uppercase tracking-tighter text-white">Tech<span
+                            class="text-africa-red">4</span>Afrika</div>
+                    <p class="text-slate-400 text-xs leading-relaxed max-w-xs">An integrated ecosystem driving Africa's
+                        digital future through education, innovation, and community.</p>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-6">Ecosystem</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase text-slate-300">
+                        <li><a href="academy.html" class="hover:text-africa-red transition">Academy</a></li>
+                        <li><a href="agency.html" class="hover:text-africa-red transition">Agency</a></li>
+                        <li><a href="events.html" class="hover:text-africa-red transition">Tech4Lagos</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h6 class="font-bold text-[10px] uppercase tracking-[0.2em] text-slate-500 mb-6">Resources</h6>
+                    <ul class="space-y-4 text-xs font-bold uppercase text-slate-300">
+                        <li><a href="blog.html" class="hover:text-africa-red transition">Tech4Nigeria</a></li>
+                        <li><a href="contact.html" class="hover:text-africa-red transition">Contact</a></li>
+                    </ul>
+                </div>
+                <!-- ... other footer cols ... -->
+            </div>
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
+                <span class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">© 2026 Tech4Agency. Part of
+                    Tech4Afrika.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add('is-visible');
+                });
+            }, observerOptions);
+            document.querySelectorAll('header, section > div, h2, h3').forEach(el => {
+                el.classList.add('reveal-element');
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
