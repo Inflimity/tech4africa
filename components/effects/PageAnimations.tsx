@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export default function AcademyAnimations() {
+export default function PageAnimations() {
     const initialized = useRef(false);
 
     useEffect(() => {
@@ -185,7 +185,7 @@ export default function AcademyAnimations() {
                 window.addEventListener("scroll", updateNavbar, { passive: true });
             }
 
-            console.log("✨ Academy scroll animations initialized!");
+            console.log("✨ Page scroll animations initialized!");
         }, 100);
 
         // Cleanup

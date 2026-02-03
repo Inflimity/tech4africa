@@ -3,6 +3,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
+import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
     title: "Tech4Nigeria | Insights & News",
@@ -12,18 +13,19 @@ export const metadata: Metadata = {
 export default function BlogPage() {
     return (
         <div className="bg-africa-soft text-africa-midnight selection:bg-africa-green selection:text-white">
+            <PageAnimations />
             <Marquee />
             <Navbar />
 
             {/* Hero */}
             <header className="pt-32 pb-12 px-6 max-w-7xl mx-auto text-center border-b border-africa-border">
-                <span className="inline-block py-1 px-3 rounded-full bg-green-100 text-green-800 text-[10px] font-bold uppercase tracking-widest mb-6">
+                <div data-reveal className="inline-block py-1 px-3 rounded-full bg-green-100 text-green-800 text-[10px] font-bold uppercase tracking-widest mb-6">
                     Tech4Nigeria
-                </span>
-                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 text-africa-midnight">
+                </div>
+                <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 text-africa-midnight" data-reveal data-stagger="1">
                     The Pulse of <br /> Nigerian Tech.
                 </h1>
-                <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p className="text-lg text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed" data-reveal data-stagger="2">
                     Deep dives, ecosystem reports, and stories from the fastest growing tech hub in Africa.
                 </p>
             </header>
@@ -32,7 +34,7 @@ export default function BlogPage() {
             <section className="py-16 px-6 max-w-7xl mx-auto">
                 <div className="grid md:grid-cols-3 gap-8">
                     {/* Featured Post */}
-                    <article className="md:col-span-2 group cursor-pointer">
+                    <article className="md:col-span-2 group cursor-pointer" data-reveal="scale-up">
                         <div className="rounded-3xl overflow-hidden mb-6 h-[400px] border border-africa-border shadow-sm group-hover:shadow-xl transition-all duration-300 relative">
                             <Image
                                 src="/images/home1.jpeg"
@@ -56,7 +58,7 @@ export default function BlogPage() {
 
                     {/* Sidebar Posts */}
                     <div className="space-y-12">
-                        <article className="group cursor-pointer">
+                        <article className="group cursor-pointer" data-reveal="fade-left" data-stagger="1">
                             <div className="rounded-2xl overflow-hidden mb-4 h-48 border border-africa-border relative">
                                 <Image
                                     src="/images/home2.jpeg"
@@ -71,7 +73,7 @@ export default function BlogPage() {
                             </h4>
                         </article>
 
-                        <article className="group cursor-pointer">
+                        <article className="group cursor-pointer" data-reveal="fade-left" data-stagger="2">
                             <div className="rounded-2xl overflow-hidden mb-4 h-48 border border-africa-border relative">
                                 <Image
                                     src="/images/home4.jpeg"

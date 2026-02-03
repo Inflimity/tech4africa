@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
+import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
     title: "Tech4Agency | Digital Solutions",
@@ -86,16 +87,17 @@ const process = [
 export default function AgencyPage() {
     return (
         <div className="bg-africa-midnight text-white">
+            <PageAnimations />
             <Marquee />
             <Navbar />
 
             {/* Hero */}
             <header className="pt-32 pb-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-10">
+                <div data-hero className="absolute inset-0 z-0 opacity-10">
                     <Image src="/images/agency1.jpeg" alt="Agency Background" fill className="object-cover" />
                 </div>
 
-                <div className="relative z-10 text-center">
+                <div className="relative z-10 text-center" data-reveal>
                     <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
                         Tech4Agency
                     </span>
@@ -121,18 +123,19 @@ export default function AgencyPage() {
             {/* Services */}
             <section className="py-20 px-6 bg-slate-900 border-y border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
+                    <div className="text-center mb-16" data-reveal>
                         <span className="inline-block py-1 px-3 rounded-full bg-africa-red/20 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-4">
                             What We Do
                         </span>
-                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4">Our Services</h2>
+                        <h2 className="text-3xl md:text-4xl font-extrabold mb-4" data-section-header>Our Services</h2>
                         <p className="text-slate-400 max-w-xl mx-auto">Solutions built for African businesses by African experts.</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {services.map((service) => (
+                        {services.map((service, index) => (
                             <div
                                 key={service.title}
+                                data-track-card
                                 className="p-8 rounded-3xl bg-africa-midnight border border-white/10 hover:border-africa-red transition-colors group relative overflow-hidden"
                             >
                                 {service.bg && (
@@ -154,7 +157,7 @@ export default function AgencyPage() {
             {/* Why Choose Us */}
             <section className="py-24 px-6 bg-africa-midnight">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
-                    <div className="relative">
+                    <div className="relative" data-reveal="fade-left">
                         <div className="absolute inset-0 bg-africa-red/20 rounded-[40px] rotate-3 transform scale-95 blur-xl" />
                         <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
                             <Image src="/images/home4.jpeg" alt="Tech4Agency Team" width={600} height={400} className="w-full h-full object-cover" />
@@ -162,7 +165,7 @@ export default function AgencyPage() {
                         </div>
                     </div>
 
-                    <div>
+                    <div data-reveal="fade-right">
                         <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
                             Why Choose Us
                         </span>
@@ -174,8 +177,8 @@ export default function AgencyPage() {
                         </p>
 
                         <div className="space-y-6">
-                            {whyUs.map((item) => (
-                                <div key={item.title} className="flex items-start gap-4">
+                            {whyUs.map((item, index) => (
+                                <div key={item.title} className="flex items-start gap-4" data-reveal data-stagger={index + 1}>
                                     <div className="w-10 h-10 bg-africa-red rounded-xl flex items-center justify-center text-white font-bold shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
@@ -195,12 +198,12 @@ export default function AgencyPage() {
             {/* Process */}
             <section className="py-24 px-6 max-w-7xl mx-auto">
                 <div className="text-center mb-16">
-                    <h2 className="text-3xl font-extrabold mb-4">How We Work</h2>
-                    <div className="w-12 h-1 bg-africa-red mx-auto" />
+                    <h2 className="text-3xl font-extrabold mb-4" data-section-header>How We Work</h2>
+                    <div className="w-12 h-1 bg-africa-red mx-auto" data-divider />
                 </div>
                 <div className="grid md:grid-cols-4 gap-8 text-center">
-                    {process.map((item) => (
-                        <div key={item.step}>
+                    {process.map((item, index) => (
+                        <div key={item.step} data-step>
                             <div className={`w-16 h-16 ${item.highlight ? 'bg-africa-red' : 'bg-white/10'} rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6`}>
                                 {item.step}
                             </div>

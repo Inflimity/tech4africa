@@ -4,6 +4,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
+import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
     title: "Tech4Afrika Academy | Professional Dev Training",
@@ -59,12 +60,13 @@ const mentors = [
 export default function AcademyPage() {
     return (
         <>
+            <PageAnimations />
             <Marquee />
             <Navbar />
 
             {/* Hero Slider Section */}
             <section className="pt-24 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
-                <div className="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden bg-africa-midnight border border-africa-border">
+                <div data-hero className="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden bg-africa-midnight border border-africa-border">
                     {/* Static hero for SSR - first slide */}
                     <div className="absolute inset-0 w-full h-full">
                         <Image
@@ -106,20 +108,20 @@ export default function AcademyPage() {
             {/* Stats Section */}
             <section className="bg-africa-midnight py-16 px-6 border-y border-white/10">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div className="text-center">
-                        <div className="text-africa-red text-3xl font-extrabold mb-1">98%</div>
+                    <div className="text-center" data-stat>
+                        <div className="text-africa-red text-3xl font-extrabold mb-1" data-counter>98%</div>
                         <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Success Rate</div>
                     </div>
-                    <div className="text-center border-l border-white/10">
-                        <div className="text-white text-3xl font-extrabold mb-1">24/7</div>
+                    <div className="text-center border-l border-white/10" data-stat>
+                        <div className="text-white text-3xl font-extrabold mb-1" data-counter>24/7</div>
                         <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Mentor Support</div>
                     </div>
-                    <div className="text-center border-l border-white/10">
-                        <div className="text-white text-3xl font-extrabold mb-1">50+</div>
+                    <div className="text-center border-l border-white/10" data-stat>
+                        <div className="text-white text-3xl font-extrabold mb-1" data-counter>50+</div>
                         <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Hiring Partners</div>
                     </div>
-                    <div className="text-center border-l border-white/10">
-                        <div className="text-white text-3xl font-extrabold mb-1">12</div>
+                    <div className="text-center border-l border-white/10" data-stat>
+                        <div className="text-white text-3xl font-extrabold mb-1" data-counter>12</div>
                         <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Expert Tracks</div>
                     </div>
                 </div>
@@ -127,7 +129,7 @@ export default function AcademyPage() {
 
             {/* Mission Section */}
             <section id="about" className="py-20 bg-white border-y border-africa-border">
-                <div className="max-w-4xl mx-auto px-6 text-center">
+                <div className="max-w-4xl mx-auto px-6 text-center" data-mission>
                     <h2 className="text-2xl font-bold mb-6">Our Mission</h2>
                     <p className="text-xl text-slate-500 leading-relaxed italic">
                         &quot;We bridge the gap between academic theory and industry reality. Tech4Africa is built to empower African talent with the specific tools needed to compete in the global digital economy.&quot;
@@ -138,13 +140,13 @@ export default function AcademyPage() {
             {/* Learning Tracks Section */}
             <section id="courses" className="py-24 px-6 max-w-7xl mx-auto">
                 <div className="mb-16">
-                    <h2 className="text-3xl font-extrabold mb-2">Our Learning Tracks</h2>
-                    <div className="w-16 h-1 bg-africa-red" />
+                    <h2 className="text-3xl font-extrabold mb-2" data-section-header>Our Learning Tracks</h2>
+                    <div className="w-16 h-1 bg-africa-red" data-divider />
                 </div>
 
                 <div className="grid md:grid-cols-12 gap-6 mb-12">
                     {/* Web Engineering */}
-                    <div className="md:col-span-8 bg-africa-midnight text-white p-10 rounded-3xl flex flex-col justify-between min-h-[350px] relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+                    <div data-track-card className="md:col-span-8 bg-africa-midnight text-white p-10 rounded-3xl flex flex-col justify-between min-h-[350px] relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
                         <div className="relative z-10">
                             <span className="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">
                                 Most Popular
@@ -162,7 +164,7 @@ export default function AcademyPage() {
                     </div>
 
                     {/* Mobile App */}
-                    <div className="md:col-span-4 bg-africa-red text-white p-8 rounded-3xl flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+                    <div data-track-card className="md:col-span-4 bg-africa-red text-white p-8 rounded-3xl flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
                         <div>
                             <h3 className="text-xl font-bold mb-3">Mobile App <br />Development</h3>
                             <p className="text-rose-100 text-sm">Build cross-platform Android & iOS apps with C# and modern frameworks.</p>
@@ -171,7 +173,7 @@ export default function AcademyPage() {
                     </div>
 
                     {/* Data Science */}
-                    <div className="md:col-span-4 bg-slate-700 text-white p-8 rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+                    <div data-track-card className="md:col-span-4 bg-slate-700 text-white p-8 rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
                         <h3 className="text-xl font-bold mb-3">Data Science <br /> & Analysis</h3>
                         <p className="text-slate-300 text-sm mb-6">Learn Python, Data Analysis, and Predictive Modeling.</p>
                         <div className="flex items-center gap-2">
@@ -181,7 +183,7 @@ export default function AcademyPage() {
                     </div>
 
                     {/* Cybersecurity */}
-                    <div className="md:col-span-8 bg-slate-800 text-white p-10 rounded-3xl flex items-center justify-between group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
+                    <div data-track-card className="md:col-span-8 bg-slate-800 text-white p-10 rounded-3xl flex items-center justify-between group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
                         <div>
                             <h3 className="text-2xl font-bold">Cybersecurity & Networking</h3>
                             <p className="text-slate-400 mt-2">Ethical hacking, defense systems, and network infrastructure.</p>
@@ -196,7 +198,7 @@ export default function AcademyPage() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                     {/* Forex */}
-                    <div className="bg-rose-50 border border-rose-200 p-8 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-red cursor-pointer">
+                    <div data-track-card className="bg-rose-50 border border-rose-200 p-8 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-red cursor-pointer">
                         <div>
                             <h3 className="text-xl font-bold mb-2 text-africa-midnight">Forex & Crypto Trading</h3>
                             <p className="text-slate-600 text-sm">Master the markets. Learn technical analysis and risk management for digital assets.</p>
@@ -207,7 +209,7 @@ export default function AcademyPage() {
                     </div>
 
                     {/* Quiz */}
-                    <div className="bg-slate-100 border border-slate-200 p-8 rounded-3xl flex items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-midnight cursor-pointer">
+                    <div data-track-card className="bg-slate-100 border border-slate-200 p-8 rounded-3xl flex items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-midnight cursor-pointer">
                         <div className="w-12 h-12 bg-africa-midnight rounded-xl flex items-center justify-center text-white font-bold text-xl">
                             ?
                         </div>
@@ -222,16 +224,17 @@ export default function AcademyPage() {
             {/* Full Catalog Section */}
             <section className="py-24 px-6 max-w-7xl mx-auto" id="all-courses">
                 <div className="mb-12">
-                    <h2 className="text-3xl font-extrabold uppercase tracking-tight">
+                    <h2 className="text-3xl font-extrabold uppercase tracking-tight" data-section-header>
                         Explore the <span className="text-africa-red">Full Catalog</span>
                     </h2>
-                    <div className="w-12 h-1 bg-africa-red mt-2" />
+                    <div className="w-12 h-1 bg-africa-red mt-2" data-divider />
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {courses.map((course) => (
                         <div
                             key={course.t}
+                            data-course-card
                             className={`group p-8 bg-white border border-africa-border rounded-[2rem] hover:-translate-y-2 transition-all duration-300 cursor-pointer shadow-sm hover:shadow-xl ${course.hover}`}
                         >
                             <div className={`mb-4 group-hover:scale-110 transition-transform duration-300 ${course.color}`}>
@@ -256,27 +259,27 @@ export default function AcademyPage() {
             <section id="curriculum" className="py-24 bg-slate-100/50 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl font-extrabold mb-4">The Learning Path</h2>
-                        <p className="text-slate-500">A rigorous 5-month journey to mastery.</p>
+                        <h2 className="text-3xl font-extrabold mb-4" data-section-header>The Learning Path</h2>
+                        <p className="text-slate-500" data-reveal>A rigorous 5-month journey to mastery.</p>
                     </div>
 
                     <div className="grid md:grid-cols-4 gap-8">
-                        <div className="space-y-4">
+                        <div className="space-y-4" data-step>
                             <div className="text-africa-red font-black text-4xl">01</div>
                             <h4 className="font-bold uppercase text-xs tracking-widest">Foundations</h4>
                             <p className="text-sm text-slate-500">HTML5, Semantic CSS, and responsive architecture.</p>
                         </div>
-                        <div className="space-y-4">
+                        <div className="space-y-4" data-step>
                             <div className="text-slate-300 font-black text-4xl">02</div>
                             <h4 className="font-bold uppercase text-xs tracking-widest">Client Logic</h4>
                             <p className="text-sm text-slate-500">Modern JavaScript, DOM, and API integration.</p>
                         </div>
-                        <div className="space-y-4">
+                        <div className="space-y-4" data-step>
                             <div className="text-slate-300 font-black text-4xl">03</div>
                             <h4 className="font-bold uppercase text-xs tracking-widest">Server Side</h4>
                             <p className="text-sm text-slate-500">Node.js, Express, and Database Design.</p>
                         </div>
-                        <div className="space-y-4">
+                        <div className="space-y-4" data-step>
                             <div className="text-slate-300 font-black text-4xl">04</div>
                             <h4 className="font-bold uppercase text-xs tracking-widest">Deployment</h4>
                             <p className="text-sm text-slate-500">CI/CD, Cloud Hosting, and Career Prep.</p>
@@ -289,16 +292,16 @@ export default function AcademyPage() {
             <section className="py-24 bg-africa-midnight text-white px-6">
                 <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-16 items-center">
                     <div className="md:w-1/3">
-                        <h2 className="text-3xl font-extrabold mb-6 uppercase">
+                        <h2 className="text-3xl font-extrabold mb-6 uppercase" data-reveal>
                             Led by <span className="text-africa-red">Seniors</span>, not just teachers.
                         </h2>
-                        <p className="text-slate-400 text-sm leading-relaxed">
+                        <p className="text-slate-400 text-sm leading-relaxed" data-reveal>
                             Our mentors work at top global firms like Google, Paystack, and Binance.
                         </p>
                     </div>
                     <div className="flex-1 grid grid-cols-2 md:grid-cols-3 gap-6 w-full">
                         {mentors.map((mentor) => (
-                            <div key={mentor.name} className="text-center group">
+                            <div key={mentor.name} className="text-center group" data-mentor>
                                 <div className="w-full aspect-square bg-slate-800 rounded-3xl mb-4 overflow-hidden border border-white/10 group-hover:border-africa-red transition">
                                     <Image
                                         src={mentor.img}
