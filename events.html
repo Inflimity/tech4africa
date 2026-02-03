@@ -140,7 +140,7 @@
 
                 <!-- 7. Contact -->
                 <a href="contact.html" @click="mobileMenu = false" x-show="mobileMenu"
-                    class="absolute flex items-center justify-center w-12 h-12 bg-gradient-to-br from-africa-red to-red-600 text-white rounded-full shadow-xl font-bold text-[10px] transition-all duration-500 delay-300"
+                    class="absolute flex items-center justify-center w-12 h-12 bg-africa-red text-white rounded-full shadow-xl font-bold text-[10px] transition-all duration-500 delay-300"
                     :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
                     :style="mobileMenu ? 'transform: translate(-80px, 260px)' : 'transform: translate(0, 0) scale(0)'">
                     Contact
@@ -158,30 +158,41 @@
     </div>
 
     <!-- Hero -->
-    <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center relative">
+    <header class="pt-32 pb-20 px-6 max-w-7xl mx-auto text-center relative overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0 opacity-15">
+            <img src="assets/img/event5.jpeg" alt="Tech4Lagos Event" class="w-full h-full object-cover">
+        </div>
+
         <div
             class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-yellow-300 rounded-full blur-[100px] opacity-20 pointer-events-none">
         </div>
 
-        <span
-            class="inline-block py-1 px-3 rounded-full bg-yellow-200 text-yellow-800 text-[10px] font-bold uppercase tracking-widest mb-6">
-            Tech4Lagos 2026
-        </span>
-        <h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter mb-6 text-africa-midnight">
-            The Gathering <br> of <span class="text-africa-red">Innovators.</span>
-        </h1>
-        <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed font-medium">
-            Join thousands of developers, designers, and founders for the biggest annual tech festival in Lagos.
-        </p>
-        <div class="flex flex-wrap justify-center gap-4">
-            <button
-                class="bg-africa-midnight text-white px-8 py-4 rounded-xl font-bold text-sm hover:scale-105 transition shadow-xl shadow-africa-midnight/20">
-                Get Early Access
-            </button>
-            <button
-                class="bg-white text-africa-midnight border border-slate-200 px-8 py-4 rounded-xl font-bold text-sm hover:bg-slate-50 transition">
-                Sponsor Event
-            </button>
+        <div class="relative z-10">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
+                Tech4Lagos 2026
+            </span>
+            <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 text-africa-midnight leading-tight">
+                Network Event For Founders, Startups <br><span class="text-africa-red">And Tech Enablement</span>
+            </h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto mb-4 leading-relaxed font-medium">
+                Welcome to Tech4Lagos, Africa's biggest gathering of founders, startups, investors, and innovators.
+            </p>
+            <p class="text-md text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
+                Connect, learn, and grow with the best minds in African tech. Join thousands for an unforgettable
+                experience.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <button
+                    class="bg-africa-red text-white px-8 py-4 rounded-xl font-bold text-sm hover:scale-105 transition shadow-xl shadow-africa-red/20">
+                    Get Early Access
+                </button>
+                <button
+                    class="bg-africa-midnight text-white border border-africa-midnight px-8 py-4 rounded-xl font-bold text-sm hover:bg-africa-red hover:border-africa-red transition">
+                    Sponsor Event
+                </button>
+            </div>
         </div>
     </header>
 
