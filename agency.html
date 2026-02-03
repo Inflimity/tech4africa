@@ -82,24 +82,46 @@
             </button>
         </nav>
 
-        <!-- Mobile Menu Overlay -->
+        <!-- Mobile Radial Menu (270° Arc) -->
         <div class="md:hidden">
-            <div class="fixed inset-0 z-[60] bg-africa-midnight flex flex-col items-center justify-center gap-8 text-2xl font-bold"
-                x-show="mobileMenu" x-cloak x-transition.opacity>
-                <a href="index.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Home</a>
-                <a href="academy.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Academy</a>
-                <a href="agency.html" class="text-africa-red" @click="mobileMenu = false">Agency</a>
-                <a href="events.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Events</a>
-                <a href="blog.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Blog</a>
-                <a href="contact.html" class="text-white hover:text-africa-red" @click="mobileMenu = false">Contact</a>
+            <!-- Menu Items Container - positioned relative to hamburger -->
+            <div class="fixed top-4 right-4 z-[60]" x-cloak>
+                <!-- Radial Menu Items -->
+                <a href="index.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-red text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-90px, 0px)' : 'transform: translate(0, 0) scale(0)'">
+                    Home
+                </a>
 
-                <button @click="mobileMenu = false" class="absolute top-6 right-6 p-2 text-white">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                <a href="academy.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-midnight text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500 delay-75"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-130px, 50px)' : 'transform: translate(0, 0) scale(0)'">
+                    Academy
+                </a>
+
+                <a href="agency.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-14 h-14 bg-africa-midnight text-white rounded-full shadow-xl font-bold text-xs transition-all duration-500 delay-150"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-130px, 110px)' : 'transform: translate(0, 0) scale(0)'">
+                    Agency
+                </a>
+
+                <a href="contact.html" @click="mobileMenu = false" x-show="mobileMenu"
+                    class="absolute flex items-center justify-center w-16 h-16 bg-gradient-to-br from-africa-red to-red-600 text-white rounded-full shadow-xl font-bold text-[10px] text-center leading-tight transition-all duration-500 delay-200"
+                    :class="mobileMenu ? 'opacity-100' : 'opacity-0'"
+                    :style="mobileMenu ? 'transform: translate(-90px, 170px)' : 'transform: translate(0, 0) scale(0)'">
+                    Contact<br>Us
+                </a>
+            </div>
+
+            <!-- Backdrop -->
+            <div x-show="mobileMenu" x-cloak @click="mobileMenu = false"
+                class="fixed inset-0 z-[55] bg-africa-midnight/20 backdrop-blur-sm"
+                x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
             </div>
         </div>
     </div>
