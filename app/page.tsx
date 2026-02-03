@@ -128,6 +128,31 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Gallery Slideshow Card */}
+          <div className="max-w-5xl mx-auto mb-16 relative z-20">
+            <div className="bg-white/40 backdrop-blur-lg rounded-3xl p-4 border border-white/50 shadow-2xl overflow-hidden">
+              <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden">
+                <HeroCarousel
+                  images={[
+                    { src: "/images/event1.jpeg", alt: "Tech Event 1" },
+                    { src: "/images/home1.jpeg", alt: "Academy Session" },
+                    { src: "/images/event2.jpeg", alt: "Tech Event 2" },
+                    { src: "/images/home4.jpeg", alt: "Workshop" },
+                    { src: "/images/cert1.jpeg", alt: "Certification" },
+                    { src: "/images/home5.jpeg", alt: "Community" },
+                  ]}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-africa-midnight/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-2">
+                    Our Community
+                  </span>
+                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">Building Africa&apos;s Future Together</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Pillars Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <PillarCard
