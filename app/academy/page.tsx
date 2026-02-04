@@ -7,6 +7,7 @@ import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
 import Particles from "@/components/effects/Particles";
 import FloatingIcons from "@/components/effects/FloatingIcons";
+import AcademyHero from "@/components/ui/AcademyHero";
 
 export const metadata: Metadata = {
     title: "Tech4Africa Academy | Professional Dev Training",
@@ -70,42 +71,8 @@ export default function AcademyPage() {
 
             {/* Hero Slider Section */}
             <section className="pt-24 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
-                <div data-hero className="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden bg-africa-midnight border border-africa-border">
-                    {/* Static hero for SSR - first slide */}
-                    <div className="absolute inset-0 w-full h-full">
-                        <Image
-                            src={slides[0].img}
-                            alt={slides[0].title}
-                            fill
-                            className="object-cover"
-                            priority
-                        />
-                        <div className="absolute inset-0 bg-africa-midnight/60" />
-                        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
-                            <div className="max-w-3xl">
-                                <span className="inline-block bg-africa-red text-white text-[10px] font-black uppercase tracking-[0.3em] px-4 py-1.5 rounded-full mb-8">
-                                    Tech4Africa Academy
-                                </span>
-                                <h1 className="text-4xl md:text-7xl font-extrabold text-white uppercase leading-none mb-8 tracking-tighter">
-                                    {slides[0].title}
-                                </h1>
-                                <p className="text-slate-200 text-lg md:text-xl font-medium mb-12 max-w-2xl mx-auto leading-relaxed">
-                                    {slides[0].sub}
-                                </p>
-                                <div className="flex flex-wrap justify-center gap-4">
-                                    <Link
-                                        href="#courses"
-                                        className="bg-africa-red text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition active:scale-95 shadow-2xl shadow-africa-red/30"
-                                    >
-                                        View Courses
-                                    </Link>
-                                    <button className="bg-white/10 backdrop-blur-md text-white border border-white/20 px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:bg-white/20 transition">
-                                        Learn More
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div data-hero className="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden border border-africa-border shadow-2xl">
+                    <AcademyHero slides={slides} />
                 </div>
             </section>
 
@@ -148,78 +115,101 @@ export default function AcademyPage() {
                     <div className="w-16 h-1 bg-africa-red" data-divider />
                 </div>
 
-                <div className="grid md:grid-cols-12 gap-6 mb-12">
+                <div className="grid md:grid-cols-12 gap-8 mb-12">
                     {/* Web Engineering */}
-                    <div data-track-card className="md:col-span-8 bg-africa-midnight text-white p-10 rounded-3xl flex flex-col justify-between min-h-[350px] relative overflow-hidden group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-                        <div className="relative z-10">
-                            <span className="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-white/10 px-3 py-1 rounded-full">
+                    <div data-track-card className="md:col-span-8 bg-africa-midnight text-white rounded-[2.5rem] flex flex-col relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl cursor-pointer border border-white/5">
+                        <div className="h-64 relative overflow-hidden">
+                            <Image src="/images/home1.jpeg" alt="Web Engineering" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                        <div className="relative p-10 z-10">
+                            <span className="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-africa-red/10 border border-africa-red/20 px-4 py-1.5 rounded-full">
                                 Most Popular
                             </span>
-                            <h3 className="text-3xl font-bold mt-6">Web Engineering</h3>
-                            <p className="text-slate-300 mt-4 max-w-sm">
-                                Master HTML5, CSS3, JavaScript, and Node.js. Build the modern web from scratch.
+                            <h3 className="text-4xl font-extrabold mt-6 uppercase tracking-tighter">Web Engineering</h3>
+                            <p className="text-slate-300 mt-4 max-w-md leading-relaxed">
+                                Master HTML5, CSS3, JavaScript, and Node.js. Build the modern web from scratch with senior mentors.
                             </p>
-                        </div>
-                        <div className="flex flex-wrap gap-2 relative z-10 mt-8">
-                            <span className="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-[10px] font-bold">HTML/CSS</span>
-                            <span className="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-[10px] font-bold">JAVASCRIPT</span>
-                            <span className="px-3 py-1 bg-white/10 border border-white/20 rounded-md text-[10px] font-bold">NODE.JS</span>
+                            <div className="flex flex-wrap gap-3 mt-8">
+                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">HTML/CSS</span>
+                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">JAVASCRIPT</span>
+                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">NODE.JS</span>
+                            </div>
                         </div>
                     </div>
 
                     {/* Mobile App */}
-                    <div data-track-card className="md:col-span-4 bg-africa-red text-white p-8 rounded-3xl flex flex-col justify-between transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-                        <div>
-                            <h3 className="text-xl font-bold mb-3">Mobile App <br />Development</h3>
-                            <p className="text-rose-100 text-sm">Build cross-platform Android & iOS apps with C# and modern frameworks.</p>
+                    <div data-track-card className="md:col-span-4 bg-africa-red text-white rounded-[2.5rem] flex flex-col relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer group">
+                        <div className="h-64 relative overflow-hidden">
+                            <Image src="/images/home6.jpeg" alt="Mobile Development" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
-                        <div className="mt-8 text-white font-bold text-xs bg-white/20 px-4 py-2 rounded-full w-fit">8 Modules →</div>
+                        <div className="p-8">
+                            <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-4">Mobile App <br />Development</h3>
+                            <p className="text-rose-100 text-sm leading-relaxed mb-8">Build cross-platform Android & iOS apps with C# and modern frameworks.</p>
+                            <div className="text-white font-black text-[10px] uppercase tracking-widest bg-white/20 px-6 py-2.5 rounded-xl w-fit backdrop-blur-sm border border-white/30">8 Modules →</div>
+                        </div>
                     </div>
 
                     {/* Data Science */}
-                    <div data-track-card className="md:col-span-4 bg-slate-700 text-white p-8 rounded-3xl transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-                        <h3 className="text-xl font-bold mb-3">Data Science <br /> & Analysis</h3>
-                        <p className="text-slate-300 text-sm mb-6">Learn Python, Data Analysis, and Predictive Modeling.</p>
-                        <div className="flex items-center gap-2">
-                            <div className="w-2 h-2 rounded-full bg-africa-red animate-pulse" />
-                            <span className="text-[10px] font-bold text-slate-300 uppercase tracking-tighter">Python Integrated</span>
+                    <div data-track-card className="md:col-span-4 bg-slate-700 text-white rounded-[2.5rem] flex flex-col relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer group">
+                        <div className="h-64 relative overflow-hidden">
+                            <Image src="/images/home4.jpeg" alt="Data Science" fill className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90" />
+                        </div>
+                        <div className="p-8">
+                            <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-4">Data Science <br /> & Analysis</h3>
+                            <p className="text-slate-300 text-sm leading-relaxed mb-6">Learn Python, Data Analysis, and Predictive Modeling with real datasets.</p>
+                            <div className="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                                <div className="w-2.5 h-2.5 rounded-full bg-africa-red animate-pulse shadow-[0_0_10px_rgba(255,51,102,0.8)]" />
+                                <span className="text-[10px] font-black text-white uppercase tracking-widest">Python Integrated</span>
+                            </div>
                         </div>
                     </div>
 
                     {/* Cybersecurity */}
-                    <div data-track-card className="md:col-span-8 bg-slate-800 text-white p-10 rounded-3xl flex items-center justify-between group transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-2xl cursor-pointer">
-                        <div>
-                            <h3 className="text-2xl font-bold">Cybersecurity & Networking</h3>
-                            <p className="text-slate-400 mt-2">Ethical hacking, defense systems, and network infrastructure.</p>
+                    <div data-track-card className="md:col-span-8 bg-slate-800 text-white rounded-[2.5rem] flex flex-col relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl cursor-pointer border border-white/5">
+                        <div className="h-64 relative overflow-hidden">
+                            <Image src="/images/home5.jpeg" alt="Cybersecurity" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
-                        <div className="w-14 h-14 bg-africa-red text-white rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-africa-red transition-colors">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
+                        <div className="p-10 flex flex-col md:flex-row justify-between items-start md:items-center">
+                            <div>
+                                <h3 className="text-3xl font-extrabold uppercase tracking-tighter">Cybersecurity <br /> & Networking</h3>
+                                <p className="text-slate-400 mt-4 max-w-sm">Ethical hacking, defense systems, and network infrastructure management.</p>
+                            </div>
+                            <div className="mt-8 md:mt-0 md:ml-auto">
+                                <div className="w-16 h-16 bg-africa-red/20 backdrop-blur-xl border border-africa-red/30 text-africa-red rounded-3xl flex items-center justify-center group-hover:bg-africa-red group-hover:text-white transition-all duration-500 shadow-xl">
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-8">
                     {/* Forex */}
-                    <div data-track-card className="bg-rose-50 border border-rose-200 p-8 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-red cursor-pointer">
-                        <div>
-                            <h3 className="text-xl font-bold mb-2 text-africa-midnight">Forex & Crypto Trading</h3>
-                            <p className="text-slate-600 text-sm">Master the markets. Learn technical analysis and risk management for digital assets.</p>
+                    <div data-track-card className="bg-rose-50 border border-rose-200 rounded-[2.5rem] flex flex-col overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-africa-red cursor-pointer group">
+                        <div className="h-64 relative overflow-hidden">
+                            <Image src="/images/home2.jpeg" alt="Trading" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
-                        <button className="bg-africa-red text-white px-6 py-3 rounded-xl font-bold text-xs shrink-0 hover:bg-rose-700 transition">
-                            Trading Floor
-                        </button>
+                        <div className="p-10 flex flex-col md:flex-row justify-between items-center gap-8">
+                            <div className="flex-1">
+                                <h3 className="text-2xl font-black uppercase tracking-tighter text-africa-midnight mb-3">Forex & Crypto Trading</h3>
+                                <p className="text-slate-500 text-sm leading-relaxed">Master the markets. Learn technical analysis and risk management for digital assets.</p>
+                            </div>
+                            <button className="bg-gradient-to-r from-africa-red to-orange-500 text-white px-10 py-5 rounded-2xl font-black text-[10px] uppercase tracking-widest shrink-0 hover:scale-105 transition shadow-lg shadow-africa-red/20 active:scale-95">
+                                Trading Floor
+                            </button>
+                        </div>
                     </div>
 
                     {/* Quiz */}
-                    <div data-track-card className="bg-slate-100 border border-slate-200 p-8 rounded-3xl flex items-center gap-6 transition-all duration-500 hover:scale-[1.02] hover:-translate-y-2 hover:shadow-xl hover:border-africa-midnight cursor-pointer">
-                        <div className="w-12 h-12 bg-africa-midnight rounded-xl flex items-center justify-center text-white font-bold text-xl">
+                    <div data-track-card className="bg-slate-100 border border-slate-200 p-10 rounded-[2.5rem] flex items-center gap-8 transition-all duration-500 hover:shadow-2xl hover:border-africa-midnight cursor-pointer group">
+                        <div className="w-16 h-16 bg-africa-midnight rounded-2xl flex items-center justify-center text-white font-black text-2xl shadow-xl group-hover:bg-africa-red transition-colors">
                             ?
                         </div>
                         <div>
-                            <h4 className="font-bold text-sm text-africa-midnight">Not sure where to start?</h4>
-                            <p className="text-xs text-slate-500">Take our 2-minute career quiz to find your path.</p>
+                            <h4 className="font-black text-[10px] uppercase tracking-widest text-africa-midnight mb-2">Not sure where to start?</h4>
+                            <p className="text-xs text-slate-500 leading-relaxed font-medium">Take our 2-minute career quiz to find your path with an AI career advisor.</p>
                         </div>
                     </div>
                 </div>
