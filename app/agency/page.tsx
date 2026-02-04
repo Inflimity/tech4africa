@@ -7,6 +7,7 @@ import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
 import Particles from "@/components/effects/Particles";
 import FloatingIcons from "@/components/effects/FloatingIcons";
+import AgencyHero from "@/components/ui/AgencyHero";
 
 export const metadata: Metadata = {
     title: "Tech4Agency | Digital Solutions",
@@ -96,32 +97,30 @@ export default function AgencyPage() {
             <Navbar />
 
             {/* Hero */}
-            <header className="pt-32 pb-20 px-6 max-w-7xl mx-auto relative overflow-hidden">
-                <div data-hero className="absolute inset-0 z-0 opacity-10">
-                    <Image src="/images/agency1.jpeg" alt="Agency Background" fill className="object-cover" />
-                </div>
-
-                <div className="relative z-10 text-center" data-reveal>
-                    <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
-                        Tech4Agency
-                    </span>
-                    <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 leading-tight">
-                        Building Websites, Mobile Application <br />
-                        <span className="text-africa-red">For Startups & Fixing Any Tech Related Issues.</span>
-                    </h1>
-                    <p className="text-lg text-slate-400 max-w-3xl mx-auto mb-6 leading-relaxed">
-                        Welcome to Tech4Agency, we build websites, mobile applications for startups and we fix all tech related issues.
-                    </p>
-                    <p className="text-md text-slate-500 max-w-2xl mx-auto mb-10 leading-relaxed">
-                        We provide solutions in software development, data, design, AI, and more — built for Africans by African experts.
-                    </p>
-                    <Link
-                        href="/contact"
-                        className="inline-block bg-africa-red text-white py-4 px-8 rounded-xl font-bold uppercase tracking-widest hover:scale-105 transition shadow-lg shadow-africa-red/20 text-xs"
-                    >
-                        Book a Consultation
-                    </Link>
-                </div>
+            <header className="relative w-full h-screen overflow-hidden bg-africa-midnight">
+                <AgencyHero slides={[
+                    {
+                        img: "/images/agency1.jpeg",
+                        title: "Building Digital Products For Startups",
+                        sub: "Transforming ambitious ideas into elite digital platforms with cutting-edge engineering.",
+                        cta: "Get Started",
+                        href: "/contact"
+                    },
+                    {
+                        img: "/images/home6.jpeg",
+                        title: "Mobile Application Mastery",
+                        sub: "High-performance iOS and Android apps that scale with your business vision.",
+                        cta: "Discuss Project",
+                        href: "/contact"
+                    },
+                    {
+                        img: "/images/home5.jpeg",
+                        title: "Technical Support & Problem Solving",
+                        sub: "From legacy code fixes to modern infrastructure management, we handle the tech debt so you don't have to.",
+                        cta: "Fix My Issue",
+                        href: "/contact"
+                    }
+                ]} />
             </header>
 
             {/* Services */}
