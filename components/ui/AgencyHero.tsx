@@ -72,19 +72,20 @@ export default function AgencyHero({ slides }: AgencyHeroProps) {
                             </div>
                         </div>
                     </div>
+                </div>
             ))}
 
-                    {/* Navigation Dots */}
-                    <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-3">
-                        {slides.map((_, i) => (
-                            <button
-                                key={i}
-                                onClick={() => setCurrent(i)}
-                                className={`h-2 rounded-full transition-all duration-500 shadow-xl ${i === current ? "w-14 bg-africa-red" : "w-3 bg-white/40 hover:bg-white/70"
-                                    }`}
-                            />
-                        ))}
-                    </div>
-                </div>
-            );
+            {/* Navigation Dots */}
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+                {slides.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => setCurrent(i)}
+                        className={`h-2 rounded-full transition-all duration-500 shadow-xl ${i === current ? "w-14 bg-africa-red" : "w-3 bg-white/40 hover:bg-white/70"
+                            }`}
+                    />
+                ))}
+            </div>
+        </div>
+    );
 }
