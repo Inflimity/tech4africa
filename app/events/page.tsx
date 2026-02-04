@@ -6,6 +6,8 @@ import Footer from "@/components/Footer";
 import Counter from "@/components/ui/Counter";
 import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
+import Particles from "@/components/effects/Particles";
+import FloatingIcons from "@/components/effects/FloatingIcons";
 
 export const metadata: Metadata = {
     title: "Tech4Lagos | Community Tech Events",
@@ -63,6 +65,8 @@ export default function EventsPage() {
     return (
         <div className="bg-yellow-50 text-africa-midnight">
             <PageAnimations />
+            <Particles />
+            <FloatingIcons />
             <Marquee />
             <Navbar />
 

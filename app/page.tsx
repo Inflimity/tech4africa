@@ -5,7 +5,6 @@ import Marquee from "@/components/Marquee";
 import Particles from "@/components/effects/Particles";
 import CursorTrail from "@/components/effects/CursorTrail";
 import FloatingIcons from "@/components/effects/FloatingIcons";
-import ScatterText from "@/components/effects/ScatterText";
 import PillarCard from "@/components/ui/PillarCard";
 import Counter from "@/components/ui/Counter";
 import HeroCarousel from "@/components/ui/HeroCarousel";
@@ -83,12 +82,12 @@ export default function Home() {
           </span>
 
           <h1 className="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">
-            <ScatterText text="From Africa," /> <br />
-            <ScatterText text="To The Future." isGradient />
+            From Africa, <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-africa-red to-orange-500">To The Future.</span>
           </h1>
 
           <p className="hero-description text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
-            A central hub for tech education, events, news and startup enablement reimagining what&apos;s possible from Africa, for the world.
+            A central hub for tech education, events, news and startup enablement.
           </p>
 
           {/* Stats Counter Section */}

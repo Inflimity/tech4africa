@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
+import Particles from "@/components/effects/Particles";
+import FloatingIcons from "@/components/effects/FloatingIcons";
 
 export const metadata: Metadata = {
     title: "Tech4Nigeria | Insights & News",
@@ -14,6 +16,8 @@ export default function BlogPage() {
     return (
         <div className="bg-africa-soft text-africa-midnight selection:bg-africa-green selection:text-white">
             <PageAnimations />
+            <Particles />
+            <FloatingIcons />
             <Marquee />
             <Navbar />
 

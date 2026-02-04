@@ -4,6 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
+import Particles from "@/components/effects/Particles";
+import FloatingIcons from "@/components/effects/FloatingIcons";
 
 export const metadata: Metadata = {
     title: "Contact Us | Tech4Africa",
@@ -20,6 +22,8 @@ export default function ContactPage() {
     return (
         <>
             <PageAnimations />
+            <Particles />
+            <FloatingIcons />
             <Marquee />
             <Navbar />
 

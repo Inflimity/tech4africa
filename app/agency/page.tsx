@@ -5,6 +5,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
+import Particles from "@/components/effects/Particles";
+import FloatingIcons from "@/components/effects/FloatingIcons";
 
 export const metadata: Metadata = {
     title: "Tech4Agency | Digital Solutions",
@@ -88,6 +90,8 @@ export default function AgencyPage() {
     return (
         <div className="bg-africa-midnight text-white">
             <PageAnimations />
+            <Particles />
+            <FloatingIcons />
             <Marquee />
             <Navbar />
 
