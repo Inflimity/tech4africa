@@ -45,11 +45,11 @@ export default function AgencyHero({ slides }: AgencyHeroProps) {
                     {/* Balanced dark overlay for readability */}
                     <div className="absolute inset-0 bg-africa-midnight/60 backdrop-blur-[1px] bg-gradient-to-b from-africa-midnight/30 via-transparent to-africa-midnight/50" />
 
-                    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6">
+                    <div className="absolute inset-0 flex flex-col items-center justify-start text-center px-6 pt-56 md:pt-72">
                         <div className={`max-w-4xl transition-all duration-1000 delay-300 ${index === current ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                             }`}>
                             <span className="inline-block bg-africa-red text-white text-[10px] font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-8 shadow-2xl shadow-africa-red/30 border border-white/10">
-                                Tech4Agency Excellence
+                                Tech4Agency
                             </span>
                             <h1 className="text-4xl md:text-7xl font-black text-white uppercase leading-[1.1] mb-8 tracking-tighter drop-shadow-2xl">
                                 {slide.title}

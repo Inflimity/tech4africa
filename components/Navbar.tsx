@@ -23,7 +23,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-8 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center transition-all duration-300">
+            <nav className="fixed top-12 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white/90 backdrop-blur-xl border border-africa-border px-8 py-5 flex justify-between items-center rounded-2xl shadow-2xl shadow-africa-midnight/5 transition-all duration-300">
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center gap-1.5 text-xl font-extrabold uppercase tracking-tight">
                         <Image src="/images/favicon.jpeg" alt="Tech4Africa Logo" width={28} height={28} className="rounded-md" />
