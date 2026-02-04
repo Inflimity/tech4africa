@@ -23,7 +23,7 @@ const variantStyles = {
         iconBg: "bg-africa-red text-white shadow-africa-red/20 border-white",
         title: "group-hover:text-africa-red",
         description: "text-slate-500",
-        cta: "bg-africa-midnight text-white hover:bg-africa-red hover:shadow-lg shadow-africa-red/20",
+        cta: "bg-africa-midnight text-white hover:bg-africa-red hover:scale-105 hover:shadow-[0_0_20px_rgba(255,51,102,0.4)] border border-white/10",
         headerDecor: "bg-africa-red/10",
     },
     dark: {
@@ -31,7 +31,7 @@ const variantStyles = {
         iconBg: "bg-white/20 text-white backdrop-blur-sm border-africa-midnight",
         title: "group-hover:text-africa-red",
         description: "text-slate-400",
-        cta: "bg-white/10 text-white hover:bg-africa-red backdrop-blur-sm shadow-lg shadow-africa-red/20",
+        cta: "bg-white/10 text-white hover:bg-africa-red hover:scale-105 hover:shadow-[0_0_20px_rgba(255,51,102,0.4)] backdrop-blur-sm border border-white/20",
         headerDecor: "bg-white/10",
     },
     yellow: {
@@ -39,7 +39,7 @@ const variantStyles = {
         iconBg: "bg-africa-midnight text-white border-africa-yellow",
         title: "text-africa-midnight",
         description: "text-africa-midnight/80",
-        cta: "bg-africa-midnight text-white hover:bg-black shadow-lg shadow-africa-midnight/20",
+        cta: "bg-africa-midnight/80 text-white hover:bg-africa-midnight hover:scale-105 hover:shadow-xl backdrop-blur-md border border-white/20",
         headerDecor: "bg-white/30",
     },
     green: {
@@ -47,7 +47,7 @@ const variantStyles = {
         iconBg: "bg-white/30 text-white border-africa-green",
         title: "text-white",
         description: "text-white/90",
-        cta: "bg-africa-midnight text-white hover:bg-black shadow-lg shadow-africa-midnight/20",
+        cta: "bg-africa-midnight/80 text-white hover:bg-africa-midnight hover:scale-105 hover:shadow-xl backdrop-blur-md border border-white/20",
         headerDecor: "bg-white/20",
     },
     blue: {
@@ -55,7 +55,7 @@ const variantStyles = {
         iconBg: "bg-white/30 text-white border-blue-600",
         title: "text-white",
         description: "text-white/90",
-        cta: "bg-africa-midnight text-white hover:bg-black shadow-lg shadow-africa-midnight/20",
+        cta: "bg-africa-midnight/80 text-white hover:bg-africa-midnight hover:scale-105 hover:shadow-xl backdrop-blur-md border border-white/20",
         headerDecor: "bg-white/20",
     },
     purple: {
@@ -63,7 +63,7 @@ const variantStyles = {
         iconBg: "bg-white/30 text-white border-africa-purple",
         title: "text-white",
         description: "text-white/90",
-        cta: "bg-africa-midnight text-white hover:bg-black shadow-lg shadow-africa-midnight/20",
+        cta: "bg-africa-midnight/80 text-white hover:bg-africa-midnight hover:scale-105 hover:shadow-xl backdrop-blur-md border border-white/20",
         headerDecor: "bg-white/20",
     },
 };

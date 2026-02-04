@@ -86,7 +86,6 @@ export default function Home() {
             From Africa, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-africa-red via-africa-orange to-africa-yellow hero-title-gradient">To The Future.</span>
           </h1>
-          Broadway
 
           <div className="hero-actions flex flex-wrap justify-center gap-4 mb-12" data-reveal="scale-up" data-stagger="3">
             <Link
@@ -171,7 +170,7 @@ export default function Home() {
               href="/academy"
               title="Tech4Academy"
               description="World-class training for the next generation of tech leaders."
-              ctaText="Start Learning"
+              ctaText="Start Now"
               imageSrc="/images/cert1.jpeg"
               imageAlt="Academy"
               icon={<AcademyIcon />}
@@ -183,7 +182,7 @@ export default function Home() {
               href="/agency"
               title="Tech4Agency"
               description="Building digital products for ambitious brands worldwide."
-              ctaText="Hire Us"
+              ctaText="Let's Build"
               imageSrc="/images/agency1.jpeg"
               imageAlt="Agency"
               icon={<AgencyIcon />}
@@ -194,7 +193,7 @@ export default function Home() {
               href="/events"
               title="Tech4Lagos"
               description="The premier annual tech gathering in Lagos."
-              ctaText="Join Event"
+              ctaText="Get Access"
               imageSrc="/images/event1.jpeg"
               imageAlt="Events"
               icon={<EventsIcon />}
@@ -205,7 +204,7 @@ export default function Home() {
               href="/blog"
               title="Tech4Nigeria"
               description="Insights and stories from the Nigerian tech space."
-              ctaText="Read Blog"
+              ctaText="Explore"
               imageSrc="/images/home4.jpeg"
               imageAlt="Blog"
               icon={<BlogIcon />}
@@ -215,9 +214,9 @@ export default function Home() {
 
             <PillarCard
               href="#"
-              title="Skill4Afrika"
+              title="Skill4Africa"
               description="Connecting students with internship opportunities across Africa."
-              ctaText="Find jobs and internship placement"
+              ctaText="Apply Now"
               imageSrc="/images/skill4africa.jpeg"
               imageAlt="Skill4Afrika"
               icon={<SkillIcon />}
