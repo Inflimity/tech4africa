@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Marquee from "@/components/Marquee";
@@ -85,6 +86,21 @@ export default function Home() {
             From Africa, <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-africa-red to-orange-500">To The Future.</span>
           </h1>
+
+          <div className="hero-actions flex flex-wrap justify-center gap-4 mb-12" data-reveal="scale-up" data-stagger="3">
+            <Link
+              href="/login"
+              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-africa-midnight/10 bg-white/50 backdrop-blur-md hover:bg-white transition-all active:scale-95 shadow-lg shadow-black/5"
+            >
+              Login
+            </Link>
+            <Link
+              href="/signup"
+              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-africa-red text-white hover:bg-red-700 transition-all active:scale-95 shadow-xl shadow-africa-red/25"
+            >
+              Sign Up
+            </Link>
+          </div>
 
           <p className="hero-description text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
             A central hub for tech education, events, news and startup enablement.
