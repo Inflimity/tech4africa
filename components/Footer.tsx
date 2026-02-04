@@ -9,7 +9,7 @@ export default function Footer() {
                     <div className="col-span-2">
                         <div className="text-xl font-black mb-6 uppercase tracking-tighter flex items-center gap-1.5">
                             <Image src="/images/favicon.jpeg" alt="Tech4Africa Logo" width={28} height={28} className="rounded-md" />
-                            <span>Tech<span className="text-africa-red">4</span>Afrika</span>
+                            <span>Tech<span className="text-africa-red">4</span>Africa</span>
                         </div>
                         <p className="text-slate-400 text-xs leading-relaxed max-w-xs">
                             An integrated ecosystem driving Africa&apos;s digital future through education, innovation, and community.
