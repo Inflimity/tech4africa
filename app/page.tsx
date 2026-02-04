@@ -233,7 +233,7 @@ export default function Home() {
       <section className="py-24 px-6 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
           <div className="relative z-10 order-2 md:order-1">
-            <span className="inline-block py-1 px-3 rounded-full bg-africa-red/10 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-6">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-africa-red/10 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-6 border border-africa-red/20 backdrop-blur-sm animate-pulse">
               Our Impact
             </span>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">
@@ -263,8 +263,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative order-1 md:order-2">
-            <div className="absolute inset-0 bg-africa-red/10 rounded-[40px] rotate-6 transform scale-95 blur-xl" />
+          <div className="relative order-1 md:order-2 group">
+            <div className="absolute inset-0 bg-gradient-to-tr from-africa-red/20 via-africa-orange/20 to-africa-cyan/20 rounded-[40px] rotate-6 transform scale-105 blur-2xl group-hover:scale-110 transition-transform duration-700" />
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
               <Image
                 src="/images/home7.jpeg"

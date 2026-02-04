@@ -66,7 +66,7 @@ export default function Counter({ target, suffix = "", className = "" }: Counter
     }, [target]);
 
     return (
-        <span ref={countRef} className={`counter-number ${className}`}>
+        <span ref={countRef} className={`counter-number vibrant-gradient-text ${className}`}>
             {count}{suffix}
         </span>
     );
