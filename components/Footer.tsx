@@ -8,7 +8,7 @@ export default function Footer() {
                 <div className="grid grid-cols-2 md:grid-cols-6 gap-12 mb-20">
                     <div className="col-span-2">
                         <div className="text-xl font-black mb-6 uppercase tracking-tighter flex items-center gap-1.5">
-                            <Image src="/images/favicon.jpeg" alt="Tech4Afrika Logo" width={28} height={28} className="rounded-md" />
+                            <Image src="/images/favicon.jpeg" alt="Tech4Africa Logo" width={28} height={28} className="rounded-md" />
                             <span>Tech<span className="text-africa-red">4</span>Afrika</span>
                         </div>
                         <p className="text-slate-400 text-xs leading-relaxed max-w-xs">
@@ -81,7 +81,7 @@ export default function Footer() {
 
                 <div className="pt-8 border-t border-africa-border flex flex-col md:flex-row justify-between items-center gap-6">
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">
-                        © 2026 Tech4Afrika Universe. All Rights Reserved.
+                        © 2026 Tech4Africa Universe. All Rights Reserved.
                     </span>
                     <div className="flex gap-8">
                         <Link

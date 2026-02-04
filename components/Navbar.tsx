@@ -26,7 +26,7 @@ export default function Navbar() {
             <nav className="fixed top-8 w-full z-50 bg-white/80 backdrop-blur-md border-b border-africa-border px-6 py-4 flex justify-between items-center transition-all duration-300">
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center gap-1.5 text-xl font-extrabold uppercase tracking-tight">
-                        <Image src="/images/favicon.jpeg" alt="Tech4Afrika Logo" width={28} height={28} className="rounded-md" />
+                        <Image src="/images/favicon.jpeg" alt="Tech4Africa Logo" width={28} height={28} className="rounded-md" />
                         <span>Tech<span className="text-africa-red">4</span>Afrika</span>
                     </Link>
                 </div>

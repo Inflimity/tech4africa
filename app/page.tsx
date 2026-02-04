@@ -255,7 +255,7 @@ export default function Home() {
             <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
               <Image
                 src="/images/home7.jpeg"
-                alt="Tech4Afrika Impact"
+                alt="Tech4Africa Impact"
                 width={600}
                 height={400}
                 className="w-full h-full object-cover"

@@ -6,8 +6,8 @@ import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
-    title: "Contact Us | Tech4Afrika",
-    description: "Get in touch with Tech4Afrika. We're here to help with your tech education, development projects, and event inquiries.",
+    title: "Contact Us | Tech4Africa",
+    description: "Get in touch with Tech4Africa. We're here to help with your tech education, development projects, and event inquiries.",
 };
 
 const heroSlides = [

@@ -7,7 +7,7 @@ import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
-    title: "Tech4Afrika Academy | Professional Dev Training",
+    title: "Tech4Africa Academy | Professional Dev Training",
     description: "Master the code with intensive Full-Stack training for the next generation. Web development, mobile apps, data science, cybersecurity and more.",
 };
 

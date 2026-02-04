@@ -7,8 +7,8 @@ import Marquee from "@/components/Marquee";
 import PageAnimations from "@/components/effects/PageAnimations";
 
 export const metadata: Metadata = {
-    title: "Gallery | Tech4Afrika",
-    description: "Browse through photos from Tech4Afrika events, training sessions, and community gatherings. Capturing moments of innovation and collaboration.",
+    title: "Gallery | Tech4Africa",
+    description: "Browse through photos from Tech4Africa events, training sessions, and community gatherings. Capturing moments of innovation and collaboration.",
 };
 
 const heroSlides = [

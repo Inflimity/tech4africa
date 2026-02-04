@@ -10,10 +10,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Tech4Afrika | Innovation Ecosystem",
+  title: "Tech4Africa | Innovation Ecosystem",
   description: "A central hub for tech education, events, news and startup enablement reimagining what's possible from Africa, for the world.",
   keywords: ["tech education", "Africa", "startups", "innovation", "digital skills", "Tech4Lagos", "Tech4Academy"],
-  authors: [{ name: "Tech4Afrika" }],
+  authors: [{ name: "Tech4Africa" }],
   icons: {
     icon: "/images/favicon.jpeg",
     shortcut: "/images/favicon.jpeg",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Tech4Afrika | Innovation Ecosystem",
+    title: "Tech4Africa | Innovation Ecosystem",
     description: "A central hub for tech education, events, news and startup enablement reimagining what's possible from Africa, for the world.",
     type: "website",
   },
