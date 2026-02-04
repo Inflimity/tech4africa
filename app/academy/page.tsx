@@ -125,7 +125,7 @@ export default function AcademyPage() {
                             <span className="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-africa-red/10 border border-africa-red/20 px-4 py-1.5 rounded-full">
                                 Most Popular
                             </span>
-                            <h3 className="text-4xl font-extrabold mt-6 uppercase tracking-tighter">Web Engineering</h3>
+                            <h3 className="text-4xl font-extrabold mt-6 uppercase tracking-tighter">Full Stack Development</h3>
                             <p className="text-slate-300 mt-4 max-w-md leading-relaxed">
                                 Master HTML5, CSS3, JavaScript, and Node.js. Build the modern web from scratch.
                             </p>
@@ -133,6 +133,7 @@ export default function AcademyPage() {
                                 <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">HTML/CSS</span>
                                 <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">JAVASCRIPT</span>
                                 <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">NODE.JS</span>
+                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">PYTHON</span>
                             </div>
                         </div>
                     </div>
