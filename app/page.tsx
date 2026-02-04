@@ -60,8 +60,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center pt-20 px-6 relative overflow-hidden">
-        <br />
+      <section className="min-h-screen flex flex-col items-center justify-start pt-48 md:pt-56 px-6 relative overflow-hidden">
 
         {/* Background Carousel */}
         <div className="absolute inset-0 z-0">
@@ -75,7 +74,7 @@ export default function Home() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[128px]" />
         </div>
 
-        <div className="py-24" />
+
 
         <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
           <span className="hero-badge inline-block py-1.5 px-4 rounded-full bg-africa-red/10 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-6 border border-africa-red/20 backdrop-blur-sm">
