@@ -60,7 +60,7 @@ export default function Home() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="min-h-screen flex flex-col items-center justify-start pt-48 md:pt-56 px-6 relative overflow-hidden">
+      <section className="min-h-screen flex flex-col items-center justify-start pt-32 md:pt-40 px-6 relative overflow-hidden">
 
         {/* Background Carousel */}
         <div className="absolute inset-0 z-0">
@@ -89,21 +89,40 @@ export default function Home() {
           <div className="hero-actions flex flex-wrap justify-center gap-4 mb-12" data-reveal="scale-up" data-stagger="3">
             <Link
               href="/login"
-              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-africa-midnight/10 bg-white/50 backdrop-blur-md hover:bg-white transition-all active:scale-95 shadow-lg shadow-black/5"
+              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-africa-midnight/10 bg-white/50 backdrop-blur-md hover:bg-white transition-all active:scale-95 shadow-lg shadow-black/5 animate-bounce-subtle"
             >
               Login
             </Link>
             <Link
               href="/signup"
-              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-africa-red text-white hover:bg-red-700 transition-all active:scale-95 shadow-xl shadow-africa-red/25"
+              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-africa-red text-white hover:bg-red-700 transition-all active:scale-95 shadow-xl shadow-africa-red/25 animate-bounce-subtle [animation-delay:0.2s]"
             >
               Sign Up
             </Link>
           </div>
 
-          <p className="hero-description text-lg md:text-2xl text-slate-500 max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="hero-description text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-8 leading-relaxed">
             A central hub for tech education, events, news and startup enablement.
           </p>
+
+
+          {/* Gallery Slideshow Card */}
+          <div className="max-w-5xl mx-auto mb-16 relative z-20">
+            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
+              <div className="relative h-[300px] md:h-[450px] overflow-hidden">
+                <HeroCarousel
+                  images={[
+                    { src: "/images/event1.jpeg", alt: "Tech Event 1" },
+                    { src: "/images/home1.jpeg", alt: "Academy Session" },
+                    { src: "/images/event2.jpeg", alt: "Tech Event 2" },
+                    { src: "/images/home4.jpeg", alt: "Workshop" },
+                    { src: "/images/cert1.jpeg", alt: "Certification" },
+                    { src: "/images/home5.jpeg", alt: "Community" },
+                  ]}
+                />
+              </div>
+            </div>
+          </div>
 
           {/* Stats Counter Section */}
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-16 relative z-20 bg-white/30 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-xl tilt-card">
@@ -141,31 +160,6 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Gallery Slideshow Card */}
-          <div className="max-w-5xl mx-auto mb-16 relative z-20">
-            <div className="bg-white/40 backdrop-blur-lg rounded-3xl p-4 border border-white/50 shadow-2xl overflow-hidden">
-              <div className="relative h-[300px] md:h-[400px] rounded-2xl overflow-hidden">
-                <HeroCarousel
-                  images={[
-                    { src: "/images/event1.jpeg", alt: "Tech Event 1" },
-                    { src: "/images/home1.jpeg", alt: "Academy Session" },
-                    { src: "/images/event2.jpeg", alt: "Tech Event 2" },
-                    { src: "/images/home4.jpeg", alt: "Workshop" },
-                    { src: "/images/cert1.jpeg", alt: "Certification" },
-                    { src: "/images/home5.jpeg", alt: "Community" },
-                  ]}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-africa-midnight/60 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6 text-white">
-                  <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-2">
-                    Our Community
-                  </span>
-                  <h3 className="text-2xl md:text-3xl font-extrabold tracking-tight">Building Africa&apos;s Future Together</h3>
-                </div>
-              </div>
-            </div>
-          </div>
-
           {/* Pillars Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <PillarCard
@@ -188,7 +182,7 @@ export default function Home() {
               imageSrc="/images/agency1.jpeg"
               imageAlt="Agency"
               icon={<AgencyIcon />}
-              variant="dark"
+              variant="yellow"
             />
 
             <PillarCard
@@ -199,7 +193,7 @@ export default function Home() {
               imageSrc="/images/event1.jpeg"
               imageAlt="Events"
               icon={<EventsIcon />}
-              variant="yellow"
+              variant="purple"
             />
 
             <PillarCard
@@ -218,7 +212,7 @@ export default function Home() {
               href="#"
               title="Skill4Afrika"
               description="Connecting students with internship opportunities across Africa."
-              ctaText="Find Internships"
+              ctaText="Find jobs and internship placement"
               imageSrc="/images/skill4africa.jpeg"
               imageAlt="Skill4Afrika"
               icon={<SkillIcon />}

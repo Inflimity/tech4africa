@@ -602,6 +602,24 @@ html {
   font-variant-numeric: tabular-nums;
 }
 
+/* Continuous Bounce Animation */
+@keyframes subtle-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: subtle-bounce 2s ease-in-out infinite;
+}
+
+
 /* Staggered reveal for cards */
 .stagger-reveal {
   opacity: 0;

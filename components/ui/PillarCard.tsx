@@ -12,7 +12,7 @@ interface PillarCardProps {
     imageSrc: string;
     imageAlt: string;
     icon: ReactNode;
-    variant?: "default" | "dark" | "yellow" | "green" | "blue";
+    variant?: "default" | "dark" | "yellow" | "green" | "blue" | "purple";
     isComingSoon?: boolean;
     className?: string;
 }
@@ -23,7 +23,7 @@ const variantStyles = {
         iconBg: "bg-africa-red text-white shadow-africa-red/20 border-white",
         title: "group-hover:text-africa-red",
         description: "text-slate-500",
-        cta: "text-africa-midnight group-hover:text-africa-red opacity-50 group-hover:opacity-100",
+        cta: "bg-africa-midnight text-white hover:bg-africa-red",
         headerDecor: "bg-africa-red/10",
     },
     dark: {
@@ -31,7 +31,7 @@ const variantStyles = {
         iconBg: "bg-white/20 text-white backdrop-blur-sm border-africa-midnight",
         title: "group-hover:text-africa-red",
         description: "text-slate-400",
-        cta: "text-slate-500 group-hover:text-white",
+        cta: "bg-white/10 text-white hover:bg-white/20 backdrop-blur-sm",
         headerDecor: "bg-white/10",
     },
     yellow: {
@@ -39,7 +39,7 @@ const variantStyles = {
         iconBg: "bg-africa-midnight text-white border-yellow-400",
         title: "text-africa-midnight",
         description: "text-africa-midnight/70",
-        cta: "text-africa-midnight opacity-60 group-hover:opacity-100",
+        cta: "bg-africa-midnight text-white hover:bg-black",
         headerDecor: "bg-white/30",
     },
     green: {
@@ -47,7 +47,7 @@ const variantStyles = {
         iconBg: "bg-white/30 text-white border-green-600",
         title: "text-white",
         description: "text-white/80",
-        cta: "text-white/60 group-hover:text-white",
+        cta: "bg-africa-midnight text-white hover:bg-black",
         headerDecor: "bg-white/20",
     },
     blue: {
@@ -55,7 +55,15 @@ const variantStyles = {
         iconBg: "bg-white/30 text-white border-blue-600",
         title: "text-white",
         description: "text-white/80",
-        cta: "text-white/60 group-hover:text-white",
+        cta: "bg-africa-midnight text-white hover:bg-black",
+        headerDecor: "bg-white/20",
+    },
+    purple: {
+        card: "bg-purple-600 border-purple-700 hover:shadow-purple-600/20",
+        iconBg: "bg-white/30 text-white border-purple-600",
+        title: "text-white",
+        description: "text-white/80",
+        cta: "bg-africa-midnight text-white hover:bg-black",
         headerDecor: "bg-white/20",
     },
 };
@@ -163,12 +171,12 @@ export default function PillarCard({
                     {description}
                 </p>
                 <div
-                    className={`flex items-center gap-2 text-[10px] font-black uppercase tracking-widest transition-all ${styles.cta}`}
+                    className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all self-start ${styles.cta}`}
                 >
                     <span>{ctaText}</span>
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-3 h-3"
+                        className="w-3.5 h-3.5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
