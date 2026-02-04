@@ -70,7 +70,7 @@ export default function AcademyPage() {
             <Navbar />
 
             {/* Hero Slider Section */}
-            <section className="pt-24 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
+            <section className="pt-32 pb-12 px-6 max-w-7xl mx-auto overflow-hidden">
                 <div data-hero className="relative h-[500px] md:h-[650px] w-full rounded-[2.5rem] overflow-hidden border border-africa-border shadow-2xl">
                     <AcademyHero slides={slides} />
                 </div>

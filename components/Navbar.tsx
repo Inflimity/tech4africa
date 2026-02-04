@@ -23,7 +23,7 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="fixed top-12 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 bg-white/90 backdrop-blur-xl border border-africa-border px-8 py-5 flex justify-between items-center rounded-2xl shadow-2xl shadow-africa-midnight/5 transition-all duration-300">
+            <nav className="fixed top-12 inset-x-0 mx-auto w-[92%] max-w-7xl z-50 bg-white/90 backdrop-blur-xl border border-africa-border px-8 py-5 flex justify-between items-center rounded-2xl shadow-2xl shadow-africa-midnight/5 transition-all duration-300">
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center gap-1.5 text-xl font-extrabold uppercase tracking-tight">
                         <Image src="/images/favicon.jpeg" alt="Tech4Africa Logo" width={28} height={28} className="rounded-md" />
@@ -92,7 +92,7 @@ export default function Navbar() {
                         className={`absolute flex items-center justify-center px-4 py-2 ${isActive("/") ? "bg-africa-red" : "bg-africa-midnight"
                             } text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500`}
                         style={{
-                            transform: mobileMenu ? "translate(-90px, 0px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-120px, 0px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                         }}
                     >
@@ -105,7 +105,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenu(false)}
                         className="absolute flex items-center justify-center px-4 py-2 bg-africa-midnight text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-75"
                         style={{
-                            transform: mobileMenu ? "translate(-120px, 45px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-150px, 50px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                         }}
                     >
@@ -118,7 +118,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenu(false)}
                         className="absolute flex items-center justify-center px-4 py-2 bg-africa-midnight text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-100"
                         style={{
-                            transform: mobileMenu ? "translate(-135px, 90px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-165px, 100px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                         }}
                     >
@@ -131,7 +131,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenu(false)}
                         className="absolute flex items-center justify-center px-4 py-2 bg-africa-midnight text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-150"
                         style={{
-                            transform: mobileMenu ? "translate(-135px, 135px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-165px, 150px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                         }}
                     >
@@ -144,7 +144,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenu(false)}
                         className="absolute flex items-center justify-center px-4 py-2 bg-africa-midnight text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-200"
                         style={{
-                            transform: mobileMenu ? "translate(-120px, 180px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-150px, 200px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                         }}
                     >
@@ -157,7 +157,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenu(false)}
                         className="absolute flex items-center justify-center px-4 py-2 bg-africa-midnight text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500"
                         style={{
-                            transform: mobileMenu ? "translate(-90px, 225px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-120px, 245px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                             transitionDelay: "250ms",
                         }}
@@ -171,7 +171,7 @@ export default function Navbar() {
                         onClick={() => setMobileMenu(false)}
                         className="absolute flex items-center justify-center px-4 py-2 bg-gradient-to-br from-africa-red to-red-600 text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-300"
                         style={{
-                            transform: mobileMenu ? "translate(-55px, 265px)" : "translate(0, 0) scale(0)",
+                            transform: mobileMenu ? "translate(-85px, 285px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
                         }}
                     >
