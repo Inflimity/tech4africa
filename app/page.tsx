@@ -68,10 +68,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-africa-soft/90 via-africa-soft/60 to-africa-soft" />
         </div>
 
-        {/* Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-africa-red rounded-full blur-[128px]" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600 rounded-full blur-[128px]" />
+        {/* Background Elements - Updated for vibrancy */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none z-0">
+          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-africa-red rounded-full blur-[128px] animate-pulse" />
+          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-africa-cyan rounded-full blur-[128px] animate-pulse [animation-delay:1s]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-africa-purple/10 rounded-full blur-[160px]" />
         </div>
 
 
@@ -83,19 +84,23 @@ export default function Home() {
 
           <h1 className="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">
             From Africa, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-africa-red to-orange-500">To The Future.</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-africa-red via-africa-orange to-africa-yellow hero-title-gradient">To The Future.</span>
           </h1>
+          Broadway
 
           <div className="hero-actions flex flex-wrap justify-center gap-4 mb-12" data-reveal="scale-up" data-stagger="3">
             <Link
               href="/login"
-              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-africa-midnight/10 bg-white/50 backdrop-blur-md hover:bg-white transition-all active:scale-95 shadow-lg shadow-black/5 animate-bounce-subtle"
+              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest border border-africa-red/20 bg-white/10 backdrop-blur-xl hover:bg-white/20 transition-all active:scale-95 shadow-lg shadow-black/5 animate-bounce-subtle flex items-center gap-2 group"
             >
-              Login
+              <span>Login</span>
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14" />
+              </svg>
             </Link>
             <Link
               href="/signup"
-              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-africa-red text-white hover:bg-red-700 transition-all active:scale-95 shadow-xl shadow-africa-red/25 animate-bounce-subtle [animation-delay:0.2s]"
+              className="px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-gradient-to-r from-africa-red to-africa-orange text-white hover:scale-105 transition-all active:scale-95 shadow-xl shadow-africa-red/30 animate-bounce-subtle [animation-delay:0.2s] pulse-btn"
             >
               Sign Up
             </Link>

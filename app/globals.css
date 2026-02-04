@@ -2,13 +2,16 @@
 
 /* Custom Theme Configuration */
 @theme inline {
-  /* Colors - Africa Theme */
-  --color-africa-red: #E11D48;
+  /* Colors - Africa Theme - Updated for more vibrancy */
+  --color-africa-red: #ff3366;
   --color-africa-midnight: #0F172A;
-  --color-africa-soft: #F8FAFC;
+  --color-africa-soft: #fcfdfe;
   --color-africa-border: #E2E8F0;
-  --color-africa-yellow: #fbbf24;
-  --color-africa-green: #16a34a;
+  --color-africa-yellow: #ffcc00;
+  --color-africa-green: #00ff88;
+  --color-africa-orange: #ff7700;
+  --color-africa-cyan: #00ffff;
+  --color-africa-purple: #9900ff;
 
   /* Font */
   --font-sans: 'Plus Jakarta Sans', sans-serif;
@@ -413,20 +416,20 @@ html {
 
 @keyframes float-particle {
   0% {
-    transform: translateY(-100vh) rotate(0deg);
+    transform: translateY(-100vh) rotate(0deg) scale(0.5);
     opacity: 0;
   }
 
-  10% {
-    opacity: 0.6;
+  20% {
+    opacity: 0.8;
   }
 
-  90% {
-    opacity: 0.6;
+  80% {
+    opacity: 0.8;
   }
 
   100% {
-    transform: translateY(100vh) rotate(720deg);
+    transform: translateY(100vh) rotate(720deg) scale(1.5);
     opacity: 0;
   }
 }
@@ -455,11 +458,11 @@ html {
   object-fit: cover;
 }
 
-/* Animated Gradient Background */
+/* Animated Gradient Background - Updated for more sweetness */
 .animated-gradient-bg {
-  background: linear-gradient(-45deg, #E11D48, #f97316, #3b82f6, #8b5cf6, #E11D48);
+  background: linear-gradient(-45deg, #ff3366, #ff7700, #00ffff, #9900ff, #ff3366);
   background-size: 400% 400%;
-  animation: gradient-flow 15s ease infinite;
+  animation: gradient-flow 10s ease infinite;
 }
 
 @keyframes gradient-flow {
@@ -680,8 +683,34 @@ html {
 }
 
 .input-field:focus {
-  box-shadow: 0 0 0 4px rgba(225, 29, 72, 0.1);
-  border-color: #E11D48;
+  box-shadow: 0 0 0 4px rgba(255, 51, 102, 0.1);
+  border-color: #ff3366;
+}
+
+/* Glass Glow Utility */
+.glass-glow {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  transition: all 0.3s ease;
+}
+
+.glass-glow:hover {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.5);
+  transform: translateY(-2px);
+}
+
+.sweet-shadow {
+  box-shadow: 0 20px 40px -15px rgba(255, 51, 102, 0.3);
+}
+
+.vibrant-gradient-text {
+  background: linear-gradient(135deg, #ff3366 0%, #ff7700 50%, #00ffff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Masonry Grid for Gallery */
