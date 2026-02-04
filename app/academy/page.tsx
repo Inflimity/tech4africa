@@ -119,7 +119,7 @@ export default function AcademyPage() {
                     {/* Web Engineering */}
                     <div data-track-card className="md:col-span-8 bg-africa-midnight text-white rounded-[2.5rem] flex flex-col relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl cursor-pointer border border-white/5">
                         <div className="h-64 relative overflow-hidden">
-                            <Image src="/images/home1.jpeg" alt="Web Engineering" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <Image src="/images/stu1.jpeg" alt="Full stack Engineering" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="relative p-10 z-10">
                             <span className="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-africa-red/10 border border-africa-red/20 px-4 py-1.5 rounded-full">
@@ -127,7 +127,7 @@ export default function AcademyPage() {
                             </span>
                             <h3 className="text-4xl font-extrabold mt-6 uppercase tracking-tighter">Web Engineering</h3>
                             <p className="text-slate-300 mt-4 max-w-md leading-relaxed">
-                                Master HTML5, CSS3, JavaScript, and Node.js. Build the modern web from scratch with senior mentors.
+                                Master HTML5, CSS3, JavaScript, and Node.js. Build the modern web from scratch.
                             </p>
                             <div className="flex flex-wrap gap-3 mt-8">
                                 <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">HTML/CSS</span>
@@ -140,7 +140,7 @@ export default function AcademyPage() {
                     {/* Mobile App */}
                     <div data-track-card className="md:col-span-4 bg-africa-red text-white rounded-[2.5rem] flex flex-col relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer group">
                         <div className="h-64 relative overflow-hidden">
-                            <Image src="/images/home6.jpeg" alt="Mobile Development" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <Image src="/images/stu6.jpeg" alt="Mobile Development" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-8">
                             <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-4">Mobile App <br />Development</h3>
@@ -152,11 +152,11 @@ export default function AcademyPage() {
                     {/* Data Science */}
                     <div data-track-card className="md:col-span-4 bg-slate-700 text-white rounded-[2.5rem] flex flex-col relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer group">
                         <div className="h-64 relative overflow-hidden">
-                            <Image src="/images/home4.jpeg" alt="Data Science" fill className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90" />
+                            <Image src="/images/stu4.jpeg" alt="Data Science" fill className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-90" />
                         </div>
                         <div className="p-8">
                             <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-4">Data Science <br /> & Analysis</h3>
-                            <p className="text-slate-300 text-sm leading-relaxed mb-6">Learn Python, Data Analysis, and Predictive Modeling with real datasets.</p>
+                            <p className="text-slate-300 text-sm leading-relaxed mb-6">Learn Python, Data Analysis, and Predictive Modeling.</p>
                             <div className="flex items-center gap-3 bg-white/5 p-4 rounded-2xl border border-white/10">
                                 <div className="w-2.5 h-2.5 rounded-full bg-africa-red animate-pulse shadow-[0_0_10px_rgba(255,51,102,0.8)]" />
                                 <span className="text-[10px] font-black text-white uppercase tracking-widest">Python Integrated</span>
@@ -167,12 +167,12 @@ export default function AcademyPage() {
                     {/* Cybersecurity */}
                     <div data-track-card className="md:col-span-8 bg-slate-800 text-white rounded-[2.5rem] flex flex-col relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl cursor-pointer border border-white/5">
                         <div className="h-64 relative overflow-hidden">
-                            <Image src="/images/home5.jpeg" alt="Cybersecurity" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <Image src="/images/stu5.jpeg" alt="Cybersecurity" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-10 flex flex-col md:flex-row justify-between items-start md:items-center">
                             <div>
                                 <h3 className="text-3xl font-extrabold uppercase tracking-tighter">Cybersecurity <br /> & Networking</h3>
-                                <p className="text-slate-400 mt-4 max-w-sm">Ethical hacking, defense systems, and network infrastructure management.</p>
+                                <p className="text-slate-400 mt-4 max-w-sm">Ethical hacking, defense systems, and network infrastructure.</p>
                             </div>
                             <div className="mt-8 md:mt-0 md:ml-auto">
                                 <div className="w-16 h-16 bg-africa-red/20 backdrop-blur-xl border border-africa-red/30 text-africa-red rounded-3xl flex items-center justify-center group-hover:bg-africa-red group-hover:text-white transition-all duration-500 shadow-xl">
@@ -189,7 +189,7 @@ export default function AcademyPage() {
                     {/* Forex */}
                     <div data-track-card className="bg-rose-50 border border-rose-200 rounded-[2.5rem] flex flex-col overflow-hidden transition-all duration-500 hover:shadow-2xl hover:border-africa-red cursor-pointer group">
                         <div className="h-64 relative overflow-hidden">
-                            <Image src="/images/home2.jpeg" alt="Trading" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
+                            <Image src="/images/stu10.jpeg" alt="Trading" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-10 flex flex-col md:flex-row justify-between items-center gap-8">
                             <div className="flex-1">
@@ -209,7 +209,7 @@ export default function AcademyPage() {
                         </div>
                         <div>
                             <h4 className="font-black text-[10px] uppercase tracking-widest text-africa-midnight mb-2">Not sure where to start?</h4>
-                            <p className="text-xs text-slate-500 leading-relaxed font-medium">Take our 2-minute career quiz to find your path with an AI career advisor.</p>
+                            <p className="text-xs text-slate-500 leading-relaxed font-medium">Take our 2-minute career quiz to find your path.</p>
                         </div>
                     </div>
                 </div>
