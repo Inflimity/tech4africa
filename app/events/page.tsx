@@ -63,7 +63,7 @@ const speakers = [
 
 export default function EventsPage() {
     return (
-        <div className="bg-yellow-50 text-africa-midnight">
+        <div className="bg-slate-50 text-africa-midnight">
             <PageAnimations />
             <Particles />
             <FloatingIcons />
@@ -75,16 +75,16 @@ export default function EventsPage() {
                 {/* Background Image */}
                 <div data-hero className="absolute inset-0 z-0">
                     <Image src="/images/event5.jpeg" alt="Tech4Lagos Event" fill className="object-cover blur-sm opacity-20" />
-                    <div className="absolute inset-0 bg-yellow-50/70" />
+                    <div className="absolute inset-0 bg-slate-50/70" />
                 </div>
 
                 <div className="relative z-10" data-reveal="scale-up">
-                    <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
+                    <span className="inline-block py-1 px-3 rounded-full bg-purple-600 text-white text-[10px] font-bold uppercase tracking-widest mb-6">
                         Tech4Lagos 2026
                     </span>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 text-africa-midnight leading-tight">
                         Network Event For Founders, Startups <br />
-                        <span className="text-africa-red">And Tech Enablement</span>
+                        <span className="text-purple-600">And Tech Enablement</span>
                     </h1>
                     <p className="text-lg text-slate-600 max-w-3xl mx-auto mb-4 leading-relaxed font-medium">
                         Welcome to Tech4Lagos, Africa&apos;s biggest gathering of founders, startups, investors, and innovators.
@@ -93,10 +93,10 @@ export default function EventsPage() {
                         Connect, learn, and grow with the best minds in African tech. Join thousands for an unforgettable experience.
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <button className="bg-africa-red text-white px-8 py-4 rounded-xl font-bold text-sm hover:scale-105 transition shadow-xl shadow-africa-red/20">
+                        <button className="bg-purple-600 text-white px-8 py-4 rounded-xl font-bold text-sm hover:scale-105 transition shadow-xl shadow-purple-600/20">
                             Get Early Access
                         </button>
-                        <button className="bg-africa-midnight text-white border border-africa-midnight px-8 py-4 rounded-xl font-bold text-sm hover:bg-africa-red hover:border-africa-red transition">
+                        <button className="bg-africa-midnight text-white border border-africa-midnight px-8 py-4 rounded-xl font-bold text-sm hover:bg-purple-600 hover:border-purple-600 transition">
                             Sponsor Event
                         </button>
                     </div>
@@ -131,25 +131,25 @@ export default function EventsPage() {
             <section className="py-24 bg-africa-midnight text-white px-6">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                        <div className="text-5xl font-black text-purple-600 mb-2" data-counter>
                             5000+
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Attendees</div>
                     </div>
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                        <div className="text-5xl font-black text-purple-600 mb-2" data-counter>
                             50+
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Speakers</div>
                     </div>
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                        <div className="text-5xl font-black text-purple-600 mb-2" data-counter>
                             20+
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Workshops</div>
                     </div>
                     <div>
-                        <div className="text-5xl font-black text-africa-red mb-2" data-counter>
+                        <div className="text-5xl font-black text-purple-600 mb-2" data-counter>
                             100%
                         </div>
                         <div className="text-xs font-bold uppercase tracking-widest">Energy</div>
@@ -158,10 +158,10 @@ export default function EventsPage() {
             </section>
 
             {/* What to Expect */}
-            <section className="py-24 px-6 bg-yellow-50">
+            <section className="py-24 px-6 bg-purple-50">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16" data-reveal>
-                        <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-4">
+                        <span className="inline-block py-1 px-3 rounded-full bg-purple-600 text-white text-[10px] font-bold uppercase tracking-widest mb-4">
                             Event Highlights
                         </span>
                         <h2 className="text-3xl md:text-4xl font-extrabold mb-4 text-africa-midnight" data-section-header>What to Expect</h2>
@@ -204,7 +204,7 @@ export default function EventsPage() {
                                         height={300}
                                         className="w-full aspect-square object-cover group-hover:scale-110 transition duration-500"
                                     />
-                                    <div className="absolute inset-0 bg-africa-red/0 group-hover:bg-africa-red/20 transition" />
+                                    <div className="absolute inset-0 bg-purple-600/0 group-hover:bg-purple-600/20 transition" />
                                 </div>
                                 <h4 className="font-bold text-africa-midnight">{speaker.name}</h4>
                                 <p className="text-xs text-slate-400">{speaker.role}</p>

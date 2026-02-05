@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
     return (
-        <div className="bg-africa-soft text-africa-midnight selection:bg-africa-green selection:text-white">
+        <div className="bg-africa-soft text-africa-midnight selection:bg-emerald-500 selection:text-white">
             <PageAnimations />
             <Particles />
             <FloatingIcons />
@@ -23,7 +23,7 @@ export default function BlogPage() {
 
             {/* Hero */}
             <header className="pt-32 pb-12 px-6 max-w-7xl mx-auto text-center border-b border-africa-border">
-                <div data-reveal className="inline-block py-1 px-3 rounded-full bg-green-100 text-green-800 text-[10px] font-bold uppercase tracking-widest mb-6">
+                <div data-reveal className="inline-block py-1 px-3 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold uppercase tracking-widest mb-6">
                     Tech4Nigeria
                 </div>
                 <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter mb-6 text-africa-midnight" data-reveal data-stagger="1">
@@ -48,16 +48,16 @@ export default function BlogPage() {
                             />
                         </div>
                         <div className="flex items-center gap-4 text-xs font-bold uppercase tracking-widest mb-4">
-                            <span className="text-green-600">Startups</span>
+                            <span className="text-emerald-600">Startups</span>
                             <span className="text-slate-400">Feb 3, 2026</span>
                         </div>
-                        <h3 className="text-3xl font-extrabold mb-4 group-hover:text-green-600 transition-colors">
+                        <h3 className="text-3xl font-extrabold mb-4 group-hover:text-emerald-600 transition-colors">
                             The Rise of EdTech in Lagos: A 2026 Report
                         </h3>
                         <p className="text-slate-500 leading-relaxed mb-6">
                             How local startups are redefining education through mobile-first learning platforms and community-driven initiatives.
                         </p>
-                        <div className="font-bold text-sm underline decoration-green-600 underline-offset-4">Read Article</div>
+                        <div className="font-bold text-sm underline decoration-emerald-600 underline-offset-4">Read Article</div>
                     </article>
 
                     {/* Sidebar Posts */}
@@ -71,8 +71,8 @@ export default function BlogPage() {
                                     className="object-cover group-hover:scale-105 transition duration-500"
                                 />
                             </div>
-                            <div className="text-xs font-bold uppercase tracking-widest mb-2 text-green-600">Policy</div>
-                            <h4 className="text-xl font-bold mb-2 group-hover:text-green-600 transition-colors">
+                            <div className="text-xs font-bold uppercase tracking-widest mb-2 text-emerald-600">Policy</div>
+                            <h4 className="text-xl font-bold mb-2 group-hover:text-emerald-600 transition-colors">
                                 New Tech Visas for Nigerian Talent
                             </h4>
                         </article>
@@ -86,8 +86,8 @@ export default function BlogPage() {
                                     className="object-cover group-hover:scale-105 transition duration-500"
                                 />
                             </div>
-                            <div className="text-xs font-bold uppercase tracking-widest mb-2 text-green-600">Design</div>
-                            <h4 className="text-xl font-bold mb-2 group-hover:text-green-600 transition-colors">
+                            <div className="text-xs font-bold uppercase tracking-widest mb-2 text-emerald-600">Design</div>
+                            <h4 className="text-xl font-bold mb-2 group-hover:text-emerald-600 transition-colors">
                                 Afro-Futurism in UI/UX Design
                             </h4>
                         </article>
