@@ -43,11 +43,7 @@ const SkillIcon = () => (
   </svg>
 );
 
-const heroImages = [
-  { src: "/images/home6.jpeg", alt: "Hero 1" },
-  { src: "/images/event1.jpeg", alt: "Hero 2" },
-  { src: "/images/home1.jpeg", alt: "Hero 3" },
-];
+
 
 export default function Home() {
   return (
@@ -64,7 +60,7 @@ export default function Home() {
 
         {/* Background Carousel */}
         <div className="absolute inset-0 z-0">
-          <HeroCarousel images={heroImages} />
+
           <div className="absolute inset-0 bg-gradient-to-b from-africa-soft/90 via-africa-soft/60 to-africa-soft" />
         </div>
 
