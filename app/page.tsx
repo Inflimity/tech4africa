@@ -106,7 +106,7 @@ export default function Home() {
 
           {/* Gallery Slideshow Card */}
           <div className="max-w-5xl mx-auto mb-16 relative z-20">
-            <div className="rounded-[2.5rem] overflow-hidden shadow-2xl">
+            <div className="rounded-none overflow-hidden shadow-2xl">
               <div className="relative h-[300px] md:h-[450px] overflow-hidden">
                 <HeroCarousel
                   images={[
