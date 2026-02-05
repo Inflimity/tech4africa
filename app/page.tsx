@@ -168,7 +168,7 @@ export default function Home() {
               imageSrc="/images/stu18.jpeg"
               imageAlt="Academy"
               icon={<AcademyIcon />}
-              variant="orange"
+              variant="red"
               className="lg:col-span-2"
             />
 

@@ -12,7 +12,7 @@ interface PillarCardProps {
     imageSrc: string;
     imageAlt: string;
     icon: ReactNode;
-    variant?: "default" | "dark" | "yellow" | "green" | "blue" | "purple" | "orange";
+    variant?: "default" | "dark" | "yellow" | "green" | "blue" | "purple" | "red";
     isComingSoon?: boolean;
     className?: string;
 }
@@ -66,12 +66,12 @@ const variantStyles = {
         cta: "bg-purple-600 text-white hover:bg-indigo-900 hover:scale-105 hover:shadow-[0_0_20px_rgba(153,0,255,0.3)] border border-white/20",
         headerDecor: "bg-white/20",
     },
-    orange: {
-        card: "bg-africa-orange border-africa-orange/50 hover:shadow-africa-orange/40",
-        iconBg: "bg-white/30 text-white border-africa-orange",
+    red: {
+        card: "bg-africa-red border-africa-red/50 hover:shadow-africa-red/40",
+        iconBg: "bg-white/30 text-white border-africa-red",
         title: "text-white",
         description: "text-white/90",
-        cta: "bg-white text-africa-orange hover:bg-white/90 hover:scale-105 hover:shadow-lg border border-white/20",
+        cta: "bg-white text-africa-red hover:bg-white/90 hover:scale-105 hover:shadow-lg border border-white/20",
         headerDecor: "bg-white/20",
     },
 };
