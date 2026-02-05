@@ -165,10 +165,10 @@ export default function Home() {
               title="Tech4Academy"
               description="World-class training for the next generation of tech leaders."
               ctaText="Start Now"
-              imageSrc="/images/cert1.jpeg"
+              imageSrc="/images/stu18.jpeg"
               imageAlt="Academy"
               icon={<AcademyIcon />}
-              variant="default"
+              variant="orange"
               className="lg:col-span-2"
             />
 
