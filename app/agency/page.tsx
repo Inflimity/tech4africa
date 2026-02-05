@@ -127,7 +127,7 @@ export default function AgencyPage() {
             <section className="py-20 px-6 bg-slate-900 border-y border-white/5">
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-16" data-reveal>
-                        <span className="inline-block py-1 px-3 rounded-full bg-africa-red/20 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-4">
+                        <span className="inline-block py-1 px-3 rounded-full bg-africa-yellow/20 text-africa-yellow text-[10px] font-bold uppercase tracking-widest mb-4">
                             What We Do
                         </span>
                         <h2 className="text-3xl md:text-4xl font-extrabold mb-4" data-section-header>Our Services</h2>
@@ -139,7 +139,7 @@ export default function AgencyPage() {
                             <div
                                 key={service.title}
                                 data-track-card
-                                className="p-8 rounded-3xl bg-africa-midnight border border-white/10 hover:border-africa-red transition-colors group relative overflow-hidden"
+                                className="p-8 rounded-3xl bg-africa-midnight border border-white/10 hover:border-africa-yellow transition-colors group relative overflow-hidden"
                             >
                                 {service.bg && (
                                     <div className="absolute inset-0 z-0 opacity-10">
@@ -147,7 +147,7 @@ export default function AgencyPage() {
                                     </div>
                                 )}
                                 <div className="relative z-10">
-                                    <div className="mb-6">{service.icon}</div>
+                                    <div className="mb-6 text-africa-yellow">{service.icon}</div>
                                     <h3 className="text-xl font-bold mb-4">{service.title}</h3>
                                     <p className="text-slate-400 text-sm leading-relaxed">{service.description}</p>
                                 </div>
@@ -161,7 +161,7 @@ export default function AgencyPage() {
             <section className="py-24 px-6 bg-africa-midnight">
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
                     <div className="relative" data-reveal="fade-left">
-                        <div className="absolute inset-0 bg-africa-red/20 rounded-[40px] rotate-3 transform scale-95 blur-xl" />
+                        <div className="absolute inset-0 bg-africa-yellow/20 rounded-[40px] rotate-3 transform scale-95 blur-xl" />
                         <div className="relative rounded-[40px] overflow-hidden shadow-2xl">
                             <Image src="/images/home4.jpeg" alt="Tech4Agency Team" width={600} height={400} className="w-full h-full object-cover" />
                             <div className="absolute inset-0 bg-gradient-to-tr from-africa-midnight/50 to-transparent" />
@@ -169,11 +169,11 @@ export default function AgencyPage() {
                     </div>
 
                     <div data-reveal="fade-right">
-                        <span className="inline-block py-1 px-3 rounded-full bg-africa-red text-white text-[10px] font-bold uppercase tracking-widest mb-6">
+                        <span className="inline-block py-1 px-3 rounded-full bg-africa-yellow text-africa-midnight text-[10px] font-bold uppercase tracking-widest mb-6">
                             Why Choose Us
                         </span>
                         <h2 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">
-                            Built for Africa. <br /><span className="text-africa-red">By African Experts.</span>
+                            Built for Africa. <br /><span className="text-africa-yellow">By African Experts.</span>
                         </h2>
                         <p className="text-slate-400 mb-8 leading-relaxed">
                             We understand the unique challenges and opportunities of the African market. Our team combines local insights with global standards to deliver solutions that truly work.
@@ -182,7 +182,7 @@ export default function AgencyPage() {
                         <div className="space-y-6">
                             {whyUs.map((item, index) => (
                                 <div key={item.title} className="flex items-start gap-4" data-reveal data-stagger={index + 1}>
-                                    <div className="w-10 h-10 bg-africa-red rounded-xl flex items-center justify-center text-white font-bold shrink-0">
+                                    <div className="w-10 h-10 bg-africa-yellow rounded-xl flex items-center justify-center text-africa-midnight font-bold shrink-0">
                                         <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                         </svg>
@@ -202,12 +202,12 @@ export default function AgencyPage() {
             <section className="py-24 px-6 max-w-7xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl font-extrabold mb-4" data-section-header>How We Work</h2>
-                    <div className="w-12 h-1 bg-africa-red mx-auto" data-divider />
+                    <div className="w-12 h-1 bg-africa-yellow mx-auto" data-divider />
                 </div>
                 <div className="grid md:grid-cols-4 gap-8 text-center">
                     {process.map((item, index) => (
                         <div key={item.step} data-step>
-                            <div className={`w-16 h-16 ${item.highlight ? 'bg-africa-red' : 'bg-white/10'} rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6`}>
+                            <div className={`w-16 h-16 ${item.highlight ? 'bg-africa-yellow text-africa-midnight' : 'bg-white/10'} rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-6`}>
                                 {item.step}
                             </div>
                             <h4 className="font-bold mb-2">{item.title}</h4>

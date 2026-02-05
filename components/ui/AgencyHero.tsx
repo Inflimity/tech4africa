@@ -49,7 +49,7 @@ export default function AgencyHero({ slides }: AgencyHeroProps) {
                         <div className="w-full max-w-7xl px-6 flex flex-col items-center text-center">
                             <div className={`max-w-4xl transition-all duration-1000 delay-300 ${index === current ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
                                 }`}>
-                                <span className="inline-block bg-africa-red text-white text-[10px] font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-8 shadow-2xl shadow-africa-red/30 border border-white/10">
+                                <span className="inline-block bg-africa-yellow text-africa-midnight text-[10px] font-black uppercase tracking-[0.3em] px-5 py-2 rounded-full mb-8 shadow-2xl shadow-africa-yellow/30 border border-white/10">
                                     Tech4Agency
                                 </span>
                                 <h1 className="text-4xl md:text-7xl font-black text-white uppercase leading-[1.1] mb-8 tracking-tighter drop-shadow-2xl">
@@ -61,7 +61,7 @@ export default function AgencyHero({ slides }: AgencyHeroProps) {
                                 <div className="flex flex-wrap justify-center gap-5">
                                     <Link
                                         href={slide.href}
-                                        className="bg-africa-red text-white px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition active:scale-95 shadow-2xl shadow-africa-red/40"
+                                        className="bg-africa-yellow text-africa-midnight px-10 py-5 rounded-2xl font-bold text-sm uppercase tracking-widest hover:scale-105 transition active:scale-95 shadow-2xl shadow-africa-yellow/40"
                                     >
                                         {slide.cta}
                                     </Link>
@@ -81,7 +81,7 @@ export default function AgencyHero({ slides }: AgencyHeroProps) {
                     <button
                         key={i}
                         onClick={() => setCurrent(i)}
-                        className={`h-2 rounded-full transition-all duration-500 shadow-xl ${i === current ? "w-14 bg-africa-red" : "w-3 bg-white/40 hover:bg-white/70"
+                        className={`h-2 rounded-full transition-all duration-500 shadow-xl ${i === current ? "w-14 bg-africa-yellow" : "w-3 bg-white/40 hover:bg-white/70"
                             }`}
                     />
                 ))}
