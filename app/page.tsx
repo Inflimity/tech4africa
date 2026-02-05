@@ -78,7 +78,7 @@ export default function Home() {
 
           <h1 className="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">
             From Africa, <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-africa-red via-africa-orange to-africa-yellow hero-title-gradient bg-300% animate-gradient-shift decoration-clone [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">To The Future.</span>
+            <span className="text-africa-red hero-title-gradient bg-clip-text text-transparent bg-gradient-to-r from-africa-red to-africa-orange [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]">To The Future.</span>
           </h1>
 
           <div className="hero-actions flex flex-wrap justify-center gap-4 mb-12" data-reveal="scale-up" data-stagger="3">
@@ -93,7 +93,7 @@ export default function Home() {
             </Link>
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-gradient-to-r from-africa-red to-africa-orange text-white hover:scale-105 transition-all active:scale-95 shadow-xl shadow-africa-red/30 animate-bounce-subtle [animation-delay:0.2s] pulse-btn"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-africa-red text-white hover:bg-africa-orange hover:scale-105 transition-all active:scale-95 shadow-xl shadow-africa-red/30 animate-bounce-subtle [animation-delay:0.2s] pulse-btn"
             >
               Sign Up
             </Link>
