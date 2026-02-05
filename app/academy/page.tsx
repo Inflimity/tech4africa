@@ -117,36 +117,36 @@ export default function AcademyPage() {
 
                 <div className="grid md:grid-cols-12 gap-8 mb-12">
                     {/* Web Engineering */}
-                    <div data-track-card className="md:col-span-8 bg-africa-midnight text-white rounded-[2.5rem] flex flex-col relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl cursor-pointer border border-white/5">
+                    <div data-track-card className="md:col-span-8 bg-africa-red text-white rounded-[2.5rem] flex flex-col relative overflow-hidden group transition-all duration-500 hover:scale-[1.01] hover:shadow-2xl cursor-pointer border border-white/5">
                         <div className="h-64 relative overflow-hidden">
                             <Image src="/images/stu1.jpeg" alt="Full stack Engineering" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="relative p-10 z-10">
-                            <span className="text-africa-red font-bold text-[10px] uppercase tracking-widest bg-africa-red/10 border border-africa-red/20 px-4 py-1.5 rounded-full">
+                            <span className="text-white font-bold text-[10px] uppercase tracking-widest bg-white/20 border border-white/30 px-4 py-1.5 rounded-full">
                                 Most Popular
                             </span>
                             <h3 className="text-4xl font-extrabold mt-6 uppercase tracking-tighter">Full Stack Development</h3>
-                            <p className="text-slate-300 mt-4 max-w-md leading-relaxed">
+                            <p className="text-rose-100 mt-4 max-w-md leading-relaxed">
                                 Master HTML5, CSS3, JavaScript, and Node.js. Build the modern web from scratch.
                             </p>
                             <div className="flex flex-wrap gap-3 mt-8">
-                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">HTML/CSS</span>
-                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">JAVASCRIPT</span>
-                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">NODE.JS</span>
-                                <span className="px-4 py-1.5 bg-white/5 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">PYTHON</span>
+                                <span className="px-4 py-1.5 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">HTML/CSS</span>
+                                <span className="px-4 py-1.5 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">JAVASCRIPT</span>
+                                <span className="px-4 py-1.5 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">NODE.JS</span>
+                                <span className="px-4 py-1.5 bg-black/20 backdrop-blur-md border border-white/10 rounded-xl text-[10px] font-black uppercase tracking-widest">PYTHON</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Mobile App */}
-                    <div data-track-card className="md:col-span-4 bg-africa-red text-white rounded-[2.5rem] flex flex-col relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer group">
+                    <div data-track-card className="md:col-span-4 bg-africa-midnight text-white rounded-[2.5rem] flex flex-col relative overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl cursor-pointer group">
                         <div className="h-64 relative overflow-hidden">
                             <Image src="/images/stu6.jpeg" alt="Mobile Development" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
                         </div>
                         <div className="p-8">
                             <h3 className="text-2xl font-black uppercase tracking-tighter leading-none mb-4">Mobile App <br />Development</h3>
-                            <p className="text-rose-100 text-sm leading-relaxed mb-8">Build cross-platform Android & iOS apps with C# and modern frameworks.</p>
-                            <div className="text-white font-black text-[10px] uppercase tracking-widest bg-white/20 px-6 py-2.5 rounded-xl w-fit backdrop-blur-sm border border-white/30">8 Modules →</div>
+                            <p className="text-slate-400 text-sm leading-relaxed mb-8">Build cross-platform Android & iOS apps with C# and modern frameworks.</p>
+                            <div className="text-white font-black text-[10px] uppercase tracking-widest bg-white/10 px-6 py-2.5 rounded-xl w-fit backdrop-blur-sm border border-white/10 hover:bg-africa-red transition-colors">8 Modules →</div>
                         </div>
                     </div>
 
