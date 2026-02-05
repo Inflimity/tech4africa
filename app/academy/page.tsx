@@ -77,23 +77,23 @@ export default function AcademyPage() {
             </section>
 
             {/* Stats Section */}
-            <section className="bg-africa-midnight py-16 px-6 border-y border-white/10">
+            <section className="bg-africa-red py-16 px-6 border-y border-white/10">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
                     <div className="text-center" data-stat>
-                        <div className="text-africa-red text-3xl font-extrabold mb-1" data-counter>98%</div>
-                        <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Success Rate</div>
+                        <div className="text-white text-3xl font-extrabold mb-1" data-counter>98%</div>
+                        <div className="text-white/80 text-[10px] uppercase font-bold tracking-widest">Success Rate</div>
                     </div>
                     <div className="text-center border-l border-white/10" data-stat>
                         <div className="text-white text-3xl font-extrabold mb-1" data-counter>24/7</div>
-                        <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Mentor Support</div>
+                        <div className="text-white/80 text-[10px] uppercase font-bold tracking-widest">Mentor Support</div>
                     </div>
                     <div className="text-center border-l border-white/10" data-stat>
                         <div className="text-white text-3xl font-extrabold mb-1" data-counter>50+</div>
-                        <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Hiring Partners</div>
+                        <div className="text-white/80 text-[10px] uppercase font-bold tracking-widest">Hiring Partners</div>
                     </div>
                     <div className="text-center border-l border-white/10" data-stat>
                         <div className="text-white text-3xl font-extrabold mb-1" data-counter>12</div>
-                        <div className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Expert Tracks</div>
+                        <div className="text-white/80 text-[10px] uppercase font-bold tracking-widest">Expert Tracks</div>
                     </div>
                 </div>
             </section>
