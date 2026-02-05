@@ -64,17 +64,15 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-africa-soft/90 via-africa-soft/60 to-africa-soft" />
         </div>
 
-        {/* Background Elements - Updated for vibrancy */}
-        <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none z-0">
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-africa-red rounded-full blur-[128px] animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-africa-cyan rounded-full blur-[128px] animate-pulse [animation-delay:1s]" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-africa-purple/10 rounded-full blur-[160px]" />
-        </div>
+
 
 
 
         <div className="max-w-7xl mx-auto text-center relative z-10 w-full">
-          <span className="hero-badge inline-block py-1.5 px-4 rounded-full bg-africa-red/10 text-africa-red text-[10px] font-bold uppercase tracking-widest mb-6 border border-africa-red/20 backdrop-blur-sm">
+
+
+
+          <span className="text-africa-red font-extrabold tracking-widest uppercase mb-4 block text-sm">
             AFRICA SILICON VALLEY
           </span>
 
@@ -101,7 +99,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className="hero-description text-base md:text-lg text-slate-500 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="hero-description text-lg md:text-xl text-slate-700 font-semibold max-w-2xl mx-auto mb-8 leading-relaxed">
             A central hub for tech education, events, news and startup enablement.
           </p>
 
