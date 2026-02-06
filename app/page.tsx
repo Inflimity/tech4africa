@@ -99,15 +99,15 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className="hero-description text-lg md:text-xl text-slate-700 font-semibold max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="hero-description text-lg md:text-xl text-[#0F172A] font-semibold max-w-2xl mx-auto mb-8 leading-relaxed">
             A central hub for tech education, events, news and startup enablement.
           </p>
 
 
           {/* Gallery Slideshow Card */}
           <div className="max-w-5xl mx-auto mb-16 relative z-20">
-            <div className="rounded-none overflow-hidden shadow-2xl">
-              <div className="relative h-[300px] md:h-[450px] overflow-hidden">
+            <div className="rounded-2xl overflow-hidden shadow-2xl">
+              <div className="relative h-[400px] md:h-[600px] overflow-hidden">
                 <HeroCarousel
                   images={[
                     { src: "/images/event1.jpeg", alt: "Tech Event 1" },
@@ -125,7 +125,7 @@ export default function Home() {
           {/* Stats Counter Section */}
           <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 text-center mb-16 relative z-20 bg-white/30 backdrop-blur-md rounded-2xl p-6 border border-white/40 shadow-xl tilt-card">
             <div className="p-2">
-              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-red">
+              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-midnight">
                 <Counter target={500} suffix="+" />
               </div>
               <div className="text-xs font-bold opacity-80 uppercase tracking-wider text-africa-midnight">
@@ -133,7 +133,7 @@ export default function Home() {
               </div>
             </div>
             <div className="p-2">
-              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-red">
+              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-midnight">
                 <Counter target={50} suffix="+" />
               </div>
               <div className="text-xs font-bold opacity-80 uppercase tracking-wider text-africa-midnight">
@@ -141,7 +141,7 @@ export default function Home() {
               </div>
             </div>
             <div className="p-2">
-              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-red">
+              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-midnight">
                 <Counter target={15} suffix="+" />
               </div>
               <div className="text-xs font-bold opacity-80 uppercase tracking-wider text-africa-midnight">
@@ -149,7 +149,7 @@ export default function Home() {
               </div>
             </div>
             <div className="p-2">
-              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-red">
+              <div className="text-3xl md:text-4xl font-black mb-1 text-africa-midnight">
                 <Counter target={100} suffix="%" />
               </div>
               <div className="text-xs font-bold opacity-80 uppercase tracking-wider text-africa-midnight">
