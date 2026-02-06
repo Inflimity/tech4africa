@@ -99,7 +99,7 @@ export default function Home() {
             </Link>
           </div>
 
-          <p className="hero-description text-lg md:text-xl text-[#0F172A] font-semibold max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="hero-description text-lg md:text-xl vibrant-gradient-text font-semibold max-w-2xl mx-auto mb-8 leading-relaxed">
             A central hub for tech education, events, news and startup enablement.
           </p>
 
