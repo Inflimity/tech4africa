@@ -15,7 +15,7 @@ export default function Marquee() {
     ];
 
     return (
-        <div className="fixed top-0 w-full z-[60] py-2 bg-africa-midnight overflow-hidden">
+        <div className="fixed top-0 w-full z-[60] py-2 bg-africa-red overflow-hidden">
             <div className="marquee-container">
                 <div className="marquee-content gap-12 text-white/90 font-bold text-xs uppercase tracking-widest">
                     {/* First set */}
