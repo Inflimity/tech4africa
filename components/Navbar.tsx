@@ -37,7 +37,7 @@ export default function Navbar() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={isActive(link.href) ? "text-africa-red" : "hover:text-africa-red"}
+                            className={isActive(link.href) ? "text-yellow-500" : "hover:text-yellow-500"}
                         >
                             {link.label}
                         </Link>
@@ -46,7 +46,7 @@ export default function Navbar() {
 
                 <Link
                     href="/contact"
-                    className="hidden md:block bg-africa-midnight text-white px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-africa-red transition"
+                    className="hidden md:block bg-yellow-400 text-africa-midnight px-5 py-2.5 text-xs font-bold rounded-lg hover:bg-yellow-500 transition"
                 >
                     Get Started
                 </Link>

@@ -78,7 +78,7 @@ export default function Home() {
 
           <h1 className="hero-title text-5xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-tight">
             From Africa, <br />
-            <span className="text-africa-red">To The Future.</span>
+            <span className="text-yellow-400">To The Future.</span>
           </h1>
 
           <div className="hero-actions flex flex-wrap justify-center gap-4 mb-12" data-reveal="scale-up" data-stagger="3">
