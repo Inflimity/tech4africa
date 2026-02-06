@@ -168,7 +168,7 @@ export default function Home() {
               imageSrc="/images/stu18.jpeg"
               imageAlt="Academy"
               icon={<AcademyIcon />}
-              variant="black"
+              variant="red"
               className="lg:col-span-2"
             />
 
@@ -180,7 +180,7 @@ export default function Home() {
               imageSrc="/images/agency1.jpeg"
               imageAlt="Agency"
               icon={<AgencyIcon />}
-              variant="yellow"
+              variant="black"
             />
 
             <PillarCard
