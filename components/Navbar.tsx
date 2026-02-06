@@ -27,7 +27,7 @@ export default function Navbar() {
                 <div className="flex items-center">
                     <Link href="/" className="flex items-center gap-1.5 text-xl font-extrabold uppercase tracking-tight">
                         <Image src="/images/favicon.jpeg" alt="Tech4Africa Logo" width={28} height={28} className="rounded-md" />
-                        <span>Tech<span className="text-africa-red">4</span>Africa</span>
+                        <span>Tech<span className="text-yellow-400">4</span>Africa</span>
                     </Link>
                 </div>
 

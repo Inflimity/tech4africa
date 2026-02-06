@@ -93,7 +93,7 @@ export default function Home() {
             </Link>
             <Link
               href="/signup"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-africa-red text-white hover:bg-africa-orange hover:scale-105 transition-all active:scale-95 shadow-xl shadow-africa-red/30 animate-bounce-subtle [animation-delay:0.2s] pulse-btn"
+              className="inline-flex items-center justify-center px-8 py-4 rounded-xl font-bold text-sm uppercase tracking-widest bg-yellow-400 text-africa-midnight hover:bg-yellow-500 hover:scale-105 transition-all active:scale-95 shadow-xl shadow-yellow-400/30 animate-bounce-subtle [animation-delay:0.2s] pulse-btn"
             >
               Sign Up
             </Link>
