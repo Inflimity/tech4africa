@@ -89,8 +89,8 @@ export default function Navbar() {
                     <Link
                         href="/"
                         onClick={() => setMobileMenu(false)}
-                        className={`absolute flex items-center justify-center px-4 py-2 ${isActive("/") ? "bg-africa-red" : "bg-africa-midnight"
-                            } text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500`}
+                        className={`absolute flex items-center justify-center px-4 py-2 ${isActive("/") ? "bg-yellow-400 text-africa-midnight" : "bg-africa-midnight text-white"
+                            } rounded-xl shadow-xl font-bold text-xs transition-all duration-500`}
                         style={{
                             transform: mobileMenu ? "translate(-120px, 0px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
@@ -169,7 +169,7 @@ export default function Navbar() {
                     <Link
                         href="/contact"
                         onClick={() => setMobileMenu(false)}
-                        className="absolute flex items-center justify-center px-4 py-2 bg-gradient-to-br from-africa-red to-red-600 text-white rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-300"
+                        className="absolute flex items-center justify-center px-4 py-2 bg-yellow-400 text-africa-midnight rounded-xl shadow-xl font-bold text-xs transition-all duration-500 delay-300"
                         style={{
                             transform: mobileMenu ? "translate(-85px, 285px)" : "translate(0, 0) scale(0)",
                             opacity: mobileMenu ? 1 : 0,
