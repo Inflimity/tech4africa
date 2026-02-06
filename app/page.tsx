@@ -72,7 +72,7 @@ export default function Home() {
 
 
 
-          <span className="text-africa-red font-extrabold tracking-widest uppercase mb-4 block text-sm">
+          <span className="text-yellow-400 font-extrabold tracking-widest uppercase mb-4 block text-sm">
             AFRICA SILICON VALLEY
           </span>
 

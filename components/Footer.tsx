@@ -84,7 +84,7 @@ export default function Footer() {
                                 placeholder="your@email.com"
                                 className="bg-white/5 border border-white/10 px-4 py-3 rounded-xl text-xs text-white focus:outline-none focus:border-africa-red transition-all"
                             />
-                            <button className="bg-africa-red text-white py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-red-700 transition-all shadow-xl shadow-africa-red/20 active:scale-95">
+                            <button className="bg-yellow-400 text-africa-midnight py-4 rounded-xl font-black uppercase text-[10px] tracking-widest hover:bg-yellow-500 transition-all shadow-xl shadow-yellow-400/20 active:scale-95">
                                 Join Ecosystem
                             </button>
                         </div>
